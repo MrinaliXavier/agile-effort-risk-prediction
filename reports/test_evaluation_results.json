@@ -1,0 +1,195 @@
+{
+  "effort_test_results": {
+    "Dummy (Median)": {
+      "MAE": 1.9441,
+      "RMSE": 4.783,
+      "MdAE": 2.0,
+      "R2": -0.0058,
+      "PRED(25)%": 20.54,
+      "MdMRE%": 50.0
+    },
+    "Ridge (Tabular Only)": {
+      "MAE": 1.8782,
+      "RMSE": 4.7076,
+      "MdAE": 1.3008,
+      "R2": 0.0257,
+      "PRED(25)%": 23.06,
+      "MdMRE%": 53.41
+    },
+    "Ridge (Tabular + TF-IDF)": {
+      "MAE": 1.8805,
+      "RMSE": 4.6432,
+      "MdAE": 1.3821,
+      "R2": 0.0522,
+      "PRED(25)%": 25.59,
+      "MdMRE%": 47.09
+    },
+    "LightGBM (Tabular + TF-IDF)": {
+      "MAE": 1.8252,
+      "RMSE": 4.6441,
+      "MdAE": 1.3861,
+      "R2": 0.0518,
+      "PRED(25)%": 25.41,
+      "MdMRE%": 48.84
+    }
+  },
+  "risk_test_results": {
+    "Dummy (Majority Class)": {
+      "ROC-AUC": 0.5,
+      "PR-AUC": 0.2945,
+      "Accuracy": 0.7055,
+      "AtRisk-Precision": 0.0,
+      "AtRisk-Recall": 0.0,
+      "AtRisk-F1": 0.0,
+      "Macro-F1": 0.4136,
+      "Brier": 0.2124
+    },
+    "Logistic Regression (No Effort)": {
+      "ROC-AUC": 0.7096,
+      "PR-AUC": 0.4061,
+      "Accuracy": 0.6509,
+      "AtRisk-Precision": 0.3077,
+      "AtRisk-Recall": 0.1481,
+      "AtRisk-F1": 0.2,
+      "Macro-F1": 0.4884,
+      "Brier": 0.1942
+    },
+    "Logistic Regression (+ Pred Effort)": {
+      "ROC-AUC": 0.7015,
+      "PR-AUC": 0.3943,
+      "Accuracy": 0.64,
+      "AtRisk-Precision": 0.32,
+      "AtRisk-Recall": 0.1975,
+      "AtRisk-F1": 0.2443,
+      "Macro-F1": 0.504,
+      "Brier": 0.1965
+    },
+    "Random Forest (No Effort)": {
+      "ROC-AUC": 0.6287,
+      "PR-AUC": 0.3568,
+      "Accuracy": 0.6291,
+      "AtRisk-Precision": 0.3385,
+      "AtRisk-Recall": 0.2716,
+      "AtRisk-F1": 0.3014,
+      "Macro-F1": 0.5244,
+      "Brier": 0.2154
+    },
+    "Random Forest (+ Pred Effort)": {
+      "ROC-AUC": 0.6371,
+      "PR-AUC": 0.376,
+      "Accuracy": 0.6436,
+      "AtRisk-Precision": 0.3768,
+      "AtRisk-Recall": 0.321,
+      "AtRisk-F1": 0.3467,
+      "Macro-F1": 0.5508,
+      "Brier": 0.2082
+    },
+    "LightGBM (No Effort)": {
+      "ROC-AUC": 0.7096,
+      "PR-AUC": 0.4776,
+      "Accuracy": 0.6255,
+      "AtRisk-Precision": 0.3981,
+      "AtRisk-Recall": 0.5309,
+      "AtRisk-F1": 0.455,
+      "Macro-F1": 0.5849,
+      "Brier": 0.2134
+    },
+    "LightGBM (+ Pred Effort)": {
+      "ROC-AUC": 0.7489,
+      "PR-AUC": 0.5313,
+      "Accuracy": 0.6691,
+      "AtRisk-Precision": 0.4615,
+      "AtRisk-Recall": 0.7407,
+      "AtRisk-F1": 0.5687,
+      "Macro-F1": 0.6501,
+      "Brier": 0.2111
+    }
+  },
+  "best_effort_model": "LightGBM (Tabular + TF-IDF)",
+  "best_risk_model_test": "LightGBM (+ Pred Effort)",
+  "bootstrap_ablation_ci": {
+    "Logistic Regression": {
+      "point_delta": -0.0081,
+      "ci_low_95": -0.0178,
+      "ci_high_95": 0.0019,
+      "significant_at_95": false,
+      "n_bootstrap": 1000
+    },
+    "Random Forest": {
+      "point_delta": 0.0084,
+      "ci_low_95": -0.0247,
+      "ci_high_95": 0.0453,
+      "significant_at_95": false,
+      "n_bootstrap": 1000
+    },
+    "LightGBM": {
+      "point_delta": 0.0394,
+      "ci_low_95": 0.0104,
+      "ci_high_95": 0.0728,
+      "significant_at_95": true,
+      "n_bootstrap": 1000
+    }
+  },
+  "top_shap_features_test": [
+    {
+      "Feature": "first_status_change_days_imputed",
+      "Mean_Abs_SHAP": 0.6047722490224432
+    },
+    {
+      "Feature": "reporter_prev_issue_count",
+      "Mean_Abs_SHAP": 0.5782327323712837
+    },
+    {
+      "Feature": "early_status_changes",
+      "Mean_Abs_SHAP": 0.5379994207097735
+    },
+    {
+      "Feature": "pred_effort",
+      "Mean_Abs_SHAP": 0.4154419088565736
+    },
+    {
+      "Feature": "early_assignee_changes",
+      "Mean_Abs_SHAP": 0.3287897179957088
+    },
+    {
+      "Feature": "description_len",
+      "Mean_Abs_SHAP": 0.2709106610002171
+    },
+    {
+      "Feature": "summary_len",
+      "Mean_Abs_SHAP": 0.25791458368822945
+    },
+    {
+      "Feature": "priority_Minor",
+      "Mean_Abs_SHAP": 0.14837190471625314
+    },
+    {
+      "Feature": "early_comment_count",
+      "Mean_Abs_SHAP": 0.09164857657309149
+    },
+    {
+      "Feature": "issuetype_Bug",
+      "Mean_Abs_SHAP": 0.08224790893271956
+    },
+    {
+      "Feature": "priority_Major",
+      "Mean_Abs_SHAP": 0.03341199703581921
+    },
+    {
+      "Feature": "num_components",
+      "Mean_Abs_SHAP": 0.03279767439744412
+    },
+    {
+      "Feature": "issuetype_Story",
+      "Mean_Abs_SHAP": 0.02548862668492116
+    },
+    {
+      "Feature": "issuetype_Epic",
+      "Mean_Abs_SHAP": 0.022291155603835672
+    },
+    {
+      "Feature": "num_labels",
+      "Mean_Abs_SHAP": 0.01996901259501318
+    }
+  ]
+}

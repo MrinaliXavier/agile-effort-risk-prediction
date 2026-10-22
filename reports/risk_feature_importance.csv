@@ -1,0 +1,27 @@
+Feature,Mean_Abs_SHAP
+had_early_status_change,0.8334168980547376
+early_status_changes,0.6493598417526215
+early_assignee_changes,0.4440757656482585
+first_status_change_days_imputed,0.33616555535608933
+reporter_prev_issue_count,0.32630478716497807
+priority_Minor,0.27639478742190354
+pred_effort,0.2156104167886832
+issuetype_Story,0.21388294155282783
+issuetype_Bug,0.16779760606549443
+early_comment_count,0.09361207848127429
+summary_len,0.07828739197329122
+description_len,0.06201758216847454
+early_priority_changes,0.05559676188146865
+issuetype_Technical task,0.04208692333108189
+priority_Major,0.04026671124951447
+priority_Critical,0.040056428655747
+has_description,0.0340863840423502
+num_components,0.032186999684299035
+has_labels,0.02272755011483677
+issuetype_Improvement,0.015741545599803407
+priority_ordinal,0.015484658043364024
+has_components,0.012680861686348834
+num_labels,0.006523656081600329
+priority_Blocker,0.004591293241768126
+priority_Trivial,0.0
+issuetype_Epic,0.0

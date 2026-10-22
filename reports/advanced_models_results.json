@@ -1,0 +1,274 @@
+{
+  "effort_results": {
+    "Ridge (Tabular Only)": {
+      "train": {
+        "MAE": 2.2204,
+        "RMSE": 4.6586,
+        "MdAE": 1.4802,
+        "R2": -0.0173,
+        "PRED(25)%": 26.69,
+        "MdMRE%": 50.9
+      },
+      "val": {
+        "MAE": 1.846,
+        "RMSE": 2.428,
+        "MdAE": 1.4967,
+        "R2": -0.0036,
+        "PRED(25)%": 26.08,
+        "MdMRE%": 53.57
+      }
+    },
+    "Ridge (Tabular + TF-IDF)": {
+      "train": {
+        "MAE": 2.0482,
+        "RMSE": 4.4985,
+        "MdAE": 1.2314,
+        "R2": 0.0515,
+        "PRED(25)%": 28.42,
+        "MdMRE%": 45.37
+      },
+      "val": {
+        "MAE": 1.7604,
+        "RMSE": 2.3121,
+        "MdAE": 1.2947,
+        "R2": 0.09,
+        "PRED(25)%": 26.62,
+        "MdMRE%": 49.45
+      }
+    },
+    "LightGBM (Tabular Only)": {
+      "train": {
+        "MAE": 2.032,
+        "RMSE": 4.3387,
+        "MdAE": 1.2769,
+        "R2": 0.1176,
+        "PRED(25)%": 29.16,
+        "MdMRE%": 46.19
+      },
+      "val": {
+        "MAE": 1.8416,
+        "RMSE": 2.3952,
+        "MdAE": 1.4166,
+        "R2": 0.0234,
+        "PRED(25)%": 26.62,
+        "MdMRE%": 51.72
+      }
+    },
+    "LightGBM (Tabular + TF-IDF)": {
+      "train": {
+        "MAE": 1.9297,
+        "RMSE": 4.4049,
+        "MdAE": 1.188,
+        "R2": 0.0905,
+        "PRED(25)%": 31.47,
+        "MdMRE%": 41.27
+      },
+      "val": {
+        "MAE": 1.7696,
+        "RMSE": 2.3055,
+        "MdAE": 1.4366,
+        "R2": 0.0952,
+        "PRED(25)%": 26.8,
+        "MdMRE%": 49.18
+      }
+    }
+  },
+  "risk_results": {
+    "Logistic Regression (No Effort)": {
+      "train": {
+        "ROC-AUC": 0.7546,
+        "PR-AUC": 0.5941,
+        "Accuracy": 0.6629,
+        "AtRisk-Precision": 0.5339,
+        "AtRisk-Recall": 0.8172,
+        "AtRisk-F1": 0.6458,
+        "Macro-F1": 0.6621,
+        "Brier": 0.2023
+      },
+      "val": {
+        "ROC-AUC": 0.6935,
+        "PR-AUC": 0.4359,
+        "Accuracy": 0.676,
+        "AtRisk-Precision": 0.4396,
+        "AtRisk-Recall": 0.5714,
+        "AtRisk-F1": 0.4969,
+        "Macro-F1": 0.629,
+        "Brier": 0.2014
+      }
+    },
+    "Logistic Regression (+ Pred Effort)": {
+      "train": {
+        "ROC-AUC": 0.7603,
+        "PR-AUC": 0.6026,
+        "Accuracy": 0.6702,
+        "AtRisk-Precision": 0.5416,
+        "AtRisk-Recall": 0.8014,
+        "AtRisk-F1": 0.6464,
+        "Macro-F1": 0.6687,
+        "Brier": 0.2001
+      },
+      "val": {
+        "ROC-AUC": 0.711,
+        "PR-AUC": 0.4564,
+        "Accuracy": 0.692,
+        "AtRisk-Precision": 0.4653,
+        "AtRisk-Recall": 0.6714,
+        "AtRisk-F1": 0.5497,
+        "Macro-F1": 0.6578,
+        "Brier": 0.1998
+      }
+    },
+    "Random Forest (No Effort)": {
+      "train": {
+        "ROC-AUC": 1.0,
+        "PR-AUC": 1.0,
+        "Accuracy": 1.0,
+        "AtRisk-Precision": 1.0,
+        "AtRisk-Recall": 1.0,
+        "AtRisk-F1": 1.0,
+        "Macro-F1": 1.0,
+        "Brier": 0.0292
+      },
+      "val": {
+        "ROC-AUC": 0.6681,
+        "PR-AUC": 0.373,
+        "Accuracy": 0.664,
+        "AtRisk-Precision": 0.4054,
+        "AtRisk-Recall": 0.4286,
+        "AtRisk-F1": 0.4167,
+        "Macro-F1": 0.5904,
+        "Brier": 0.2076
+      }
+    },
+    "Random Forest (+ Pred Effort)": {
+      "train": {
+        "ROC-AUC": 1.0,
+        "PR-AUC": 1.0,
+        "Accuracy": 1.0,
+        "AtRisk-Precision": 1.0,
+        "AtRisk-Recall": 1.0,
+        "AtRisk-F1": 1.0,
+        "Macro-F1": 1.0,
+        "Brier": 0.0286
+      },
+      "val": {
+        "ROC-AUC": 0.6499,
+        "PR-AUC": 0.3965,
+        "Accuracy": 0.656,
+        "AtRisk-Precision": 0.3824,
+        "AtRisk-Recall": 0.3714,
+        "AtRisk-F1": 0.3768,
+        "Macro-F1": 0.5696,
+        "Brier": 0.2067
+      }
+    },
+    "LightGBM (No Effort)": {
+      "train": {
+        "ROC-AUC": 0.9919,
+        "PR-AUC": 0.9856,
+        "Accuracy": 0.9425,
+        "AtRisk-Precision": 0.8754,
+        "AtRisk-Recall": 0.9877,
+        "AtRisk-F1": 0.9282,
+        "Macro-F1": 0.9401,
+        "Brier": 0.0641
+      },
+      "val": {
+        "ROC-AUC": 0.6663,
+        "PR-AUC": 0.3863,
+        "Accuracy": 0.672,
+        "AtRisk-Precision": 0.4,
+        "AtRisk-Recall": 0.3429,
+        "AtRisk-F1": 0.3692,
+        "Macro-F1": 0.5738,
+        "Brier": 0.212
+      }
+    },
+    "LightGBM (+ Pred Effort)": {
+      "train": {
+        "ROC-AUC": 0.9976,
+        "PR-AUC": 0.9957,
+        "Accuracy": 0.9696,
+        "AtRisk-Precision": 0.9266,
+        "AtRisk-Recall": 0.9982,
+        "AtRisk-F1": 0.9611,
+        "Macro-F1": 0.9681,
+        "Brier": 0.048
+      },
+      "val": {
+        "ROC-AUC": 0.6741,
+        "PR-AUC": 0.4281,
+        "Accuracy": 0.696,
+        "AtRisk-Precision": 0.4483,
+        "AtRisk-Recall": 0.3714,
+        "AtRisk-F1": 0.4062,
+        "Macro-F1": 0.601,
+        "Brier": 0.2076
+      }
+    }
+  },
+  "best_effort_model": "Ridge (Tabular + TF-IDF)",
+  "best_risk_model": "Logistic Regression (+ Pred Effort)",
+  "top_shap_features": [
+    {
+      "Feature": "had_early_status_change",
+      "Mean_Abs_SHAP": 0.8334168980547376
+    },
+    {
+      "Feature": "early_status_changes",
+      "Mean_Abs_SHAP": 0.6493598417526215
+    },
+    {
+      "Feature": "early_assignee_changes",
+      "Mean_Abs_SHAP": 0.4440757656482585
+    },
+    {
+      "Feature": "first_status_change_days_imputed",
+      "Mean_Abs_SHAP": 0.33616555535608933
+    },
+    {
+      "Feature": "reporter_prev_issue_count",
+      "Mean_Abs_SHAP": 0.32630478716497807
+    },
+    {
+      "Feature": "priority_Minor",
+      "Mean_Abs_SHAP": 0.27639478742190354
+    },
+    {
+      "Feature": "pred_effort",
+      "Mean_Abs_SHAP": 0.2156104167886832
+    },
+    {
+      "Feature": "issuetype_Story",
+      "Mean_Abs_SHAP": 0.21388294155282783
+    },
+    {
+      "Feature": "issuetype_Bug",
+      "Mean_Abs_SHAP": 0.16779760606549443
+    },
+    {
+      "Feature": "early_comment_count",
+      "Mean_Abs_SHAP": 0.09361207848127429
+    },
+    {
+      "Feature": "summary_len",
+      "Mean_Abs_SHAP": 0.07828739197329122
+    },
+    {
+      "Feature": "description_len",
+      "Mean_Abs_SHAP": 0.06201758216847454
+    },
+    {
+      "Feature": "early_priority_changes",
+      "Mean_Abs_SHAP": 0.05559676188146865
+    },
+    {
+      "Feature": "issuetype_Technical task",
+      "Mean_Abs_SHAP": 0.04208692333108189
+    },
+    {
+      "Feature": "priority_Major",
+      "Mean_Abs_SHAP": 0.04026671124951447
+    }
+  ]
+}
