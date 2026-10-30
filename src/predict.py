@@ -1,5 +1,5 @@
 """
-predict.py — single-ticket inference for the effort & risk models.
+predict.py - single-ticket inference for the effort & risk models.
 
 IMPORTANT DESIGN NOTE (read before using):
     Effort can be predicted the instant a ticket is created.
@@ -10,12 +10,13 @@ IMPORTANT DESIGN NOTE (read before using):
     but will reflect a ticket that has shown no activity yet, not a magic
     answer for a ticket that was literally just filed seconds ago.
 """
-
 import json
+
+import joblib
 import numpy as np
 import pandas as pd
-import joblib
-import shap
+
+from common import shap_values_positive_class
 
 MODELS_DIR = "models"
 
@@ -28,7 +29,7 @@ def load_models():
     return stage1, stage2, config
 
 
-def _ticket_to_stage1_frame(ticket: dict, config: dict) -> pd.DataFrame:
+def _ticket_to_stage1_frame(ticket: dict) -> pd.DataFrame:
     """
     ticket: dict with the raw fields known at creation time, e.g.
         {
@@ -37,38 +38,28 @@ def _ticket_to_stage1_frame(ticket: dict, config: dict) -> pd.DataFrame:
             "summary": "...", "description": "...",
             "reporter_prev_issue_count": 42,
         }
-    Fills in the small derived fields automatically so the caller doesn't
-    have to compute them by hand.
+    The small derived fields are filled in automatically.
     """
     summary = ticket.get("summary", "") or ""
     description = ticket.get("description", "") or ""
-
-    priority_map = {"Trivial": 1, "Minor": 2, "Major": 3, "Critical": 4, "Blocker": 5}
-    priority = ticket.get("priority", "Minor")
-
     row = {
         "issuetype": ticket.get("issuetype", "Story"),
-        "priority": priority,
+        "priority": ticket.get("priority", "Minor"),
         "num_components": ticket.get("num_components", 0),
         "num_labels": ticket.get("num_labels", 0),
         "summary_len": len(summary),
         "description_len": len(description),
         "reporter_prev_issue_count": ticket.get("reporter_prev_issue_count", 0),
-        "priority_ordinal": priority_map.get(priority, 2),
         "has_description": int(len(description) > 0),
-        "has_components": int(ticket.get("num_components", 0) > 0),
-        "has_labels": int(ticket.get("num_labels", 0) > 0),
         "full_text": f"{summary} {description}",
     }
     return pd.DataFrame([row])
 
 
-def predict_effort(ticket: dict, stage1, config: dict) -> float:
+def predict_effort(ticket: dict, stage1) -> float:
     """Returns predicted Story Points. Usable the instant a ticket is created."""
-    frame = _ticket_to_stage1_frame(ticket, config)
-    pred_log = stage1.predict(frame)[0]
-    pred = float(np.expm1(pred_log))
-    return max(pred, 0.0)
+    pred_log = stage1.predict(_ticket_to_stage1_frame(ticket))[0]
+    return max(float(np.expm1(pred_log)), 0.0)
 
 
 def _ticket_to_stage2_frame(ticket: dict, early_signals: dict, pred_effort: float, config: dict) -> pd.DataFrame:
@@ -79,21 +70,17 @@ def _ticket_to_stage2_frame(ticket: dict, early_signals: dict, pred_effort: floa
             "early_priority_changes": 0, "early_comment_count": 2,
             "first_status_change_days": 1.4,   # None/omit if no status change yet
         }
-    If a ticket genuinely has no activity yet, pass an empty dict - the
-    function fills in the same "no activity observed" defaults used in
-    training (had_early_status_change=0, first_status_change_days imputed
+    If a ticket has no activity yet, pass an empty dict - the same "no activity
+    observed" default used in training is applied (first status change imputed
     to the full observation window).
     """
-    stage1_frame = _ticket_to_stage1_frame(ticket, config)
-    row = stage1_frame.iloc[0].to_dict()
-
+    row = _ticket_to_stage1_frame(ticket).iloc[0].to_dict()
     first_change_days = early_signals.get("first_status_change_days")
     row.update({
         "early_status_changes": early_signals.get("early_status_changes", 0),
         "early_assignee_changes": early_signals.get("early_assignee_changes", 0),
         "early_priority_changes": early_signals.get("early_priority_changes", 0),
         "early_comment_count": early_signals.get("early_comment_count", 0),
-        "had_early_status_change": int(first_change_days is not None),
         "first_status_change_days_imputed": (
             float(first_change_days) if first_change_days is not None else float(config["early_window_days"])
         ),
@@ -107,104 +94,75 @@ def predict_risk(ticket: dict, early_signals: dict, stage1, stage2, config: dict
     Returns (risk_probability, risk_label, pred_effort_used).
     This is the 5-day early-warning check - see module docstring.
     """
-    pred_effort = predict_effort(ticket, stage1, config)
+    pred_effort = predict_effort(ticket, stage1)
     frame = _ticket_to_stage2_frame(ticket, early_signals, pred_effort, config)
     prob = float(stage2.predict_proba(frame)[0, 1])
-    label = int(prob >= 0.5)
-    return prob, label, pred_effort
+    return prob, int(prob >= 0.5), pred_effort
 
 
 def explain_risk(ticket: dict, early_signals: dict, stage1, stage2, config: dict, top_n: int = 8):
     """
-    Returns a per-prediction SHAP explanation: the specific features that
-    pushed THIS ticket's risk score up or down, not just global importance.
+    Per-prediction SHAP explanation (log-odds units): the features that pushed
+    THIS ticket's risk score up or down. Works for linear and tree models.
     """
-    pred_effort = predict_effort(ticket, stage1, config)
+    pred_effort = predict_effort(ticket, stage1)
     frame = _ticket_to_stage2_frame(ticket, early_signals, pred_effort, config)
-
-    prep = stage2.named_steps["preprocessor"]
-    model = stage2.named_steps["model"]
-
-    cat_encoder = prep.named_transformers_["cat"]
-    cat_names = list(cat_encoder.get_feature_names_out(config["cat_features"]))
-    all_feature_names = cat_names + config["stage2_num_features_with_effort"]
-
-    X_trans = prep.transform(frame)
-    if hasattr(X_trans, "toarray"):
-        X_trans = X_trans.toarray()
-
-    explainer = shap.TreeExplainer(model)
-    shap_values = explainer.shap_values(X_trans)
-    shap_row = shap_values[1][0] if isinstance(shap_values, list) else shap_values[0]
-
-    contributions = sorted(
-        zip(all_feature_names, shap_row), key=lambda x: abs(x[1]), reverse=True
-    )
+    prep, model = stage2.named_steps["preprocessor"], stage2.named_steps["model"]
+    background = joblib.load(f"{MODELS_DIR}/stage2_shap_background.joblib")
+    shap_row = shap_values_positive_class(model, background, prep.transform(frame))[0]
+    contributions = sorted(zip(prep.get_feature_names_out(), shap_row), key=lambda x: abs(x[1]), reverse=True)
     return contributions[:top_n]
+
+
+def _example_to_inputs(row):
+    ticket = {
+        "issuetype": row["issuetype"], "priority": row["priority"],
+        "num_components": row["num_components"], "num_labels": row["num_labels"],
+        "reporter_prev_issue_count": row["reporter_prev_issue_count"],
+        "summary": row["summary"] if pd.notna(row["summary"]) else "",
+        "description": row["description"] if pd.notna(row["description"]) else "",
+    }
+    early_signals = {
+        "early_status_changes": row["early_status_changes"],
+        "early_assignee_changes": row["early_assignee_changes"],
+        "early_priority_changes": row["early_priority_changes"],
+        "early_comment_count": row["early_comment_count"],
+        "first_status_change_days": (
+            row["first_status_change_days_imputed"] if row["early_status_changes"] > 0 else None
+        ),
+    }
+    return ticket, early_signals
 
 
 def _run_sanity_check():
     """
-    Runs every saved example ticket through the full inference path and
-    compares predictions to the known outcome - confirms the saved models
-    behave sensibly outside of the training script itself.
+    Runs the saved example tickets through the full inference path. These tickets
+    were part of the training data, so this is a smoke test of the inference code,
+    not an evaluation of accuracy (see evaluate_test_set.py for that).
     """
     stage1, stage2, config = load_models()
     examples = pd.read_csv(f"{MODELS_DIR}/example_tickets_for_sanity_check.csv")
 
     print("=" * 90)
-    print("SANITY CHECK: predict.py vs known example tickets")
+    print(f"SANITY CHECK: predict.py vs known example tickets  "
+          f"[Stage 1: {config['stage1_model']} | Stage 2: {config['stage2_model']}]")
     print("=" * 90)
 
     for _, row in examples.iterrows():
-        ticket = {
-            "issuetype": row["issuetype"],
-            "priority": row["priority"],
-            "num_components": row["num_components"],
-            "num_labels": row["num_labels"],
-            "reporter_prev_issue_count": row["reporter_prev_issue_count"],
-            "summary": row["summary"],
-            "description": row["description"] if pd.notna(row["description"]) else "",
-        }
-        early_signals = {
-            "early_status_changes": row["early_status_changes"],
-            "early_assignee_changes": row["early_assignee_changes"],
-            "early_priority_changes": row["early_priority_changes"],
-            "early_comment_count": row["early_comment_count"],
-            "first_status_change_days": (
-                row["first_status_change_days_imputed"] if row["had_early_status_change"] == 1 else None
-            ),
-        }
-
+        ticket, early_signals = _example_to_inputs(row)
         prob, label, pred_effort = predict_risk(ticket, early_signals, stage1, stage2, config)
-
         print(f"\n{row['key']}  |  {ticket['summary'][:60]}")
         print(f"  Predicted Story Points: {pred_effort:.2f}   (actual: {row['story_points']})")
         print(f"  Predicted risk prob:    {prob:.3f}  -> label {label}   (actual: {int(row['risk_25pct'])})")
 
-    # Show one full SHAP explanation as a demo of the explainability path
     first = examples.iloc[0]
-    ticket = {
-        "issuetype": first["issuetype"], "priority": first["priority"],
-        "num_components": first["num_components"], "num_labels": first["num_labels"],
-        "reporter_prev_issue_count": first["reporter_prev_issue_count"],
-        "summary": first["summary"], "description": first["description"] if pd.notna(first["description"]) else "",
-    }
-    early_signals = {
-        "early_status_changes": first["early_status_changes"],
-        "early_assignee_changes": first["early_assignee_changes"],
-        "early_priority_changes": first["early_priority_changes"],
-        "early_comment_count": first["early_comment_count"],
-        "first_status_change_days": (
-            first["first_status_change_days_imputed"] if first["had_early_status_change"] == 1 else None
-        ),
-    }
+    ticket, early_signals = _example_to_inputs(first)
     print("\n" + "=" * 90)
-    print(f"SHAP explanation for {first['key']} (why this specific prediction):")
+    print(f"SHAP explanation for {first['key']} (why this specific prediction, log-odds):")
     print("=" * 90)
     for feature, value in explain_risk(ticket, early_signals, stage1, stage2, config):
         direction = "pushes risk UP" if value > 0 else "pushes risk DOWN"
-        print(f"  {feature:35s}  {value:+.4f}   ({direction})")
+        print(f"  {feature:40s}  {value:+.4f}   ({direction})")
 
 
 if __name__ == "__main__":

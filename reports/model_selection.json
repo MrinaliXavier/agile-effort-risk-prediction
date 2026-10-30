@@ -1,0 +1,23 @@
+{
+  "selected_on": "validation split (train fitted on train split only)",
+  "effort_model": "Ridge (Tabular + TF-IDF)",
+  "effort_selection_metric": "Val MAE (lower is better)",
+  "effort_val_scores": {
+    "Ridge (Tabular Only)": 1.8489,
+    "Ridge (Tabular + TF-IDF)": 1.768,
+    "LightGBM (Tabular Only)": 1.8427,
+    "LightGBM (Tabular + TF-IDF)": 1.7809
+  },
+  "risk_family": "Logistic Regression",
+  "risk_model": "Logistic Regression (+ Pred Effort)",
+  "risk_selection_metric": "Val ROC-AUC (higher is better), among '+ Pred Effort' variants",
+  "risk_val_scores": {
+    "Logistic Regression (No Effort)": 0.7021,
+    "Logistic Regression (+ Pred Effort)": 0.7218,
+    "Random Forest (No Effort)": 0.639,
+    "Random Forest (+ Pred Effort)": 0.6615,
+    "LightGBM (No Effort)": 0.6575,
+    "LightGBM (+ Pred Effort)": 0.6445
+  },
+  "best_risk_variant_overall_on_val": "Logistic Regression (+ Pred Effort)"
+}

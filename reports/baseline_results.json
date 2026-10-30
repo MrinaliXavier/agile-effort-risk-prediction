@@ -1,0 +1,166 @@
+{
+  "effort_results": {
+    "Dummy (Median)": {
+      "train": {
+        "MAE": 2.2417,
+        "RMSE": 4.681,
+        "MdAE": 2.0,
+        "R2": -0.0271,
+        "PRED(25)%": 27.77,
+        "MdMRE%": 50.0
+      },
+      "val": {
+        "MAE": 1.8687,
+        "RMSE": 2.4484,
+        "MdAE": 2.0,
+        "R2": -0.0205,
+        "PRED(25)%": 23.74,
+        "MdMRE%": 50.0
+      }
+    },
+    "Ridge Regression": {
+      "train": {
+        "MAE": 2.2188,
+        "RMSE": 4.6517,
+        "MdAE": 1.4686,
+        "R2": -0.0142,
+        "PRED(25)%": 27.57,
+        "MdMRE%": 50.95
+      },
+      "val": {
+        "MAE": 1.851,
+        "RMSE": 2.4385,
+        "MdAE": 1.4723,
+        "R2": -0.0123,
+        "PRED(25)%": 26.44,
+        "MdMRE%": 52.76
+      }
+    },
+    "Random Forest": {
+      "train": {
+        "MAE": 0.9105,
+        "RMSE": 2.7716,
+        "MdAE": 0.438,
+        "R2": 0.6399,
+        "PRED(25)%": 63.13,
+        "MdMRE%": 18.42
+      },
+      "val": {
+        "MAE": 1.9919,
+        "RMSE": 2.6371,
+        "MdAE": 1.5285,
+        "R2": -0.1839,
+        "PRED(25)%": 22.12,
+        "MdMRE%": 54.69
+      }
+    },
+    "Gradient Boosting": {
+      "train": {
+        "MAE": 1.9888,
+        "RMSE": 4.1491,
+        "MdAE": 1.2503,
+        "R2": 0.1931,
+        "PRED(25)%": 29.7,
+        "MdMRE%": 44.83
+      },
+      "val": {
+        "MAE": 1.8561,
+        "RMSE": 2.3902,
+        "MdAE": 1.4634,
+        "R2": 0.0274,
+        "PRED(25)%": 25.18,
+        "MdMRE%": 50.79
+      }
+    }
+  },
+  "risk_results": {
+    "Dummy (Majority Class)": {
+      "train": {
+        "ROC-AUC": 0.5,
+        "PR-AUC": 0.3761,
+        "Accuracy": 0.6239,
+        "AtRisk-Precision": 0.0,
+        "AtRisk-Recall": 0.0,
+        "AtRisk-F1": 0.0,
+        "Macro-F1": 0.3842,
+        "Brier": 0.2346
+      },
+      "val": {
+        "ROC-AUC": 0.5,
+        "PR-AUC": 0.28,
+        "Accuracy": 0.72,
+        "AtRisk-Precision": 0.0,
+        "AtRisk-Recall": 0.0,
+        "AtRisk-F1": 0.0,
+        "Macro-F1": 0.4186,
+        "Brier": 0.2108
+      }
+    },
+    "Logistic Regression (Balanced)": {
+      "train": {
+        "ROC-AUC": 0.7529,
+        "PR-AUC": 0.5973,
+        "Accuracy": 0.6662,
+        "AtRisk-Precision": 0.5369,
+        "AtRisk-Recall": 0.819,
+        "AtRisk-F1": 0.6486,
+        "Macro-F1": 0.6654,
+        "Brier": 0.203
+      },
+      "val": {
+        "ROC-AUC": 0.7021,
+        "PR-AUC": 0.4641,
+        "Accuracy": 0.684,
+        "AtRisk-Precision": 0.4483,
+        "AtRisk-Recall": 0.5571,
+        "AtRisk-F1": 0.4968,
+        "Macro-F1": 0.6332,
+        "Brier": 0.195
+      }
+    },
+    "Random Forest (Balanced)": {
+      "train": {
+        "ROC-AUC": 1.0,
+        "PR-AUC": 1.0,
+        "Accuracy": 1.0,
+        "AtRisk-Precision": 1.0,
+        "AtRisk-Recall": 1.0,
+        "AtRisk-F1": 1.0,
+        "Macro-F1": 1.0,
+        "Brier": 0.0292
+      },
+      "val": {
+        "ROC-AUC": 0.639,
+        "PR-AUC": 0.3675,
+        "Accuracy": 0.652,
+        "AtRisk-Precision": 0.3731,
+        "AtRisk-Recall": 0.3571,
+        "AtRisk-F1": 0.365,
+        "Macro-F1": 0.5626,
+        "Brier": 0.2109
+      }
+    },
+    "Gradient Boosting": {
+      "train": {
+        "ROC-AUC": 0.8723,
+        "PR-AUC": 0.7891,
+        "Accuracy": 0.7964,
+        "AtRisk-Precision": 0.7439,
+        "AtRisk-Recall": 0.6995,
+        "AtRisk-F1": 0.721,
+        "Macro-F1": 0.7804,
+        "Brier": 0.1512
+      },
+      "val": {
+        "ROC-AUC": 0.6451,
+        "PR-AUC": 0.3649,
+        "Accuracy": 0.664,
+        "AtRisk-Precision": 0.2812,
+        "AtRisk-Recall": 0.1286,
+        "AtRisk-F1": 0.1765,
+        "Macro-F1": 0.4827,
+        "Brier": 0.1983
+      }
+    }
+  }
+}

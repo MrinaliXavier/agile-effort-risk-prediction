@@ -4,16 +4,17 @@
     "issuetype",
     "priority"
   ],
+  "cat_baselines": [
+    "Story",
+    "Minor"
+  ],
   "stage1_num_features": [
     "num_components",
     "num_labels",
     "summary_len",
     "description_len",
     "reporter_prev_issue_count",
-    "priority_ordinal",
-    "has_description",
-    "has_components",
-    "has_labels"
+    "has_description"
   ],
   "stage2_base_num_features": [
     "num_components",
@@ -21,15 +22,11 @@
     "summary_len",
     "description_len",
     "reporter_prev_issue_count",
-    "priority_ordinal",
     "has_description",
-    "has_components",
-    "has_labels",
     "early_status_changes",
     "early_assignee_changes",
     "early_priority_changes",
     "early_comment_count",
-    "had_early_status_change",
     "first_status_change_days_imputed"
   ],
   "stage2_num_features_with_effort": [
@@ -38,20 +35,23 @@
     "summary_len",
     "description_len",
     "reporter_prev_issue_count",
-    "priority_ordinal",
     "has_description",
-    "has_components",
-    "has_labels",
     "early_status_changes",
     "early_assignee_changes",
     "early_priority_changes",
     "early_comment_count",
-    "had_early_status_change",
     "first_status_change_days_imputed",
     "pred_effort"
   ],
-  "stage1_model": "LightGBM (Tabular + TF-IDF)",
-  "stage2_model": "LightGBM (+ Pred Effort)",
+  "removed_features": {
+    "priority_ordinal": "same information as the priority one-hot columns (priority entered twice)",
+    "has_components": "r = 0.95 with num_components (VIF 10.5)",
+    "has_labels": "r = 0.91 with num_labels (VIF 5.7)",
+    "had_early_status_change": "exactly equal to (early_status_changes > 0); r = -0.90 with first_status_change_days_imputed"
+  },
+  "stage1_model": "Ridge (Tabular + TF-IDF)",
+  "stage2_model": "Logistic Regression (+ Pred Effort)",
+  "selection_source": "reports/model_selection.json (validation split)",
   "n_effort_training_rows": 3704,
   "n_risk_training_rows": 2038,
   "risk_at_risk_rate": 0.35328753680078506

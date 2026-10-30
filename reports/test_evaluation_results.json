@@ -1,4 +1,27 @@
 {
+  "selection_used": {
+    "selected_on": "validation split (train fitted on train split only)",
+    "effort_model": "Ridge (Tabular + TF-IDF)",
+    "effort_selection_metric": "Val MAE (lower is better)",
+    "effort_val_scores": {
+      "Ridge (Tabular Only)": 1.8489,
+      "Ridge (Tabular + TF-IDF)": 1.768,
+      "LightGBM (Tabular Only)": 1.8427,
+      "LightGBM (Tabular + TF-IDF)": 1.7809
+    },
+    "risk_family": "Logistic Regression",
+    "risk_model": "Logistic Regression (+ Pred Effort)",
+    "risk_selection_metric": "Val ROC-AUC (higher is better), among '+ Pred Effort' variants",
+    "risk_val_scores": {
+      "Logistic Regression (No Effort)": 0.7021,
+      "Logistic Regression (+ Pred Effort)": 0.7218,
+      "Random Forest (No Effort)": 0.639,
+      "Random Forest (+ Pred Effort)": 0.6615,
+      "LightGBM (No Effort)": 0.6575,
+      "LightGBM (+ Pred Effort)": 0.6445
+    },
+    "best_risk_variant_overall_on_val": "Logistic Regression (+ Pred Effort)"
+  },
   "effort_test_results": {
     "Dummy (Median)": {
       "MAE": 1.9441,
@@ -9,28 +32,36 @@
       "MdMRE%": 50.0
     },
     "Ridge (Tabular Only)": {
-      "MAE": 1.8782,
-      "RMSE": 4.7076,
-      "MdAE": 1.3008,
-      "R2": 0.0257,
-      "PRED(25)%": 23.06,
-      "MdMRE%": 53.41
+      "MAE": 1.8827,
+      "RMSE": 4.7271,
+      "MdAE": 1.3021,
+      "R2": 0.0176,
+      "PRED(25)%": 22.7,
+      "MdMRE%": 52.74
     },
     "Ridge (Tabular + TF-IDF)": {
-      "MAE": 1.8805,
-      "RMSE": 4.6432,
-      "MdAE": 1.3821,
-      "R2": 0.0522,
-      "PRED(25)%": 25.59,
-      "MdMRE%": 47.09
+      "MAE": 1.8872,
+      "RMSE": 4.6651,
+      "MdAE": 1.3799,
+      "R2": 0.0432,
+      "PRED(25)%": 25.23,
+      "MdMRE%": 47.5
+    },
+    "LightGBM (Tabular Only)": {
+      "MAE": 1.7717,
+      "RMSE": 4.7081,
+      "MdAE": 1.0973,
+      "R2": 0.0255,
+      "PRED(25)%": 31.89,
+      "MdMRE%": 43.07
     },
     "LightGBM (Tabular + TF-IDF)": {
-      "MAE": 1.8252,
-      "RMSE": 4.6441,
-      "MdAE": 1.3861,
-      "R2": 0.0518,
-      "PRED(25)%": 25.41,
-      "MdMRE%": 48.84
+      "MAE": 1.8607,
+      "RMSE": 4.6763,
+      "MdAE": 1.4677,
+      "R2": 0.0386,
+      "PRED(25)%": 25.59,
+      "MdMRE%": 48.06
     }
   },
   "risk_test_results": {
@@ -45,151 +76,151 @@
       "Brier": 0.2124
     },
     "Logistic Regression (No Effort)": {
-      "ROC-AUC": 0.7096,
-      "PR-AUC": 0.4061,
+      "ROC-AUC": 0.7132,
+      "PR-AUC": 0.4113,
       "Accuracy": 0.6509,
       "AtRisk-Precision": 0.3077,
       "AtRisk-Recall": 0.1481,
       "AtRisk-F1": 0.2,
       "Macro-F1": 0.4884,
-      "Brier": 0.1942
+      "Brier": 0.1931
     },
     "Logistic Regression (+ Pred Effort)": {
-      "ROC-AUC": 0.7015,
-      "PR-AUC": 0.3943,
-      "Accuracy": 0.64,
-      "AtRisk-Precision": 0.32,
-      "AtRisk-Recall": 0.1975,
-      "AtRisk-F1": 0.2443,
-      "Macro-F1": 0.504,
-      "Brier": 0.1965
+      "ROC-AUC": 0.6805,
+      "PR-AUC": 0.3866,
+      "Accuracy": 0.6582,
+      "AtRisk-Precision": 0.3673,
+      "AtRisk-Recall": 0.2222,
+      "AtRisk-F1": 0.2769,
+      "Macro-F1": 0.5266,
+      "Brier": 0.1963
     },
     "Random Forest (No Effort)": {
-      "ROC-AUC": 0.6287,
-      "PR-AUC": 0.3568,
-      "Accuracy": 0.6291,
-      "AtRisk-Precision": 0.3385,
+      "ROC-AUC": 0.6621,
+      "PR-AUC": 0.3939,
+      "Accuracy": 0.6364,
+      "AtRisk-Precision": 0.3492,
       "AtRisk-Recall": 0.2716,
-      "AtRisk-F1": 0.3014,
-      "Macro-F1": 0.5244,
-      "Brier": 0.2154
+      "AtRisk-F1": 0.3056,
+      "Macro-F1": 0.5296,
+      "Brier": 0.2056
     },
     "Random Forest (+ Pred Effort)": {
-      "ROC-AUC": 0.6371,
-      "PR-AUC": 0.376,
+      "ROC-AUC": 0.6839,
+      "PR-AUC": 0.4063,
       "Accuracy": 0.6436,
-      "AtRisk-Precision": 0.3768,
-      "AtRisk-Recall": 0.321,
-      "AtRisk-F1": 0.3467,
-      "Macro-F1": 0.5508,
-      "Brier": 0.2082
+      "AtRisk-Precision": 0.3924,
+      "AtRisk-Recall": 0.3827,
+      "AtRisk-F1": 0.3875,
+      "Macro-F1": 0.5681,
+      "Brier": 0.1981
     },
     "LightGBM (No Effort)": {
-      "ROC-AUC": 0.7096,
-      "PR-AUC": 0.4776,
-      "Accuracy": 0.6255,
-      "AtRisk-Precision": 0.3981,
-      "AtRisk-Recall": 0.5309,
-      "AtRisk-F1": 0.455,
-      "Macro-F1": 0.5849,
-      "Brier": 0.2134
+      "ROC-AUC": 0.7234,
+      "PR-AUC": 0.4861,
+      "Accuracy": 0.6473,
+      "AtRisk-Precision": 0.4184,
+      "AtRisk-Recall": 0.5062,
+      "AtRisk-F1": 0.4581,
+      "Macro-F1": 0.5983,
+      "Brier": 0.2076
     },
     "LightGBM (+ Pred Effort)": {
-      "ROC-AUC": 0.7489,
-      "PR-AUC": 0.5313,
-      "Accuracy": 0.6691,
-      "AtRisk-Precision": 0.4615,
-      "AtRisk-Recall": 0.7407,
-      "AtRisk-F1": 0.5687,
-      "Macro-F1": 0.6501,
-      "Brier": 0.2111
+      "ROC-AUC": 0.7124,
+      "PR-AUC": 0.4388,
+      "Accuracy": 0.6618,
+      "AtRisk-Precision": 0.4565,
+      "AtRisk-Recall": 0.7778,
+      "AtRisk-F1": 0.5753,
+      "Macro-F1": 0.6472,
+      "Brier": 0.2243
     }
   },
-  "best_effort_model": "LightGBM (Tabular + TF-IDF)",
-  "best_risk_model_test": "LightGBM (+ Pred Effort)",
+  "selected_effort_model": "Ridge (Tabular + TF-IDF)",
+  "selected_risk_model": "Logistic Regression (+ Pred Effort)",
   "bootstrap_ablation_ci": {
     "Logistic Regression": {
-      "point_delta": -0.0081,
-      "ci_low_95": -0.0178,
-      "ci_high_95": 0.0019,
-      "significant_at_95": false,
+      "point_delta": -0.0326,
+      "ci_low_95": -0.052,
+      "ci_high_95": -0.0144,
+      "significant_at_95": true,
       "n_bootstrap": 1000
     },
     "Random Forest": {
-      "point_delta": 0.0084,
-      "ci_low_95": -0.0247,
-      "ci_high_95": 0.0453,
+      "point_delta": 0.0219,
+      "ci_low_95": -0.017,
+      "ci_high_95": 0.0612,
       "significant_at_95": false,
       "n_bootstrap": 1000
     },
     "LightGBM": {
-      "point_delta": 0.0394,
-      "ci_low_95": 0.0104,
-      "ci_high_95": 0.0728,
-      "significant_at_95": true,
+      "point_delta": -0.0109,
+      "ci_low_95": -0.0469,
+      "ci_high_95": 0.0273,
+      "significant_at_95": false,
       "n_bootstrap": 1000
     }
   },
   "top_shap_features_test": [
     {
-      "Feature": "first_status_change_days_imputed",
-      "Mean_Abs_SHAP": 0.6047722490224432
+      "Feature": "num__reporter_prev_issue_count",
+      "Mean_Abs_SHAP": 0.8042392474656629
     },
     {
-      "Feature": "reporter_prev_issue_count",
-      "Mean_Abs_SHAP": 0.5782327323712837
+      "Feature": "num__first_status_change_days_imputed",
+      "Mean_Abs_SHAP": 0.48846646468371113
     },
     {
-      "Feature": "early_status_changes",
-      "Mean_Abs_SHAP": 0.5379994207097735
+      "Feature": "num__early_assignee_changes",
+      "Mean_Abs_SHAP": 0.37846165710375673
     },
     {
-      "Feature": "pred_effort",
-      "Mean_Abs_SHAP": 0.4154419088565736
+      "Feature": "num__pred_effort",
+      "Mean_Abs_SHAP": 0.2122805920520662
     },
     {
-      "Feature": "early_assignee_changes",
-      "Mean_Abs_SHAP": 0.3287897179957088
+      "Feature": "cat__priority_Major",
+      "Mean_Abs_SHAP": 0.16250404248348432
     },
     {
-      "Feature": "description_len",
-      "Mean_Abs_SHAP": 0.2709106610002171
+      "Feature": "num__early_status_changes",
+      "Mean_Abs_SHAP": 0.13272004069422708
     },
     {
-      "Feature": "summary_len",
-      "Mean_Abs_SHAP": 0.25791458368822945
+      "Feature": "num__summary_len",
+      "Mean_Abs_SHAP": 0.11523052698758307
     },
     {
-      "Feature": "priority_Minor",
-      "Mean_Abs_SHAP": 0.14837190471625314
+      "Feature": "num__has_description",
+      "Mean_Abs_SHAP": 0.07332243066490769
     },
     {
-      "Feature": "early_comment_count",
-      "Mean_Abs_SHAP": 0.09164857657309149
+      "Feature": "num__early_comment_count",
+      "Mean_Abs_SHAP": 0.05212430641792455
     },
     {
-      "Feature": "issuetype_Bug",
-      "Mean_Abs_SHAP": 0.08224790893271956
+      "Feature": "num__num_labels",
+      "Mean_Abs_SHAP": 0.04959357780557919
     },
     {
-      "Feature": "priority_Major",
-      "Mean_Abs_SHAP": 0.03341199703581921
+      "Feature": "num__description_len",
+      "Mean_Abs_SHAP": 0.04662142132379241
     },
     {
-      "Feature": "num_components",
-      "Mean_Abs_SHAP": 0.03279767439744412
+      "Feature": "num__num_components",
+      "Mean_Abs_SHAP": 0.04448879595993615
     },
     {
-      "Feature": "issuetype_Story",
-      "Mean_Abs_SHAP": 0.02548862668492116
+      "Feature": "cat__issuetype_Improvement",
+      "Mean_Abs_SHAP": 0.03713900623623243
     },
     {
-      "Feature": "issuetype_Epic",
-      "Mean_Abs_SHAP": 0.022291155603835672
+      "Feature": "cat__issuetype_Epic",
+      "Mean_Abs_SHAP": 0.03606834514351874
     },
     {
-      "Feature": "num_labels",
-      "Mean_Abs_SHAP": 0.01996901259501318
+      "Feature": "cat__issuetype_Technical task",
+      "Mean_Abs_SHAP": 0.024926744162972653
     }
   ]
 }

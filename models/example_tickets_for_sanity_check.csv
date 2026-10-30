@@ -1,10 +1,10 @@
-key,story_points,risk_25pct,issuetype,priority,num_components,num_labels,summary_len,description_len,reporter_prev_issue_count,priority_ordinal,has_description,has_components,has_labels,early_status_changes,early_assignee_changes,early_priority_changes,early_comment_count,had_early_status_change,first_status_change_days_imputed,summary,description
-XD-2223,8.0,0,Story,Minor,1,0,46,451,109,2,1,1,0,0.0,0.0,0.0,0.0,0,5.0,Provide proper ordering for all REST endpoints,"With the implementation of XD-1864, we need to make sure that the (paginated) data returned from the REST endpoints has proper default ordering.
+key,story_points,risk_25pct,issuetype,priority,num_components,num_labels,summary_len,description_len,reporter_prev_issue_count,has_description,early_status_changes,early_assignee_changes,early_priority_changes,early_comment_count,first_status_change_days_imputed,summary,description
+XD-2223,8.0,0,Story,Minor,1,0,46,451,109,1,0.0,0.0,0.0,0.0,5.0,Provide proper ordering for all REST endpoints,"With the implementation of XD-1864, we need to make sure that the (paginated) data returned from the REST endpoints has proper default ordering.
 
 Up to now we have done client-side ordering in the Admin UI, but with server-side pagination, the server-side should support proper pagination as well.
 
 Eventually, we may even decide to provide more flexible ordering options (ASC vs DESC, sort on different properties etc.), which may be a separate Jira."
-XD-3543,2.0,1,Story,Minor,0,0,34,156,607,2,1,0,0,0.0,0.0,0.0,0.0,0,5.0,Port aggregator as s-c-s processor,"As a Spring XD developer, I'd like to port {{aggregator}} module from XD to s-c-s repo, so I can use it as {{processor}} module to build streaming pipeline."
-XD-2456,5.0,1,Story,Minor,0,0,41,148,187,2,1,0,0,0.0,0.0,0.0,0.0,0,5.0,"Acceptance test for ""spark-app"" batch job","As a QA, I'd like to include acceptance test coverage for _spark-app_ batch job so that I can validate the functionality as part of every CI build. "
-XD-3230,1.0,0,Story,Minor,0,0,23,120,433,2,1,0,0,1.0,1.0,0.0,0.0,1,2.7616958796296296,Update to Reactor 2.0.4,"As a developer, I'd like to upgrade to Reactor 2.0.4 release, so I could leverage the latest improvements and bug-fixes."
-XD-836,50.0,0,Epic,Minor,0,0,62,0,56,2,0,0,0,0.0,0.0,0.0,0.0,0,5.0,Harden the requirements for the  DSL and refactor accordingly.,
+XD-3543,2.0,1,Story,Minor,0,0,34,156,607,1,0.0,0.0,0.0,0.0,5.0,Port aggregator as s-c-s processor,"As a Spring XD developer, I'd like to port {{aggregator}} module from XD to s-c-s repo, so I can use it as {{processor}} module to build streaming pipeline."
+XD-2456,5.0,1,Story,Minor,0,0,41,148,187,1,0.0,0.0,0.0,0.0,5.0,"Acceptance test for ""spark-app"" batch job","As a QA, I'd like to include acceptance test coverage for _spark-app_ batch job so that I can validate the functionality as part of every CI build. "
+XD-3230,1.0,0,Story,Minor,0,0,23,120,433,1,1.0,1.0,0.0,0.0,2.7616958796296296,Update to Reactor 2.0.4,"As a developer, I'd like to upgrade to Reactor 2.0.4 release, so I could leverage the latest improvements and bug-fixes."
+XD-836,50.0,0,Epic,Minor,0,0,62,0,56,0,0.0,0.0,0.0,0.0,5.0,Harden the requirements for the  DSL and refactor accordingly.,
