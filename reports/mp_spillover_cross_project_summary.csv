@@ -1,0 +1,29 @@
+models,comparison,variant_vs_baseline,n_projects,projects_improved,significant_improvement,significant_worse,median_delta_auc,mean_delta_auc,wilcoxon_p
+Selected,H1 team estimate,+ Team SP vs No Effort,13,13,4,0,0.0241,0.0431,0.0002
+Selected,H2 model estimate beyond team,+ Team SP + Model SP vs + Team SP,13,9,1,0,0.005,0.0062,0.1062
+Selected,Estimation gap alone,+ Estimation Gap vs No Effort,13,12,3,0,0.0135,0.034,0.0005
+Selected,Original design (pred effort),+ Pred Effort vs No Effort,13,10,4,0,0.0153,0.0198,0.0046
+Selected,Both estimates vs none,+ Team SP + Model SP vs No Effort,13,13,4,0,0.0404,0.0493,0.0002
+Selected,Leakage: final SP vs prediction-time SP,+ Final SP + Model SP (leakage check) vs + Team SP + Model SP,13,4,0,1,-0.0071,-0.0087,0.2734
+Selected,"H3 model estimate, unestimated tickets",+ Team SP + Model SP vs + Team SP,9,7,0,0,0.0086,0.0285,0.0156
+Logistic Regression,H1 team estimate,+ Team SP vs No Effort,13,13,6,0,0.0356,0.0502,0.0002
+Logistic Regression,H2 model estimate beyond team,+ Team SP + Model SP vs + Team SP,13,10,1,0,0.005,0.0073,0.0076
+Logistic Regression,Estimation gap alone,+ Estimation Gap vs No Effort,13,12,5,0,0.0135,0.0377,0.0005
+Logistic Regression,Original design (pred effort),+ Pred Effort vs No Effort,13,9,4,0,0.0133,0.019,0.0105
+Logistic Regression,Both estimates vs none,+ Team SP + Model SP vs No Effort,13,13,6,0,0.0417,0.0575,0.0002
+Logistic Regression,Leakage: final SP vs prediction-time SP,+ Final SP + Model SP (leakage check) vs + Team SP + Model SP,13,5,1,1,-0.0071,-0.0075,0.4973
+Logistic Regression,"H3 model estimate, unestimated tickets",+ Team SP + Model SP vs + Team SP,9,7,0,0,0.0086,0.0252,0.0156
+Random Forest,H1 team estimate,+ Team SP vs No Effort,13,11,4,1,0.0241,0.0301,0.0266
+Random Forest,H2 model estimate beyond team,+ Team SP + Model SP vs + Team SP,13,9,3,0,0.0062,0.0116,0.1465
+Random Forest,Estimation gap alone,+ Estimation Gap vs No Effort,13,10,2,1,0.0318,0.0299,0.0398
+Random Forest,Original design (pred effort),+ Pred Effort vs No Effort,13,9,1,0,0.0121,0.0082,0.2439
+Random Forest,Both estimates vs none,+ Team SP + Model SP vs No Effort,13,12,4,0,0.0295,0.0417,0.0032
+Random Forest,Leakage: final SP vs prediction-time SP,+ Final SP + Model SP (leakage check) vs + Team SP + Model SP,13,4,0,2,-0.0073,-0.0131,0.2439
+Random Forest,"H3 model estimate, unestimated tickets",+ Team SP + Model SP vs + Team SP,9,6,0,0,0.0175,0.0195,0.2031
+LightGBM,H1 team estimate,+ Team SP vs No Effort,13,9,5,0,0.0208,0.0324,0.0574
+LightGBM,H2 model estimate beyond team,+ Team SP + Model SP vs + Team SP,13,7,0,1,0.0014,0.0007,0.946
+LightGBM,Estimation gap alone,+ Estimation Gap vs No Effort,13,10,2,0,0.0231,0.0293,0.0134
+LightGBM,Original design (pred effort),+ Pred Effort vs No Effort,13,7,1,1,0.0008,0.0097,0.3662
+LightGBM,Both estimates vs none,+ Team SP + Model SP vs No Effort,13,9,4,0,0.0283,0.0331,0.0398
+LightGBM,Leakage: final SP vs prediction-time SP,+ Final SP + Model SP (leakage check) vs + Team SP + Model SP,13,7,1,0,0.0005,-0.0025,0.8394
+LightGBM,"H3 model estimate, unestimated tickets",+ Team SP + Model SP vs + Team SP,9,3,0,0,-0.0137,-0.0065,0.7344

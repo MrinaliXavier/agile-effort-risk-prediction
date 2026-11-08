@@ -1,0 +1,203 @@
+[
+  {
+    "key": "DROOLS-3330",
+    "probability": 0.9073,
+    "team_sp_at_commitment": 3.0,
+    "model_sp": 3.55,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "priority changes before commitment",
+        "shap": 0.968,
+        "value": 2.0
+      },
+      {
+        "feature": "time in backlog before the sprint",
+        "shap": 0.9086,
+        "value": "1056.7 days"
+      },
+      {
+        "feature": "comments before commitment",
+        "shap": -0.8377,
+        "value": 11.0
+      },
+      {
+        "feature": "number of labels",
+        "shap": 0.6085,
+        "value": 3.0
+      },
+      {
+        "feature": "sprint length (days)",
+        "shap": 0.4521,
+        "value": 19.0
+      },
+      {
+        "feature": "assignee changes before commitment",
+        "shap": 0.3009,
+        "value": 3.0
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "issue type = Enhancement",
+        "shap_log_sp": 0.0823
+      },
+      {
+        "feature": "word 'work'",
+        "shap_log_sp": 0.0353
+      },
+      {
+        "feature": "word 'does'",
+        "shap_log_sp": 0.0274
+      },
+      {
+        "feature": "issue type is not Task",
+        "shap_log_sp": -0.023
+      },
+      {
+        "feature": "word 'different'",
+        "shap_log_sp": 0.0223
+      },
+      {
+        "feature": "number of labels",
+        "shap_log_sp": -0.0198
+      }
+    ],
+    "example": "highest predicted risk",
+    "actual_outcome": 0
+  },
+  {
+    "key": "DROOLS-6090",
+    "probability": 0.0736,
+    "team_sp_at_commitment": 1.0,
+    "model_sp": 1.98,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "reporter's earlier tickets",
+        "shap": -0.9751,
+        "value": 285.0
+      },
+      {
+        "feature": "team's estimate at commitment",
+        "shap": -0.8447,
+        "value": 1.0
+      },
+      {
+        "feature": "sprint length (days)",
+        "shap": 0.4656,
+        "value": 19.0
+      },
+      {
+        "feature": "priority = Minor",
+        "shap": -0.3605,
+        "value": null
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": -0.3243,
+        "value": 2.0
+      },
+      {
+        "feature": "number of labels",
+        "shap": -0.2327,
+        "value": 0.0
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "priority = Minor",
+        "shap_log_sp": -0.1645
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap_log_sp": -0.1056
+      },
+      {
+        "feature": "word 'does'",
+        "shap_log_sp": 0.0324
+      },
+      {
+        "feature": "issue type is not Task",
+        "shap_log_sp": -0.023
+      },
+      {
+        "feature": "word 'use'",
+        "shap_log_sp": -0.0206
+      },
+      {
+        "feature": "word 'open'",
+        "shap_log_sp": -0.0188
+      }
+    ],
+    "example": "lowest predicted risk",
+    "actual_outcome": 0
+  },
+  {
+    "key": "DROOLS-6278",
+    "probability": 0.3761,
+    "team_sp_at_commitment": 1.0,
+    "model_sp": 3.47,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "team's estimate at commitment",
+        "shap": -0.8447,
+        "value": 1.0
+      },
+      {
+        "feature": "sprint length (days)",
+        "shap": 0.4521,
+        "value": 19.0
+      },
+      {
+        "feature": "issue type = Task",
+        "shap": 0.2478,
+        "value": null
+      },
+      {
+        "feature": "number of labels",
+        "shap": -0.2327,
+        "value": 0.0
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap": -0.2122,
+        "value": 107.0
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": 0.1127,
+        "value": 3.5
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "issue type = Task",
+        "shap_log_sp": 0.0524
+      },
+      {
+        "feature": "word 'support'",
+        "shap_log_sp": 0.0372
+      },
+      {
+        "feature": "word 'rules'",
+        "shap_log_sp": 0.0365
+      },
+      {
+        "feature": "word 'rule'",
+        "shap_log_sp": 0.0326
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap_log_sp": -0.023
+      },
+      {
+        "feature": "word 'output'",
+        "shap_log_sp": 0.0213
+      }
+    ],
+    "example": "model thinks most under-estimated by the team",
+    "actual_outcome": 0
+  }
+]

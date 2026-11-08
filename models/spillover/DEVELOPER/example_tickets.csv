@@ -1,0 +1,66 @@
+key,summary,description,issuetype,priority,num_components,num_labels,reporter_prev_issue_count,early_status_changes,early_assignee_changes,early_priority_changes,early_comment_count,first_status_change_days_imputed,backlog_days,sprint_length_days,story_points,sp_team_commit,spilled
+DEVELOPER-4383,New tag for Media Programs,"HI Axel and Dan,
+
+Attached please find a new tag for our site. This tag will work for all our media programs. So we will no longer have a tag JUST for FB and then another for everything else. 
+
+I've cc'd Maria Mohammad on this email. She's the contact at Liquid Advertising that can help if you run into any technical issues.
+
+Once implemented - if there's a way you can work with Maria to test this to make sure it's tracking correctly that would be great. 
+
+I meant to also say that we need this live for Sept 1st. 
+
+Thank you! ",Story,None,1,0,13,1,1,0,1,3.777835648148148,3.779074074074074,13.999574131944446,3.0,,1
+DEVELOPER-5233,Style updates for JBoss Developer login page,"h2. Requirements
+*_This needs to be merged by Wed. July 25th._*
+
+Some styles need to be updated on the JBoss Developer login page. Rysiek has provided the static html page ( [^SSO.zip] ) so the styles can be implemented. The design changes are required for the jboss.org and redhat.com accounts merging project. Without those changes we cannot finish the development of merging logic and release it.
+
+h2. Design
+See attached screenshots for the new design.
+
+h2. Stakeholders
+* ENG [~unibrew]
+
+h2. Review Steps
+The static html login page should match the designs of the screenshots attached.",Story,None,1,1,3,0,1,0,0,4.135733958333333,4.135733958333333,13.999798449074072,3.0,3.0,0
+DEVELOPER-3334,robots.txt disallows paths which do not exist,"This is not a huge issue, but your robots.txt file is disallowing a number of paths that no longer exist (the items highlighted in red do not exist):
+
+http://screencast.com/t/nynCeOQG1hp5
+
+h2. Definition of Done
+# Paths that no longer exists have been removed from the robots.txt file 
+# Reviewer happy with changes.",Story,None,0,1,8,0,1,0,0,110.13736832175924,110.13736832175924,12.11044417824074,3.0,3.0,0
+DEVELOPER-5264,"[SPIKE] Review and cleanup type styles, partials and breakpoints","h2. Design
+There are inconsistencies with breakpoints and duplicative SCSS partials that cover a single front-end concern. Let's clean that up.
+
+h2. Stakeholders
+- Eng
+
+h2. Tasks
+- Review existing stylesheets
+- catalog all breakpoints
+- document the front-end components and modules at a logical level
+- Ensure each partial has only a single concern and vice versa
+- Ensure all breakpoints are consistent
+
+h2. Acceptance Criteria
+- Everything on the site still looks right, but breakpoints and components are sane across the frontend.",Story,None,1,1,43,0,1,0,0,14.199713032407407,14.199713032407407,13.999905023148148,3.0,3.0,1
+DEVELOPER-5845,Create Assembly Library custom module,"Create a custom module that allows authenticated users to view all of our assembly types (and their visual styles) rendered in a sort of library/styleguide.
+
+h3. Routes
+
+h4. Assembly type + visual styles listing page
+
+!localhost_8888_admin_content_assembly_library.png|thumbnail! 
+
+h4. Single assembly type page with all visual styles rendered in shadowDOM
+
+!localhost_8888_admin_content_assembly_library_call_to_action.png|thumbnail! 
+
+This example shows the page/route for our CTA assembly type, but a page/route would exist for each assembly type.
+
+h3. Acceptance Criteria
+
+* This module is created and installed on our Stage environment (not Prod)
+* The route/functionality displayed in the section above + screenshots exists
+* The functionality has been reviewed and is helpful for UX",Story,None,0,1,43,1,1,0,1,2.8159722222222223,2.817407407407408,13.99966960648148,5.0,5.0,1

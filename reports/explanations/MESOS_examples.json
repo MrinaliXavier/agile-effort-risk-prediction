@@ -1,0 +1,203 @@
+[
+  {
+    "key": "MESOS-9864",
+    "probability": 0.93,
+    "team_sp_at_commitment": 5.0,
+    "model_sp": 3.43,
+    "risk_units": "probability",
+    "risk_drivers": [
+      {
+        "feature": "reporter's earlier tickets",
+        "shap": 0.086,
+        "value": 2.0
+      },
+      {
+        "feature": "time in backlog before the sprint",
+        "shap": 0.0753,
+        "value": "22.0 days (first status change after 5.9 days)"
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": 0.0672,
+        "value": 3.4
+      },
+      {
+        "feature": "team's estimate at commitment",
+        "shap": 0.0628,
+        "value": 5.0
+      },
+      {
+        "feature": "number of labels",
+        "shap": 0.0616,
+        "value": 2.0
+      },
+      {
+        "feature": "sprint length (days)",
+        "shap": 0.0373,
+        "value": 14.0
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "word 'support'",
+        "shap_log_sp": 0.1642
+      },
+      {
+        "feature": "issue type = Task",
+        "shap_log_sp": 0.1255
+      },
+      {
+        "feature": "word 'role'",
+        "shap_log_sp": 0.0372
+      },
+      {
+        "feature": "word 'add'",
+        "shap_log_sp": -0.034
+      },
+      {
+        "feature": "issue type is not Improvement",
+        "shap_log_sp": -0.0263
+      },
+      {
+        "feature": "number of labels",
+        "shap_log_sp": 0.0215
+      }
+    ],
+    "example": "highest predicted risk",
+    "actual_outcome": 0
+  },
+  {
+    "key": "MESOS-9939",
+    "probability": 0.12,
+    "team_sp_at_commitment": 1.0,
+    "model_sp": 2.24,
+    "risk_units": "probability",
+    "risk_drivers": [
+      {
+        "feature": "description length (characters)",
+        "shap": -0.1732,
+        "value": 35690.0
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap": -0.0911,
+        "value": 101.0
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": -0.0799,
+        "value": 2.2
+      },
+      {
+        "feature": "time in backlog before the sprint",
+        "shap": -0.0567,
+        "value": "0.6 days (first status change after 0.0 days)"
+      },
+      {
+        "feature": "number of labels",
+        "shap": 0.0459,
+        "value": 2.0
+      },
+      {
+        "feature": "sprint length (days)",
+        "shap": 0.0336,
+        "value": 14.0
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "issue type is not Task",
+        "shap_log_sp": -0.0676
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap_log_sp": 0.0432
+      },
+      {
+        "feature": "description length (characters)",
+        "shap_log_sp": -0.0399
+      },
+      {
+        "feature": "issue type is not Improvement",
+        "shap_log_sp": -0.0263
+      },
+      {
+        "feature": "number of labels",
+        "shap_log_sp": 0.0215
+      },
+      {
+        "feature": "number of components",
+        "shap_log_sp": -0.02
+      }
+    ],
+    "example": "lowest predicted risk",
+    "actual_outcome": 1
+  },
+  {
+    "key": "MESOS-9616",
+    "probability": 0.72,
+    "team_sp_at_commitment": 1.0,
+    "model_sp": 4.03,
+    "risk_units": "probability",
+    "risk_drivers": [
+      {
+        "feature": "time in backlog before the sprint",
+        "shap": 0.13,
+        "value": "6.1 days"
+      },
+      {
+        "feature": "number of labels",
+        "shap": 0.0773,
+        "value": 4.0
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap": -0.0748,
+        "value": 101.0
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": 0.0725,
+        "value": 4.0
+      },
+      {
+        "feature": "description length (characters)",
+        "shap": 0.0188,
+        "value": 917.0
+      },
+      {
+        "feature": "team's estimate at commitment",
+        "shap": -0.0153,
+        "value": 1.0
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "word 'resources'",
+        "shap_log_sp": 0.0866
+      },
+      {
+        "feature": "number of labels",
+        "shap_log_sp": 0.0836
+      },
+      {
+        "feature": "word 'http'",
+        "shap_log_sp": 0.0689
+      },
+      {
+        "feature": "issue type is not Task",
+        "shap_log_sp": -0.0676
+      },
+      {
+        "feature": "word 'scheduler'",
+        "shap_log_sp": 0.0649
+      },
+      {
+        "feature": "word 'task'",
+        "shap_log_sp": 0.0536
+      }
+    ],
+    "example": "model thinks most under-estimated by the team",
+    "actual_outcome": 1
+  }
+]

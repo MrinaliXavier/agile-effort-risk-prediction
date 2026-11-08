@@ -1,0 +1,13 @@
+key,summary,description,issuetype,priority,num_components,num_labels,reporter_prev_issue_count,early_status_changes,early_assignee_changes,early_priority_changes,early_comment_count,first_status_change_days_imputed,backlog_days,sprint_length_days,story_points,sp_team_commit,spilled
+XD-2652,Document migration strategy for custom modules (from 1.0 to 1.1),"As a user, I'd like to migrate from 1.0 to 1.1 and be able to port my custom modules so that I can operationalize existing data pipelines and also take advantage of latest XD features.",Story,Minor,0,0,117,0,0,0,0,2.359516180555556,2.359516180555556,8.458180578703704,2.0,2.0,1
+XD-2956,Revisit the requirement for ID and Timestamp attributes in Tuple,"As a developer, I'd like revisit the design to determine the necessity for _ID_ and _TimeStamp_ attributes in {{Tuple}}, so I can refactor in order to improve performance throughput.",Story,Minor,0,0,191,2,1,0,0,10.146472777777776,10.354460046296296,11.291558472222222,1.0,1.0,1
+XD-2390,Add regression test,"Verify that network interruptions will not negatively affect the XD cluster.  
+Verify that a container that looses connectivity will be able to rejoin the cluster cleanly.
+Modules will redploy when the network is back up.
+",Technical task,Minor,2,0,81,0,0,0,0,0.4063078703703703,0.4063078703703703,15.166666666666666,3.0,3.0,0
+XD-3594,Add support for named channels,"As an s-c-d user, I'd like to have the option to use _named channels_, so I can create streaming pipelines without source or sink modules. ",Story,Minor,0,0,346,0,0,0,0,0.0,0.0,11.32621804398148,3.0,3.0,0
+XD-1592,Make transport configuration extensible. ,"Change message-bus.xml to read 
+
+<import resource=""classpath*:/META-INF/spring-xd/transports/${XD_TRANSPORT}-bus.xml""/>
+
+So new transports may be configured in external jars",Improvement,Minor,0,0,90,2,1,0,0,0.0165426736111111,0.2579758680555555,12.999825057870371,1.0,1.0,0

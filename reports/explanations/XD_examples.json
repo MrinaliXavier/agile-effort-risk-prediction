@@ -1,0 +1,203 @@
+[
+  {
+    "key": "XD-3145",
+    "probability": 0.9283,
+    "team_sp_at_commitment": 8.0,
+    "model_sp": 5.35,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": 1.2409,
+        "value": 5.4
+      },
+      {
+        "feature": "issue type = Epic",
+        "shap": 0.8514,
+        "value": null
+      },
+      {
+        "feature": "team's estimate at commitment",
+        "shap": 0.3191,
+        "value": 8.0
+      },
+      {
+        "feature": "status changes before commitment",
+        "shap": 0.1326,
+        "value": 0.0
+      },
+      {
+        "feature": "number of components",
+        "shap": 0.0799,
+        "value": 1.0
+      },
+      {
+        "feature": "priority = Major",
+        "shap": -0.0564,
+        "value": null
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "priority = Major",
+        "shap_log_sp": 0.1734
+      },
+      {
+        "feature": "word 'job'",
+        "shap_log_sp": 0.0938
+      },
+      {
+        "feature": "word 'module'",
+        "shap_log_sp": 0.0516
+      },
+      {
+        "feature": "word 'update'",
+        "shap_log_sp": -0.048
+      },
+      {
+        "feature": "issue type = Epic",
+        "shap_log_sp": 0.0475
+      },
+      {
+        "feature": "word 'docs'",
+        "shap_log_sp": -0.045
+      }
+    ],
+    "example": "highest predicted risk",
+    "actual_outcome": 1
+  },
+  {
+    "key": "XD-3178",
+    "probability": 0.0141,
+    "team_sp_at_commitment": 1.0,
+    "model_sp": 1.62,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "status changes before commitment",
+        "shap": -3.0826,
+        "value": 4.0
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": -0.9376,
+        "value": 1.6
+      },
+      {
+        "feature": "team's estimate at commitment",
+        "shap": -0.2008,
+        "value": 1.0
+      },
+      {
+        "feature": "issue type = Bug",
+        "shap": 0.1589,
+        "value": null
+      },
+      {
+        "feature": "number of components",
+        "shap": -0.0591,
+        "value": 0.0
+      },
+      {
+        "feature": "issue type is not Improvement",
+        "shap": -0.056,
+        "value": null
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "issue type = Bug",
+        "shap_log_sp": -0.1618
+      },
+      {
+        "feature": "word 'log'",
+        "shap_log_sp": -0.0681
+      },
+      {
+        "feature": "word 'version'",
+        "shap_log_sp": -0.0394
+      },
+      {
+        "feature": "priority is not Major",
+        "shap_log_sp": -0.0294
+      },
+      {
+        "feature": "word 'message'",
+        "shap_log_sp": 0.0243
+      },
+      {
+        "feature": "issue type is not Improvement",
+        "shap_log_sp": 0.0142
+      }
+    ],
+    "example": "lowest predicted risk",
+    "actual_outcome": 0
+  },
+  {
+    "key": "XD-3492",
+    "probability": 0.6657,
+    "team_sp_at_commitment": 1.0,
+    "model_sp": 4.36,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": 0.8207,
+        "value": 4.4
+      },
+      {
+        "feature": "team's estimate at commitment",
+        "shap": -0.2008,
+        "value": 1.0
+      },
+      {
+        "feature": "status changes before commitment",
+        "shap": 0.1326,
+        "value": 0.0
+      },
+      {
+        "feature": "sprint length (days)",
+        "shap": 0.0979,
+        "value": 11.3
+      },
+      {
+        "feature": "number of components",
+        "shap": -0.0591,
+        "value": 0.0
+      },
+      {
+        "feature": "issue type is not Improvement",
+        "shap": -0.056,
+        "value": null
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "word 'modules'",
+        "shap_log_sp": 0.1203
+      },
+      {
+        "feature": "word 'developer'",
+        "shap_log_sp": 0.1057
+      },
+      {
+        "feature": "word 'like'",
+        "shap_log_sp": 0.0987
+      },
+      {
+        "feature": "word 'xd'",
+        "shap_log_sp": 0.0643
+      },
+      {
+        "feature": "priority is not Major",
+        "shap_log_sp": -0.0294
+      },
+      {
+        "feature": "issue type is not Bug",
+        "shap_log_sp": 0.0253
+      }
+    ],
+    "example": "model thinks most under-estimated by the team",
+    "actual_outcome": 0
+  }
+]

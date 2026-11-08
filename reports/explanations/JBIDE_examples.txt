@@ -1,0 +1,61 @@
+PROJECT JBIDE - Stage 1: LightGBM (Tabular + TF-IDF) | Stage 2: Logistic Regression (+ Team SP + Model SP) | label: spilled
+
+--- highest predicted risk ---
+Ticket JBIDE-27716: Fix build errors after 4.19.0.AM1 Target  platform update
+  Chance of missing its first sprint: 82%  (this project's usual rate: 42%)
+  The team had not estimated it at commitment; the model estimates 4.5 SP
+  What drives the risk (log-odds; + raises it, - lowers it):
+    +1.628  number of components = 8.0
+    +0.364  team's estimate at commitment = not estimated
+    -0.358  has a description = 0.0
+    +0.158  issue type = Task
+    -0.094  assignee changes before commitment = 0.0
+    -0.065  priority = Blocker
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    -0.111  (x0.89)  priority = Blocker
+    +0.085  (x1.09)  reporter's earlier tickets = 41.0
+    +0.030  (x1.03)  word 'target platform'
+    +0.028  (x1.03)  description length (characters) = 0.0
+    +0.027  (x1.03)  word 'target'
+    -0.025  (x0.97)  word 'fix'
+  ACTUAL OUTCOME: finished in its sprint
+
+--- lowest predicted risk ---
+Ticket JBIDE-27730: JAX-RS Application wizard throws NPE
+  Chance of missing its first sprint: 12%  (this project's usual rate: 42%)
+  Team committed 1 SP; the model estimates 4.4 SP - 4.4x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    -0.924  team's estimate at commitment = 1.0
+    -0.505  description length (characters) = 7580.0
+    -0.315  priority = Critical
+    -0.197  summary length (characters) = 36.0
+    +0.108  assignee changes before commitment = 1.0
+    +0.101  has a description = 1.0
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.059  (x1.06)  reporter's earlier tickets = 123.0
+    -0.049  (x0.95)  word 'native'
+    -0.047  (x0.95)  word 'org eclipse'
+    +0.024  (x1.02)  description length (characters) = 7580.0
+    -0.013  (x0.99)  issue type is not Feature Request
+    +0.011  (x1.01)  word 'command'
+  ACTUAL OUTCOME: missed its sprint
+
+--- model thinks most under-estimated by the team ---
+Ticket JBIDE-27691: Migrate jbosstoolstargetplatform-notification-emails to Jenkins PSI
+  Chance of missing its first sprint: 49%  (this project's usual rate: 42%)
+  Team committed 1 SP; the model estimates 8.0 SP - 8.0x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    -0.924  team's estimate at commitment = 1.0
+    +0.454  model's effort estimate (SP) = 8.0
+    +0.341  issue type = Feature Request
+    +0.172  number of components = 2.0
+    +0.101  has a description = 1.0
+    -0.094  assignee changes before commitment = 0.0
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.172  (x1.19)  word 'ci'
+    +0.146  (x1.16)  issue type = Feature Request
+    +0.114  (x1.12)  reporter's earlier tickets = 39.0
+    +0.021  (x1.02)  word 'platform'
+    +0.019  (x1.02)  summary length (characters) = 67.0
+    -0.019  (x0.98)  description length (characters) = 133.0
+  ACTUAL OUTCOME: finished in its sprint

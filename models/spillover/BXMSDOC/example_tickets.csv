@@ -1,0 +1,26 @@
+key,summary,description,issuetype,priority,num_components,num_labels,reporter_prev_issue_count,early_status_changes,early_assignee_changes,early_priority_changes,early_comment_count,first_status_change_days_imputed,backlog_days,sprint_length_days,story_points,sp_team_commit,spilled
+BXMSDOC-5709,What's new for 7.8,"[~kaldesai], please create subtasks for each writer to work on their respective what's new items.
+
+Pull request for what's new: https://github.com/kaldesai/kie-docs/pull/72",Task,Major,0,0,82,1,0,0,2,54.27719907407408,70.00745571759259,18.998447060185185,5.0,5.0,0
+BXMSDOC-3476,Add guidance about enabling security manager in EAP for embedded application,"Need guidance about enabling security manager in EAP for embedded application. 
+
+You can find our knowledge base article:
+https://access.redhat.com/solutions/3692371
+
+I don't know the right document/chapter for this topic.",Feature Request,Major,1,1,9,1,1,0,0,0.0047685185185185,138.46637731481482,20.999381493055555,6.0,,1
+BXMSDOC-3069,EAP 7.1 installation - initial drafts,"Please review these updated drafts, for DM and PAM 7.1. Note that file names and versions will be updated closer to the release date.
+[RHDM 7.1 on EAP draft|http://file.ork.redhat.com/~emmurphy/DM-7.1-EAP]
+[RHPAM 7.1 on EAP draft|http://file.ork.redhat.com/~emmurphy/PAM-7.1-EAP]
+[Pull request|https://github.com/emmurphy1/kie-docs/pull/103/files]",Enhancement,Major,0,0,37,0,0,0,0,0.0,0.0,20.99932653935185,9.0,9.0,1
+BXMSDOC-6104,Create DM 7.8 titles on Pantheon,"Confirm the title and assembly names from each writer and create titles for DM 7.8 on pantheon.
+
+Ensure all the titles are building correctly on the master and stage branch.
+
+ETA: 10 July.",Task,Major,0,0,92,1,1,0,0,0.0003125,6.027386539351852,18.998597256944446,5.0,5.0,0
+BXMSDOC-7242, Facilitate and finalize unplanned doc contributions and updates from Kogito devs,"Finalized PRs in the sprint:
+
+DROOLS-6015 - Improve documentation to state the deprecation of the Eclipse Plugin (SME: Luca) - [Pull request|https://github.com/kiegroup/kie-docs/pull/3300]
+Adding mapper configuration information (SME: Francisco) - [Pull request|https://github.com/kiegroup/kie-docs/pull/3312]
+KOGITO-4555 Wrong Image name syntax in Kogito doc (SME: Vaibhav) - [Pull request|https://github.com/kiegroup/kie-docs/pull/3343]
+KOGITO-4439 - UnitOfWorkEvents release notes (SME: Cristiano) - [Pull request|https://github.com/kiegroup/kie-docs/pull/3352]
+",Task,Major,0,0,89,2,0,0,0,0.0017824074074074,5.844189814814815,18.99861111111111,8.0,8.0,0

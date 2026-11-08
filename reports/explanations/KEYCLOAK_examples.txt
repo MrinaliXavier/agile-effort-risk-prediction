@@ -1,0 +1,61 @@
+PROJECT KEYCLOAK - Stage 1: Ridge (Tabular + TF-IDF) | Stage 2: Logistic Regression (+ Team SP + Model SP) | label: spilled
+
+--- highest predicted risk ---
+Ticket KEYCLOAK-8730: Keycloak SAML AttributeToRoleMapper with multiple values
+  Chance of missing its first sprint: 100%  (this project's usual rate: 46%)
+  Team committed 8 SP; the model estimates 9.3 SP - 1.2x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    +7.015  time in backlog before the sprint = 920.1 days (first status change after 8.9 days)
+    +1.290  number of labels = 5.0
+    +0.679  team's estimate at commitment = 8.0
+    -0.495  status changes before commitment = 2.0
+    +0.243  model's effort estimate (SP) = 9.3
+    +0.171  number of components = 1.0
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.604  (x1.83)  number of labels = 5.0
+    +0.122  (x1.13)  word 'saml'
+    +0.097  (x1.10)  issue type is not Bug
+    +0.059  (x1.06)  issue type = Feature Request
+    -0.046  (x0.96)  number of components = 1.0
+    +0.046  (x1.05)  word 'https'
+  ACTUAL OUTCOME: finished in its sprint
+
+--- lowest predicted risk ---
+Ticket KEYCLOAK-11611: Broken tests for cookies on Gatekeeper
+  Chance of missing its first sprint: 8%  (this project's usual rate: 46%)
+  Team committed 0 SP; the model estimates 2.0 SP
+  What drives the risk (log-odds; + raises it, - lowers it):
+    -1.578  team's estimate at commitment = 0.0
+    -0.495  status changes before commitment = 2.0
+    -0.317  issue type = Bug
+    +0.171  number of components = 1.0
+    -0.128  time in backlog before the sprint = 0.0 days
+    -0.086  model's effort estimate (SP) = 2.0
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    -0.227  (x0.80)  issue type = Bug
+    -0.078  (x0.93)  word 'set'
+    -0.046  (x0.96)  number of components = 1.0
+    +0.029  (x1.03)  word 'test'
+    -0.027  (x0.97)  word 'error'
+    +0.025  (x1.03)  summary length (characters) = 38.0
+  ACTUAL OUTCOME: finished in its sprint
+
+--- model thinks most under-estimated by the team ---
+Ticket KEYCLOAK-12158: Update image in openshift-examples jsons
+  Chance of missing its first sprint: 28%  (this project's usual rate: 46%)
+  Team committed 1 SP; the model estimates 4.6 SP - 4.6x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    -0.866  team's estimate at commitment = 1.0
+    +0.178  status changes before commitment = 0.0
+    -0.165  number of components = 0.0
+    +0.136  issue type is not Bug
+    -0.128  time in backlog before the sprint = 0.0 days
+    -0.113  reporter's earlier tickets = 65.0
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.143  (x1.15)  word 'openshift'
+    +0.097  (x1.10)  issue type is not Bug
+    +0.044  (x1.04)  number of components = 0.0
+    +0.029  (x1.03)  reporter's earlier tickets = 65.0
+    -0.026  (x0.97)  word 'update'
+    +0.022  (x1.02)  summary length (characters) = 40.0
+  ACTUAL OUTCOME: missed its sprint

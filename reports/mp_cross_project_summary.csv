@@ -1,0 +1,21 @@
+models,comparison,n_projects,projects_improved,significant_improvement,significant_worse,median_delta_auc,mean_delta_auc,wilcoxon_p
+Selected,+ Estimation Gap vs No Effort,12,9,3,0,0.0181,0.0272,0.064
+Selected,+ Estimation Gap vs + Pred Effort,12,8,3,0,0.0087,0.0154,0.1763
+Selected,+ Team SP vs No Effort,12,9,3,0,0.0288,0.0287,0.0425
+Selected,+ Pred Effort vs No Effort,12,5,1,1,-0.0008,0.0118,0.9097
+Selected,+ Team SP + Model SP vs No Effort,12,8,3,2,0.0253,0.0272,0.0923
+Logistic Regression,+ Estimation Gap vs No Effort,12,8,3,0,0.0095,0.0117,0.4238
+Logistic Regression,+ Estimation Gap vs + Pred Effort,12,8,4,0,0.0112,0.0166,0.2036
+Logistic Regression,+ Team SP vs No Effort,12,8,3,0,0.0116,0.0149,0.3013
+Logistic Regression,+ Pred Effort vs No Effort,12,3,0,2,-0.0016,-0.0049,0.2334
+Logistic Regression,+ Team SP + Model SP vs No Effort,12,7,3,1,0.0043,0.008,0.5186
+Random Forest,+ Estimation Gap vs No Effort,12,7,1,2,0.0102,-0.003,0.791
+Random Forest,+ Estimation Gap vs + Pred Effort,12,4,0,1,-0.0057,-0.0285,0.9097
+Random Forest,+ Team SP vs No Effort,12,7,1,1,0.0067,0.0032,0.3804
+Random Forest,+ Pred Effort vs No Effort,12,7,1,1,0.0068,0.0255,0.3394
+Random Forest,+ Team SP + Model SP vs No Effort,12,8,1,2,0.0263,0.0164,0.2334
+LightGBM,+ Estimation Gap vs No Effort,12,7,3,1,0.018,-0.004,0.6772
+LightGBM,+ Estimation Gap vs + Pred Effort,12,6,0,1,-0.0047,-0.0423,0.7334
+LightGBM,+ Team SP vs No Effort,12,8,0,0,0.0217,0.0174,0.0771
+LightGBM,+ Pred Effort vs No Effort,12,8,2,0,0.0099,0.0383,0.1763
+LightGBM,+ Team SP + Model SP vs No Effort,12,8,0,2,0.0352,0.0306,0.123

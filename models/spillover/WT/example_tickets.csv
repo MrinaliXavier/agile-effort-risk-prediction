@@ -1,0 +1,61 @@
+key,summary,description,issuetype,priority,num_components,num_labels,reporter_prev_issue_count,early_status_changes,early_assignee_changes,early_priority_changes,early_comment_count,first_status_change_days_imputed,backlog_days,sprint_length_days,story_points,sp_team_commit,spilled
+WT-6053,fixed-width column-store macro can step past the end of allocated memory,The {{WT_FIX_FOREACH}} fixed-width column-store macro can step past the end of allocated memory.,Bug,Major - P3,0,1,155,1,0,0,0,0.0,0.0,12.912123599537038,5.0,5.0,0
+WT-6201,Release WT_CURSOR_BTREE buffers when caching a WT_CURSOR,"When {{WT_CURSOR}} cursors are cached, we free their key/value buffers. However, those cursors are likely {{WT_CURSOR_BTREE}} cursors underneath, which hold up to 4 additional buffers, which should likely be freed as well.
+
+We could discard those buffers when {{WT_CURSOR.reset}} is called, but that may no be a good idea, given the frequency at which MongoDB server calls that function.
+
+Alternatively, we could add a new Btree level cache function.",Improvement,Minor - P4,0,0,171,0,0,0,0,0.0,0.0,13.912320092592593,3.0,3.0,0
+WT-4352,Resolve birthmarks during eviction in more cases,"Jenkins reported an error where reconciliation encountered a birthmark update referencing a deleted cell.
+The Jenkins job failed with an assertion failure in reconciliation on ocelot. The assertion failure was:
+
+{code}
+[1538649381:68593][39477:0x7ffbc4b2e700], test_timestamp04.test_timestamp04.test_rollback_to_stable(nolog.col_var), file:ts04_ts_nologged.wt, eviction-server: __rec_append_orig_value, 1220: unpack != NULL && unpack->type != WT_CELL_DEL
+[1538649381:68789][39477:0x7ffbc4b2e700], test_timestamp04.test_timestamp04.test_rollback_to_stable(nolog.col_var), file:ts04_ts_nologged.wt, eviction-server: __wt_abort, 30: aborting WiredTiger library
+{code}
+
+The job is http://build.wiredtiger.com:8080/job/wiredtiger-test-timestamp-size/425/ and {{test_timestamp04 -s 1}} failed.
+
+Looking at the core file, the stack shows it is an eviction thread. It is:
+{noformat}
+#2  0x00007ffbc8fbfe00 in __wt_abort (session=0x35263d8) at ../src/os_common/os_abort.c:32
+#3  0x00007ffbc8fdb1d5 in __rec_append_orig_value (session=0x35263d8, page=0x4278cb0, upd=0x6b87b20, unpack=0x7ffbc4b2db30) at ../src/reconcile/rec_write.c:1219
+#4  0x00007ffbc8fdbcdf in __rec_txn_read (session=0x35263d8, r=0x7ffb9c0098b0, ins=0x2c604f0, ripcip=0x4278d00, vpack=0x7ffbc4b2db30, upd_savedp=0x0, 
+    updp=0x7ffbc4b2db20) at ../src/reconcile/rec_write.c:1607
+#5  0x00007ffbc8fe2634 in __rec_col_var (session=0x35263d8, r=0x7ffb9c0098b0, pageref=0x82497c0, salvage=0x0) at ../src/reconcile/rec_write.c:4766
+#6  0x00007ffbc8fd9597 in __wt_reconcile (session=0x35263d8, ref=0x82497c0, salvage=0x0, flags=138, lookaside_retryp=0x0) at ../src/reconcile/rec_write.c:474
+#7  0x00007ffbc8f8a694 in __evict_review (session=0x35263d8, ref=0x82497c0, closing=false, inmem_splitp=0x7ffbc4b2dd7e) at ../src/evict/evict_page.c:685
+#8  0x00007ffbc8f892d3 in __wt_evict (session=0x35263d8, ref=0x82497c0, closing=false, previous_state=5) at ../src/evict/evict_page.c:174
+#9  0x00007ffbc8f862f1 in __evict_page (session=0x35263d8, is_server=false) at ../src/evict/evict_lru.c:2322
+#10 0x00007ffbc8f82a29 in __evict_lru_pages (session=0x35263d8, is_server=false) at ../src/evict/evict_lru.c:1173
+#11 0x00007ffbc8f80ba8 in __wt_evict_thread_run (session=0x35263d8, thread=0x9ac6300) at ../src/evict/evict_lru.c:318
+#12 0x00007ffbc9021b98 in __thread_run (arg=0x9ac6300) at ../src/support/thread_group.c:31
+#13 0x00007ffbd1bdddc5 in start_thread (arg=0x7ffbc4b2e700) at pthread_create.c:308
+{noformat}
+
+The assertion is failing because the {{unpack->type}} is {{WT_CELL_DEL}}:
+{noformat}
+cell.i: #define WT_CELL_DEL              (4 << 4)       /* Deleted value */
+
+1217			/* Add the original value after birthmarks. */
+1218			if (upd->type == WT_UPDATE_BIRTHMARK) {
+1219				WT_ASSERT(session, unpack != NULL &&
+1220				    unpack->type != WT_CELL_DEL);
+1221				break;
+1222			}
+1223	
+(gdb) p unpack
+$1 = (WT_CELL_UNPACK *) 0x7ffbc4b2db30
+(gdb) p *unpack
+$2 = {cell = 0x427a138, v = 148, data = 0x0, size = 0, __len = 3, prefix = 0 '\000', raw = 64 '@', type = 64 '@', ovfl = 0 '\000'}
+{noformat}",Bug,Major - P3,0,1,5,0,0,0,0,4.011668194444444,4.011668194444444,13.999859583333334,5.0,,1
+WT-6895,Implement HS cursor update method,,New Feature,Major - P3,0,0,11,2,0,0,0,1.1574074074074072e-05,5.736828703703703,14.0,5.0,5.0,1
+WT-4805,Modify error message verification for test_prepare04.py,"In {{test_prepare04.py}} there are two error messages defined:
+{noformat}
+conflictmsg = '/conflict between concurrent operations/'
+preparemsg = '/conflict with a prepared update/'
+{noformat}
+but these are never used in any later code. These messages don't appear in any other tests so it isn't a copy/paste error. It seems like there was an intent to test a conflict that was never added.
+
+This should be investigated and either remove the unused lines or add in a test case for those conflicts.
+
+",Bug,Minor - P4,0,1,29,2,1,0,0,2.3148148148148147e-05,42.32229978009259,16.89511920138889,3.0,3.0,0

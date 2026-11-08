@@ -1,0 +1,61 @@
+PROJECT XD - Stage 1: Ridge (Tabular + TF-IDF) | Stage 2: Logistic Regression (+ Team SP + Model SP) | label: spilled
+
+--- highest predicted risk ---
+Ticket XD-3145: Update batch modules to be short lived
+  Chance of missing its first sprint: 93%  (this project's usual rate: 23%)
+  Team committed 8 SP; the model estimates 5.4 SP - 0.7x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    +1.241  model's effort estimate (SP) = 5.4
+    +0.851  issue type = Epic
+    +0.319  team's estimate at commitment = 8.0
+    +0.133  status changes before commitment = 0.0
+    +0.080  number of components = 1.0
+    -0.056  priority = Major
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.173  (x1.19)  priority = Major
+    +0.094  (x1.10)  word 'job'
+    +0.052  (x1.05)  word 'module'
+    -0.048  (x0.95)  word 'update'
+    +0.048  (x1.05)  issue type = Epic
+    -0.045  (x0.96)  word 'docs'
+  ACTUAL OUTCOME: missed its sprint
+
+--- lowest predicted risk ---
+Ticket XD-3178: Hadoop Distro log message shows wrong version when set via env var
+  Chance of missing its first sprint: 1%  (this project's usual rate: 23%)
+  Team committed 1 SP; the model estimates 1.6 SP - 1.6x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    -3.083  status changes before commitment = 4.0
+    -0.938  model's effort estimate (SP) = 1.6
+    -0.201  team's estimate at commitment = 1.0
+    +0.159  issue type = Bug
+    -0.059  number of components = 0.0
+    -0.056  issue type is not Improvement
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    -0.162  (x0.85)  issue type = Bug
+    -0.068  (x0.93)  word 'log'
+    -0.039  (x0.96)  word 'version'
+    -0.029  (x0.97)  priority is not Major
+    +0.024  (x1.02)  word 'message'
+    +0.014  (x1.01)  issue type is not Improvement
+  ACTUAL OUTCOME: finished in its sprint
+
+--- model thinks most under-estimated by the team ---
+Ticket XD-3492: Move header-enricher to XD proper
+  Chance of missing its first sprint: 67%  (this project's usual rate: 23%)
+  Team committed 1 SP; the model estimates 4.4 SP - 4.4x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    +0.821  model's effort estimate (SP) = 4.4
+    -0.201  team's estimate at commitment = 1.0
+    +0.133  status changes before commitment = 0.0
+    +0.098  sprint length (days) = 11.3
+    -0.059  number of components = 0.0
+    -0.056  issue type is not Improvement
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.120  (x1.13)  word 'modules'
+    +0.106  (x1.11)  word 'developer'
+    +0.099  (x1.10)  word 'like'
+    +0.064  (x1.07)  word 'xd'
+    -0.029  (x0.97)  priority is not Major
+    +0.025  (x1.03)  issue type is not Bug
+  ACTUAL OUTCOME: finished in its sprint

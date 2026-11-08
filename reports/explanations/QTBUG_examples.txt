@@ -1,0 +1,61 @@
+PROJECT QTBUG - Stage 1: LightGBM (Tabular + TF-IDF) | Stage 2: Random Forest (+ Team SP + Model SP) | label: spilled
+
+--- highest predicted risk ---
+Ticket QTBUG-86714: Add support for combining multiple QFutures
+  Chance of missing its first sprint: 85%  (this project's usual rate: 47%)
+  The team had not estimated it at commitment; the model estimates 5.3 SP
+  What drives the risk (percentage points of probability; + raises it, - lowers it):
+    +17.6 pts  time in backlog before the sprint = 399.0 days
+    +7.4 pts  team's estimate at commitment = not estimated
+    +3.8 pts  status changes before commitment = 0.0
+    -3.5 pts  sprint length (days) = 13.0
+    +3.2 pts  reporter's earlier tickets = 7.0
+    +2.9 pts  issue type is not Bug
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    -0.074  (x0.93)  issue type is not User Story
+    +0.061  (x1.06)  issue type is not Bug
+    +0.042  (x1.04)  word 'qt'
+    +0.025  (x1.03)  word 'https'
+    +0.025  (x1.03)  word 'qtconcurrent'
+    -0.011  (x0.99)  reporter's earlier tickets = 7.0
+  ACTUAL OUTCOME: missed its sprint
+
+--- lowest predicted risk ---
+Ticket QTBUG-95784: QtSensors:  windows backend specific notes
+  Chance of missing its first sprint: 11%  (this project's usual rate: 47%)
+  Team committed 3 SP; the model estimates 3.7 SP - 1.2x the team's estimate
+  What drives the risk (percentage points of probability; + raises it, - lowers it):
+    -16.1 pts  time in backlog before the sprint = 0.0 days
+    -6.2 pts  sprint length (days) = 13.0
+    -5.7 pts  team's estimate at commitment = 3.0
+    -3.5 pts  issue type = Bug
+    -3.5 pts  reporter's earlier tickets = 20.0
+    -2.5 pts  model's effort estimate (SP) = 3.7
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    -0.076  (x0.93)  issue type is not User Story
+    -0.063  (x0.94)  description length (characters) = 75.0
+    -0.058  (x0.94)  issue type = Bug
+    -0.022  (x0.98)  summary length (characters) = 42.0
+    +0.003  (x1.00)  reporter's earlier tickets = 20.0
+    +0.000  (x1.00)  issue type is not Epic
+  ACTUAL OUTCOME: finished in its sprint
+
+--- model thinks most under-estimated by the team ---
+Ticket QTBUG-86693: Create a glass material for the benchmark demo application Qt 6 version
+  Chance of missing its first sprint: 47%  (this project's usual rate: 47%)
+  Team committed 1 SP; the model estimates 6.8 SP - 6.8x the team's estimate
+  What drives the risk (percentage points of probability; + raises it, - lowers it):
+    +6.4 pts  model's effort estimate (SP) = 6.8
+    -6.2 pts  team's estimate at commitment = 1.0
+    -3.5 pts  status changes before commitment = 2.0
+    +3.4 pts  time in backlog before the sprint = 362.1 days (first status change after 0.0 days)
+    -3.3 pts  sprint length (days) = 14.0
+    +2.6 pts  reporter's earlier tickets = 6.0
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.173  (x1.19)  word 'task'
+    +0.059  (x1.06)  word 'qt'
+    +0.059  (x1.06)  word 'need'
+    -0.059  (x0.94)  issue type is not User Story
+    -0.046  (x0.96)  word '15'
+    +0.043  (x1.04)  issue type is not Bug
+  ACTUAL OUTCOME: missed its sprint

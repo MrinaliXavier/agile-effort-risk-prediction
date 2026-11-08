@@ -1,0 +1,52 @@
+key,summary,description,issuetype,priority,num_components,num_labels,reporter_prev_issue_count,early_status_changes,early_assignee_changes,early_priority_changes,early_comment_count,first_status_change_days_imputed,backlog_days,sprint_length_days,story_points,sp_team_commit,spilled
+RHDEVDOCS-129,document devsuite uninstaller,Document the new uninstallation feature when available for the devsuite installer: JBDS-3959 (requires windows box),Feature Request,High,1,0,5,1,0,0,1,35.181921296296295,35.1862962962963,21.0,3.0,3.0,1
+RHDEVDOCS-1886,Investigating DTS links in GCC chapter,"The Developing C/C++ apps guide contains several DTS and RHSCL links that either need to be updated or removed.
+
+A comment in a global RHEL 8 attributes file:
+
+enterprise/meta/attributes.adoc:// dts and rhscl references are to be removed in rhel 8, present only to enable building.
+
+Contact Vladimir (and/or Lenka). What was the initial plan? Does it concern DTS attributes, references to the User guide, or both?",Enhancement,Medium,1,0,24,0,1,0,0,14.805933726851851,14.805933726851851,19.999563958333333,3.0,3.0,1
+RHDEVDOCS-2853,Document how to customize available plug-ins/devfiles (rebuilding the registries)," 
+We tell the user how to rebuild the registries and how to start them.  But by itself all this does is give the user the same registry they would otherwise have.  We could combine these instructions with another set, say 'Building a custom plugin and adding it to the custom registry').  That would tell the user how to get some changed functionality from their custom registry.
+So if time allows, I'd suggest something like this: * Explain the use case, how the user can put a custom plugin to use
+ * Explain how to build a custom plugin (we could use a trivial/simple example, something like a container that just offers a 'word count' script to count the number of words in the source directory, for example.  I think this could be accomplished by explaining how to start with a UBI image and adding to it a pretty easy bash script)
+ * Then show how to add the plugin to the custom registry
+ * Then reference the 'building the custom registry' existing instructions
+ * Lastly, show how to make use of the custom plugin (make a devfile that uses it) and show the results
+
+
+
+
+
+ [https://www.eclipse.org/che/docs/che-7/administration-guide/customizing-the-registries/] ",Sub-task,Urgent,2,4,238,0,2,0,0,43.97625,43.97625,21.0,8.0,5.0,1
+RHDEVDOCS-2205,Modularize and review Installing CRW in a restricted environment,Upstream and downstream are not aligned. Downstream is using specific procedure which could benefit from being at least partially upstreamed.,Task,High,1,2,72,0,1,0,0,0.0001851851851851,0.0001851851851851,20.999599212962963,8.0,,1
+RHDEVDOCS-2610,Add location for the audit log file,"[URL]
+
+[https://github.com/openshift/openshift-docs/blob/enterprise-4.7/modules/cluster-logging-about-collector.adoc]
+
+ 
+
+[ISSUE]
+
+It's indicated that:
+
+ 
+{code:java}
+ By default, the log collector uses the following sources:
+
+  * journald for all system logs
+
+  */var/log/containers/*.log for all container logs
+{code}
+ 
+
+I'd suggest adding the audit logs file location to this list like this:
+{code:java}
+By default, the log collector uses the following sources:
+  * journald for all system logs
+  * /var/log/containers/*.log for all container logs
+  * /var/log/audit/audit.log for all audit logs in case that they are defined to be collected{code}
+ 
+
+ ",Bug,Medium,1,0,8,0,3,1,1,11.806273148148149,11.806273148148149,21.0,3.0,3.0,0

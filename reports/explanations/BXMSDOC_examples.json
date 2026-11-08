@@ -1,0 +1,203 @@
+[
+  {
+    "key": "BXMSDOC-8067",
+    "probability": 0.812,
+    "team_sp_at_commitment": null,
+    "model_sp": 4.51,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "team's estimate at commitment",
+        "shap": 0.8027,
+        "value": "not estimated"
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": 0.2973,
+        "value": 4.5
+      },
+      {
+        "feature": "issue type is not Sub-task",
+        "shap": 0.2043,
+        "value": null
+      },
+      {
+        "feature": "status changes before commitment",
+        "shap": 0.1567,
+        "value": 0.0
+      },
+      {
+        "feature": "time in backlog before the sprint",
+        "shap": -0.1085,
+        "value": "1.7 days"
+      },
+      {
+        "feature": "has a description",
+        "shap": 0.1048,
+        "value": 1.0
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "reporter's earlier tickets",
+        "shap_log_sp": 0.1088
+      },
+      {
+        "feature": "word 'project'",
+        "shap_log_sp": 0.1071
+      },
+      {
+        "feature": "summary length (characters)",
+        "shap_log_sp": 0.0171
+      },
+      {
+        "feature": "issue type is not Sub-task",
+        "shap_log_sp": 0.0128
+      },
+      {
+        "feature": "word 'https'",
+        "shap_log_sp": 0.0115
+      },
+      {
+        "feature": "issue type is not Enhancement",
+        "shap_log_sp": -0.0098
+      }
+    ],
+    "example": "highest predicted risk",
+    "actual_outcome": 1
+  },
+  {
+    "key": "BXMSDOC-7723",
+    "probability": 0.0765,
+    "team_sp_at_commitment": 3.0,
+    "model_sp": 1.59,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "comments before commitment",
+        "shap": -1.9477,
+        "value": 25.0
+      },
+      {
+        "feature": "status changes before commitment",
+        "shap": -1.064,
+        "value": 6.0
+      },
+      {
+        "feature": "time in backlog before the sprint",
+        "shap": 0.3216,
+        "value": "71.4 days (first status change after 0.4 days)"
+      },
+      {
+        "feature": "assignee changes before commitment",
+        "shap": 0.2922,
+        "value": 3.0
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": -0.2882,
+        "value": 1.6
+      },
+      {
+        "feature": "issue type is not Sub-task",
+        "shap": 0.2043,
+        "value": null
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "word 'qe review'",
+        "shap_log_sp": -0.1139
+      },
+      {
+        "feature": "word 'bxmsdoc'",
+        "shap_log_sp": -0.039
+      },
+      {
+        "feature": "word 'redhat com'",
+        "shap_log_sp": -0.0371
+      },
+      {
+        "feature": "word 'review'",
+        "shap_log_sp": -0.0285
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap_log_sp": -0.0279
+      },
+      {
+        "feature": "word 'pr'",
+        "shap_log_sp": -0.0186
+      }
+    ],
+    "example": "lowest predicted risk",
+    "actual_outcome": 0
+  },
+  {
+    "key": "BXMSDOC-7598",
+    "probability": 0.4236,
+    "team_sp_at_commitment": 1.0,
+    "model_sp": 3.59,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "team's estimate at commitment",
+        "shap": -0.2983,
+        "value": 1.0
+      },
+      {
+        "feature": "issue type is not Sub-task",
+        "shap": 0.2043,
+        "value": null
+      },
+      {
+        "feature": "comments before commitment",
+        "shap": -0.1869,
+        "value": 3.0
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": 0.1555,
+        "value": 3.6
+      },
+      {
+        "feature": "number of components",
+        "shap": -0.14,
+        "value": 1.0
+      },
+      {
+        "feature": "has a description",
+        "shap": 0.1048,
+        "value": 1.0
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "reporter's earlier tickets",
+        "shap_log_sp": 0.0769
+      },
+      {
+        "feature": "description length (characters)",
+        "shap_log_sp": -0.0256
+      },
+      {
+        "feature": "word 'change'",
+        "shap_log_sp": -0.0211
+      },
+      {
+        "feature": "issue type is not Sub-task",
+        "shap_log_sp": 0.0203
+      },
+      {
+        "feature": "summary length (characters)",
+        "shap_log_sp": 0.0199
+      },
+      {
+        "feature": "word 'drools'",
+        "shap_log_sp": 0.0137
+      }
+    ],
+    "example": "model thinks most under-estimated by the team",
+    "actual_outcome": 0
+  }
+]

@@ -1,0 +1,61 @@
+PROJECT DEVELOPER - Stage 1: Ridge (Tabular + TF-IDF) | Stage 2: Logistic Regression (+ Team SP + Model SP) | label: spilled
+
+--- highest predicted risk ---
+Ticket DEVELOPER-4540: Add production smoke tests and have them monitored by New relic
+  Chance of missing its first sprint: 88%  (this project's usual rate: 43%)
+  Team committed 8 SP; the model estimates 4.4 SP - 0.6x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    +0.616  sprint length (days) = 7.0
+    +0.468  time in backlog before the sprint = 374.3 days
+    +0.368  team's estimate at commitment = 8.0
+    +0.205  issue type is not Bug
+    +0.139  number of components = 1.0
+    +0.112  assignee changes before commitment = 0.0
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.063  (x1.06)  word 'tests'
+    +0.047  (x1.05)  issue type is not Bug
+    +0.040  (x1.04)  word 'production'
+    +0.038  (x1.04)  word 'existing'
+    -0.033  (x0.97)  word 'add'
+    -0.033  (x0.97)  number of components = 1.0
+  ACTUAL OUTCOME: missed its sprint
+
+--- lowest predicted risk ---
+Ticket DEVELOPER-5929: Link in Hello world documentation for CDK is pointing to older version
+  Chance of missing its first sprint: 2%  (this project's usual rate: 43%)
+  Team committed 1 SP; the model estimates 2.2 SP - 2.2x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    -1.098  priority changes before commitment = 2.0
+    -0.855  sprint length (days) = 20.0
+    -0.694  team's estimate at commitment = 1.0
+    -0.554  issue type = Bug
+    -0.429  number of labels = 0.0
+    -0.221  model's effort estimate (SP) = 2.2
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    -0.128  (x0.88)  issue type = Bug
+    -0.073  (x0.93)  number of labels = 0.0
+    -0.033  (x0.97)  number of components = 1.0
+    -0.027  (x0.97)  summary length (characters) = 70.0
+    +0.021  (x1.02)  word 'documentation'
+    -0.019  (x0.98)  word 'png thumbnail'
+  ACTUAL OUTCOME: missed its sprint
+
+--- model thinks most under-estimated by the team ---
+Ticket DEVELOPER-5872: New on-page Eloqua sign-up assembly
+  Chance of missing its first sprint: 28%  (this project's usual rate: 43%)
+  Team committed 1 SP; the model estimates 5.1 SP - 5.1x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    -0.968  sprint length (days) = 21.0
+    -0.694  team's estimate at commitment = 1.0
+    +0.581  number of labels = 2.0
+    -0.348  number of components = 0.0
+    +0.205  issue type is not Bug
+    +0.119  model's effort estimate (SP) = 5.1
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.099  (x1.10)  number of labels = 2.0
+    +0.082  (x1.09)  number of components = 0.0
+    -0.073  (x0.93)  word 'assembly'
+    +0.047  (x1.05)  issue type is not Bug
+    +0.029  (x1.03)  word 'drupal'
+    +0.028  (x1.03)  word 'create'
+  ACTUAL OUTCOME: missed its sprint

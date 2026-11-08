@@ -1,0 +1,119 @@
+project,resolution,count
+EVG,Duplicate,247
+EVG,Won't Fix,213
+EVG,Gone away,166
+EVG,Works as Designed,99
+EVG,Won't Do,76
+EVG,Cannot Reproduce,41
+EVG,Incomplete,17
+EVG,Declined,1
+DAOS,Duplicate,457
+DAOS,Won't Do,165
+DAOS,Cannot Reproduce,156
+DAOS,Won't Fix,90
+DAOS,Not a Bug,88
+DAOS,Incomplete,5
+XD,Duplicate,133
+XD,Won't Fix,129
+XD,Invalid,126
+XD,Deferred,111
+XD,Works as Designed,45
+XD,Cannot Reproduce,20
+XD,Incomplete,9
+MESOS,Duplicate,74
+MESOS,Won't Fix,70
+MESOS,Won't Do,21
+MESOS,Not A Problem,20
+MESOS,Cannot Reproduce,16
+MESOS,Invalid,6
+MESOS,Abandoned,3
+MESOS,Later,3
+MESOS,Not A Bug,2
+MESOS,Incomplete,2
+WT,Duplicate,157
+WT,Gone away,86
+WT,Won't Do,48
+WT,Works as Designed,43
+WT,Won't Fix,34
+WT,Cannot Reproduce,34
+WT,Incomplete,3
+DOCS,Won't Fix,103
+DOCS,Duplicate,77
+DOCS,Gone away,75
+DOCS,Works as Designed,37
+DOCS,Incomplete,21
+DOCS,Cannot Reproduce,16
+DOCS,Won't Do,8
+DOCS,Declined,3
+DEVELOPER,Out of Date,9
+DEVELOPER,Duplicate Issue,5
+DEVELOPER,Won't Fix,5
+DEVELOPER,Deferred,2
+DEVELOPER,Migrated to another ITS,2
+DEVELOPER,Rejected,1
+DEVELOPER,Won't Do,1
+DEVELOPER,Cannot Reproduce,1
+NEXUS,Won't Fix,118
+NEXUS,Cannot Reproduce,63
+NEXUS,Duplicate,35
+NEXUS,Incomplete,35
+NEXUS,Not A Bug,10
+NEXUS,Won't Do,5
+SERVER,Duplicate,91
+SERVER,Won't Fix,45
+SERVER,Won't Do,39
+SERVER,Gone away,34
+SERVER,Works as Designed,7
+SERVER,Cannot Reproduce,5
+SERVER,Declined,3
+DROOLS,Won't Do,28
+DROOLS,Duplicate Issue,21
+DROOLS,Cannot Reproduce,13
+DROOLS,Won't Fix,10
+DROOLS,Out of Date,9
+DROOLS,Explained,5
+DROOLS,Rejected,5
+DROOLS,Duplicate,3
+DROOLS,Deferred,2
+DROOLS,Incomplete Description,1
+DROOLS,Incomplete,1
+DROOLS,Obsolete,1
+DROOLS,Not a Bug,1
+JBIDE,Rejected,31
+JBIDE,Cannot Reproduce,27
+JBIDE,Duplicate Issue,25
+JBIDE,Out of Date,21
+JBIDE,Won't Fix,18
+JBIDE,Won't Do,18
+JBIDE,Migrated to another ITS,3
+JBIDE,Duplicate,2
+JBIDE,Deferred,1
+JBIDE,Incomplete Description,1
+JBIDE,Not a Bug,1
+RHDEVDOCS,Duplicate Issue,43
+RHDEVDOCS,Won't Do,29
+RHDEVDOCS,Rejected,20
+RHDEVDOCS,Out of Date,19
+RHDEVDOCS,Won't Fix,9
+RHDEVDOCS,Not a Bug,9
+RHDEVDOCS,Duplicate,6
+RHDEVDOCS,Explained,4
+RHDEVDOCS,Deferred,3
+RHDEVDOCS,Migrated to another ITS,1
+RHDEVDOCS,Cannot Reproduce,1
+BXMSDOC,Duplicate Issue,4
+BXMSDOC,Won't Do,1
+KEYCLOAK,Out of Date,132
+KEYCLOAK,Rejected,55
+KEYCLOAK,Deferred,48
+KEYCLOAK,Duplicate Issue,29
+KEYCLOAK,Won't Do,24
+KEYCLOAK,Won't Fix,12
+KEYCLOAK,Cannot Reproduce,11
+KEYCLOAK,Explained,6
+KEYCLOAK,Incomplete Description,1
+QTBUG,Invalid,28
+QTBUG,Duplicate,15
+QTBUG,Won't Do,13
+QTBUG,Cannot Reproduce,12
+QTBUG,Incomplete,8

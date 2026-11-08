@@ -1,0 +1,203 @@
+[
+  {
+    "key": "SERVER-61107",
+    "probability": 0.9,
+    "team_sp_at_commitment": null,
+    "model_sp": 1.22,
+    "risk_units": "probability",
+    "risk_drivers": [
+      {
+        "feature": "time in backlog before the sprint",
+        "shap": 0.1575,
+        "value": "31.1 days (first status change after 0.0 days)"
+      },
+      {
+        "feature": "team's estimate at commitment",
+        "shap": 0.1307,
+        "value": "not estimated"
+      },
+      {
+        "feature": "number of labels",
+        "shap": 0.0594,
+        "value": 2.0
+      },
+      {
+        "feature": "sprint length (days)",
+        "shap": 0.0401,
+        "value": 21.0
+      },
+      {
+        "feature": "issue type = Bug",
+        "shap": -0.0349,
+        "value": null
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": -0.0344,
+        "value": 1.2
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "reporter's earlier tickets",
+        "shap_log_sp": -0.1115
+      },
+      {
+        "feature": "word 'thread'",
+        "shap_log_sp": 0.0482
+      },
+      {
+        "feature": "issue type = Bug",
+        "shap_log_sp": -0.044
+      },
+      {
+        "feature": "description length (characters)",
+        "shap_log_sp": -0.0246
+      },
+      {
+        "feature": "word 'mongodb mongo'",
+        "shap_log_sp": -0.0235
+      },
+      {
+        "feature": "word 'connection'",
+        "shap_log_sp": 0.0219
+      }
+    ],
+    "example": "highest predicted risk",
+    "actual_outcome": 1
+  },
+  {
+    "key": "SERVER-59870",
+    "probability": 0.04,
+    "team_sp_at_commitment": 1.0,
+    "model_sp": 1.05,
+    "risk_units": "probability",
+    "risk_drivers": [
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": -0.1293,
+        "value": 1.1
+      },
+      {
+        "feature": "time in backlog before the sprint",
+        "shap": -0.0793,
+        "value": "0.0 days"
+      },
+      {
+        "feature": "issue type = Bug",
+        "shap": -0.0724,
+        "value": null
+      },
+      {
+        "feature": "team's estimate at commitment",
+        "shap": -0.0621,
+        "value": 1.0
+      },
+      {
+        "feature": "number of labels",
+        "shap": -0.0394,
+        "value": 0.0
+      },
+      {
+        "feature": "description length (characters)",
+        "shap": -0.0308,
+        "value": 131.0
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "reporter's earlier tickets",
+        "shap_log_sp": -0.1251
+      },
+      {
+        "feature": "issue type = Bug",
+        "shap_log_sp": -0.051
+      },
+      {
+        "feature": "description length (characters)",
+        "shap_log_sp": -0.0475
+      },
+      {
+        "feature": "word 'script'",
+        "shap_log_sp": 0.0063
+      },
+      {
+        "feature": "number of components",
+        "shap_log_sp": -0.0055
+      },
+      {
+        "feature": "issue type is not New Feature",
+        "shap_log_sp": -0.0046
+      }
+    ],
+    "example": "lowest predicted risk",
+    "actual_outcome": 0
+  },
+  {
+    "key": "SERVER-59827",
+    "probability": 0.57,
+    "team_sp_at_commitment": 1.0,
+    "model_sp": 3.43,
+    "risk_units": "probability",
+    "risk_drivers": [
+      {
+        "feature": "team's estimate at commitment",
+        "shap": -0.0842,
+        "value": 1.0
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": 0.0773,
+        "value": 3.4
+      },
+      {
+        "feature": "time in backlog before the sprint",
+        "shap": 0.0679,
+        "value": "40.9 days (first status change after 0.0 days)"
+      },
+      {
+        "feature": "sprint length (days)",
+        "shap": 0.0375,
+        "value": 14.0
+      },
+      {
+        "feature": "issue type = Bug",
+        "shap": -0.0369,
+        "value": null
+      },
+      {
+        "feature": "description length (characters)",
+        "shap": -0.0283,
+        "value": 5761.0
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "word 'index'",
+        "shap_log_sp": 0.2472
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap_log_sp": 0.1648
+      },
+      {
+        "feature": "word 'error'",
+        "shap_log_sp": 0.0541
+      },
+      {
+        "feature": "word 'concurrency'",
+        "shap_log_sp": 0.0373
+      },
+      {
+        "feature": "description length (characters)",
+        "shap_log_sp": 0.0369
+      },
+      {
+        "feature": "issue type = Bug",
+        "shap_log_sp": -0.0131
+      }
+    ],
+    "example": "model thinks most under-estimated by the team",
+    "actual_outcome": 0
+  }
+]

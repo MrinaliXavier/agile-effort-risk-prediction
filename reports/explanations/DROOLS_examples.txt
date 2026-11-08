@@ -1,0 +1,61 @@
+PROJECT DROOLS - Stage 1: Ridge (Tabular + TF-IDF) | Stage 2: Logistic Regression (+ Team SP + Model SP) | label: spilled
+
+--- highest predicted risk ---
+Ticket DROOLS-3330: DMN Properties panel - UX enhancements 
+  Chance of missing its first sprint: 91%  (this project's usual rate: 43%)
+  Team committed 3 SP; the model estimates 3.5 SP - 1.2x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    +0.968  priority changes before commitment = 2.0
+    +0.909  time in backlog before the sprint = 1056.7 days
+    -0.838  comments before commitment = 11.0
+    +0.608  number of labels = 3.0
+    +0.452  sprint length (days) = 19.0
+    +0.301  assignee changes before commitment = 3.0
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.082  (x1.09)  issue type = Enhancement
+    +0.035  (x1.04)  word 'work'
+    +0.027  (x1.03)  word 'does'
+    -0.023  (x0.98)  issue type is not Task
+    +0.022  (x1.02)  word 'different'
+    -0.020  (x0.98)  number of labels = 3.0
+  ACTUAL OUTCOME: finished in its sprint
+
+--- lowest predicted risk ---
+Ticket DROOLS-6090: DMN OAS schema components name Swagger spec constraint
+  Chance of missing its first sprint: 7%  (this project's usual rate: 43%)
+  Team committed 1 SP; the model estimates 2.0 SP - 2.0x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    -0.975  reporter's earlier tickets = 285.0
+    -0.845  team's estimate at commitment = 1.0
+    +0.466  sprint length (days) = 19.0
+    -0.360  priority = Minor
+    -0.324  model's effort estimate (SP) = 2.0
+    -0.233  number of labels = 0.0
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    -0.164  (x0.85)  priority = Minor
+    -0.106  (x0.90)  reporter's earlier tickets = 285.0
+    +0.032  (x1.03)  word 'does'
+    -0.023  (x0.98)  issue type is not Task
+    -0.021  (x0.98)  word 'use'
+    -0.019  (x0.98)  word 'open'
+  ACTUAL OUTCOME: finished in its sprint
+
+--- model thinks most under-estimated by the team ---
+Ticket DROOLS-6278: Rule relationship analysis graph : Text based analysis output
+  Chance of missing its first sprint: 38%  (this project's usual rate: 43%)
+  Team committed 1 SP; the model estimates 3.5 SP - 3.5x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    -0.845  team's estimate at commitment = 1.0
+    +0.452  sprint length (days) = 19.0
+    +0.248  issue type = Task
+    -0.233  number of labels = 0.0
+    -0.212  reporter's earlier tickets = 107.0
+    +0.113  model's effort estimate (SP) = 3.5
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.052  (x1.05)  issue type = Task
+    +0.037  (x1.04)  word 'support'
+    +0.036  (x1.04)  word 'rules'
+    +0.033  (x1.03)  word 'rule'
+    -0.023  (x0.98)  reporter's earlier tickets = 107.0
+    +0.021  (x1.02)  word 'output'
+  ACTUAL OUTCOME: finished in its sprint

@@ -1,0 +1,203 @@
+[
+  {
+    "key": "EVG-1496",
+    "probability": 0.9897,
+    "team_sp_at_commitment": 8.0,
+    "model_sp": 2.02,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "time in backlog before the sprint",
+        "shap": 2.7957,
+        "value": "1746.0 days (first status change after 830.0 days)"
+      },
+      {
+        "feature": "team's estimate at commitment",
+        "shap": 1.5741,
+        "value": 8.0
+      },
+      {
+        "feature": "number of labels",
+        "shap": -0.1835,
+        "value": 2.0
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": 0.174,
+        "value": 2.0
+      },
+      {
+        "feature": "has a description",
+        "shap": 0.1551,
+        "value": 1.0
+      },
+      {
+        "feature": "comments before commitment",
+        "shap": -0.1053,
+        "value": 15.0
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "issue type = New Feature",
+        "shap_log_sp": 0.0531
+      },
+      {
+        "feature": "word 'tasks'",
+        "shap_log_sp": 0.0455
+      },
+      {
+        "feature": "word 'queue'",
+        "shap_log_sp": 0.0314
+      },
+      {
+        "feature": "word 'list'",
+        "shap_log_sp": 0.0294
+      },
+      {
+        "feature": "word 'instance'",
+        "shap_log_sp": 0.0277
+      },
+      {
+        "feature": "word 'hosts'",
+        "shap_log_sp": 0.024
+      }
+    ],
+    "example": "highest predicted risk",
+    "actual_outcome": 1
+  },
+  {
+    "key": "EVG-15573",
+    "probability": 0.0139,
+    "team_sp_at_commitment": 1.0,
+    "model_sp": 0.42,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "number of labels",
+        "shap": -3.0507,
+        "value": 22.0
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": -0.5812,
+        "value": 0.4
+      },
+      {
+        "feature": "team's estimate at commitment",
+        "shap": -0.408,
+        "value": 1.0
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap": -0.3827,
+        "value": 825.0
+      },
+      {
+        "feature": "has a description",
+        "shap": 0.1551,
+        "value": 1.0
+      },
+      {
+        "feature": "issue type is not Bug",
+        "shap": 0.0762,
+        "value": null
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "number of labels",
+        "shap_log_sp": -0.3877
+      },
+      {
+        "feature": "word 'remove'",
+        "shap_log_sp": -0.049
+      },
+      {
+        "feature": "word 'check'",
+        "shap_log_sp": -0.0309
+      },
+      {
+        "feature": "word 'lint'",
+        "shap_log_sp": -0.0274
+      },
+      {
+        "feature": "word 'directory'",
+        "shap_log_sp": -0.02
+      },
+      {
+        "feature": "word 'output'",
+        "shap_log_sp": -0.0197
+      }
+    ],
+    "example": "lowest predicted risk",
+    "actual_outcome": 1
+  },
+  {
+    "key": "EVG-14907",
+    "probability": 0.4187,
+    "team_sp_at_commitment": 1.0,
+    "model_sp": 2.38,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "team's estimate at commitment",
+        "shap": -0.408,
+        "value": 1.0
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap": -0.3108,
+        "value": 702.0
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": 0.2856,
+        "value": 2.4
+      },
+      {
+        "feature": "has a description",
+        "shap": 0.1551,
+        "value": 1.0
+      },
+      {
+        "feature": "number of labels",
+        "shap": 0.1032,
+        "value": 0.0
+      },
+      {
+        "feature": "comments before commitment",
+        "shap": -0.0838,
+        "value": 12.0
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "description length (characters)",
+        "shap_log_sp": 0.0469
+      },
+      {
+        "feature": "word 'tasks'",
+        "shap_log_sp": 0.0428
+      },
+      {
+        "feature": "word 'queue'",
+        "shap_log_sp": 0.0268
+      },
+      {
+        "feature": "word 'hosts'",
+        "shap_log_sp": 0.0256
+      },
+      {
+        "feature": "word 'long'",
+        "shap_log_sp": 0.0219
+      },
+      {
+        "feature": "word 'work'",
+        "shap_log_sp": 0.0208
+      }
+    ],
+    "example": "model thinks most under-estimated by the team",
+    "actual_outcome": 0
+  }
+]

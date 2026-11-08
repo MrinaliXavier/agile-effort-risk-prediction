@@ -1,0 +1,61 @@
+PROJECT EVG - Stage 1: Ridge (Tabular + TF-IDF) | Stage 2: Logistic Regression (+ Team SP + Model SP) | label: spilled
+
+--- highest predicted risk ---
+Ticket EVG-1496: Show host pool count on task queue distros list
+  Chance of missing its first sprint: 99%  (this project's usual rate: 30%)
+  Team committed 8 SP; the model estimates 2.0 SP - 0.3x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    +2.796  time in backlog before the sprint = 1746.0 days (first status change after 830.0 days)
+    +1.574  team's estimate at commitment = 8.0
+    -0.184  number of labels = 2.0
+    +0.174  model's effort estimate (SP) = 2.0
+    +0.155  has a description = 1.0
+    -0.105  comments before commitment = 15.0
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.053  (x1.05)  issue type = New Feature
+    +0.045  (x1.05)  word 'tasks'
+    +0.031  (x1.03)  word 'queue'
+    +0.029  (x1.03)  word 'list'
+    +0.028  (x1.03)  word 'instance'
+    +0.024  (x1.02)  word 'hosts'
+  ACTUAL OUTCOME: missed its sprint
+
+--- lowest predicted risk ---
+Ticket EVG-15573: Set GOCACHE consistently, set lintdeps correctly, and remove extra data race che
+  Chance of missing its first sprint: 1%  (this project's usual rate: 30%)
+  Team committed 1 SP; the model estimates 0.4 SP - 0.4x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    -3.051  number of labels = 22.0
+    -0.581  model's effort estimate (SP) = 0.4
+    -0.408  team's estimate at commitment = 1.0
+    -0.383  reporter's earlier tickets = 825.0
+    +0.155  has a description = 1.0
+    +0.076  issue type is not Bug
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    -0.388  (x0.68)  number of labels = 22.0
+    -0.049  (x0.95)  word 'remove'
+    -0.031  (x0.97)  word 'check'
+    -0.027  (x0.97)  word 'lint'
+    -0.020  (x0.98)  word 'directory'
+    -0.020  (x0.98)  word 'output'
+  ACTUAL OUTCOME: missed its sprint
+
+--- model thinks most under-estimated by the team ---
+Ticket EVG-14907: Evergreen didn't provision new hosts while long-running tasks consumed all hosts
+  Chance of missing its first sprint: 42%  (this project's usual rate: 30%)
+  Team committed 1 SP; the model estimates 2.4 SP - 2.4x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    -0.408  team's estimate at commitment = 1.0
+    -0.311  reporter's earlier tickets = 702.0
+    +0.286  model's effort estimate (SP) = 2.4
+    +0.155  has a description = 1.0
+    +0.103  number of labels = 0.0
+    -0.084  comments before commitment = 12.0
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.047  (x1.05)  description length (characters) = 1898.0
+    +0.043  (x1.04)  word 'tasks'
+    +0.027  (x1.03)  word 'queue'
+    +0.026  (x1.03)  word 'hosts'
+    +0.022  (x1.02)  word 'long'
+    +0.021  (x1.02)  word 'work'
+  ACTUAL OUTCOME: finished in its sprint

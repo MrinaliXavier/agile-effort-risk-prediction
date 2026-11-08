@@ -1,0 +1,203 @@
+[
+  {
+    "key": "RHDEVDOCS-2926",
+    "probability": 0.9525,
+    "team_sp_at_commitment": 8.0,
+    "model_sp": 6.45,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": 0.9119,
+        "value": 6.4
+      },
+      {
+        "feature": "issue type = Story",
+        "shap": 0.5547,
+        "value": null
+      },
+      {
+        "feature": "team's estimate at commitment",
+        "shap": 0.5254,
+        "value": 8.0
+      },
+      {
+        "feature": "priority = Blocker",
+        "shap": 0.3735,
+        "value": null
+      },
+      {
+        "feature": "priority changes before commitment",
+        "shap": 0.2544,
+        "value": 3.0
+      },
+      {
+        "feature": "number of labels",
+        "shap": 0.2319,
+        "value": 1.0
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "issue type = Story",
+        "shap_log_sp": 0.3076
+      },
+      {
+        "feature": "priority = Blocker",
+        "shap_log_sp": 0.2478
+      },
+      {
+        "feature": "word 'new'",
+        "shap_log_sp": 0.037
+      },
+      {
+        "feature": "issue type is not Bug",
+        "shap_log_sp": 0.0298
+      },
+      {
+        "feature": "description length (characters)",
+        "shap_log_sp": -0.0277
+      },
+      {
+        "feature": "word 'issues'",
+        "shap_log_sp": 0.026
+      }
+    ],
+    "example": "highest predicted risk",
+    "actual_outcome": 1
+  },
+  {
+    "key": "RHDEVDOCS-3566",
+    "probability": 0.0124,
+    "team_sp_at_commitment": 1.0,
+    "model_sp": 2.72,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "status changes before commitment",
+        "shap": -3.1142,
+        "value": 5.0
+      },
+      {
+        "feature": "team's estimate at commitment",
+        "shap": -0.7236,
+        "value": 1.0
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": -0.1577,
+        "value": 2.7
+      },
+      {
+        "feature": "number of labels",
+        "shap": -0.1452,
+        "value": 0.0
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap": 0.141,
+        "value": 2.0
+      },
+      {
+        "feature": "priority = Urgent",
+        "shap": -0.1291,
+        "value": null
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "word 'support'",
+        "shap_log_sp": -0.1374
+      },
+      {
+        "feature": "priority = Urgent",
+        "shap_log_sp": 0.074
+      },
+      {
+        "feature": "issue type = Enhancement",
+        "shap_log_sp": 0.0511
+      },
+      {
+        "feature": "issue type is not Bug",
+        "shap_log_sp": 0.0298
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap_log_sp": -0.0257
+      },
+      {
+        "feature": "word 'update'",
+        "shap_log_sp": -0.0253
+      }
+    ],
+    "example": "lowest predicted risk",
+    "actual_outcome": 0
+  },
+  {
+    "key": "RHDEVDOCS-3563",
+    "probability": 0.4006,
+    "team_sp_at_commitment": 1.0,
+    "model_sp": 4.57,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "status changes before commitment",
+        "shap": -1.139,
+        "value": 2.0
+      },
+      {
+        "feature": "team's estimate at commitment",
+        "shap": -0.7236,
+        "value": 1.0
+      },
+      {
+        "feature": "issue type = Story",
+        "shap": 0.5547,
+        "value": null
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": 0.4642,
+        "value": 4.6
+      },
+      {
+        "feature": "number of labels",
+        "shap": 0.2319,
+        "value": 1.0
+      },
+      {
+        "feature": "priority = Medium",
+        "shap": 0.217,
+        "value": null
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "issue type = Story",
+        "shap_log_sp": 0.3076
+      },
+      {
+        "feature": "description length (characters)",
+        "shap_log_sp": 0.057
+      },
+      {
+        "feature": "issue type is not Bug",
+        "shap_log_sp": 0.0298
+      },
+      {
+        "feature": "word 'getting'",
+        "shap_log_sp": 0.0294
+      },
+      {
+        "feature": "word 'started'",
+        "shap_log_sp": 0.0293
+      },
+      {
+        "feature": "word 'getting started'",
+        "shap_log_sp": 0.0273
+      }
+    ],
+    "example": "model thinks most under-estimated by the team",
+    "actual_outcome": 0
+  }
+]

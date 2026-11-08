@@ -1,0 +1,98 @@
+key,summary,description,issuetype,priority,num_components,num_labels,reporter_prev_issue_count,early_status_changes,early_assignee_changes,early_priority_changes,early_comment_count,first_status_change_days_imputed,backlog_days,sprint_length_days,story_points,sp_team_commit,spilled
+DOCS-7585,Using Ops Manager with LDAP means user and group administration must be done from LDAP,"Once you configure Ops Manager with LDAP, all user maintenance should be done via LDAP (e.g. creating new users, editing user permissions) as per https://docs.opsmanager.mongodb.com/current/tutorial/configure-for-ldap-authentication/
+
+All group maintenance should also be done via LDAP.
+
+This has the side effect that groups can no longer be deleted from Ops Manager (but you can remove access to them by just removing all users from the LDAP group that maps to the Ops Manager group's roles)
+
+This should be better documented in the pages in these sections:
+* https://docs.opsmanager.mongodb.com/current/tutorial/nav/manage-groups/
+* https://docs.opsmanager.mongodb.com/current/tutorial/nav/access-control/
+
+(The warning should just be something along the lines of ""If you are using LDAP to manage your Ops Manager users, these instructions do not apply to you. Please instead refer to https://docs.opsmanager.mongodb.com/current/tutorial/configure-for-ldap-authentication/"")",Bug,Major - P3,1,1,1,0,1,0,0,22.45271990740741,22.45271990740741,19.999942488425926,1.0,,1
+DOCS-11952,It would be helpful if MongoDB Compatibility Matrix explicitly mentioned Community Edition,"----------------------------
+h2. Original Description
+
+It would be helpful if the Ops Manager Documentation Compatibility Matrix, explicitly mentioned Community Edition. 
+
+https://docs.opsmanager.mongodb.com/current/reference/mongodb-compatibility/index.html#mongodb-versions-compatible-with-mms
+----------------------------
+h2. Description
+
+h2. Scope of changes (files that need work and how much)
+
+h2. Impact to other docs outside of this product
+
+h2. MVP (work and date?)
+
+h2. Resources (e.g. Scope Docs, Invision)",Task,Trivial - P5,1,1,0,1,1,0,0,0.084224537037037,0.084224537037037,7.888888888888889,0.1,0.1,0
+DOCS-13865,Docs for SERVER-33000: Ubuntu 18.04 support added for 3.6,"h2. Description
+Ubuntu 18.04 support has been added for 3.6 
+
+h2. Scope of changes
+
+h2. Impact to Other Docs
+
+h2. MVP (Work and Date)
+
+h2. Resources (Scope or Design Docs, Invision, etc.)
+
+",Task,Major - P3,2,0,0,1,1,0,0,1.0369444444444444,1.0369444444444444,7.0,2.0,2.0,1
+DOCS-10847,Docs for SERVER-4941: collection rename may not replicate / clone properly during initial sync,"h1.Documentation Request Summary: 
+
+Renames no longer result in initial sync failing: https://docs.mongodb.com/manual/core/replica-set-sync/
+
+h1.Engineering Ticket Description:
+
+{panel:title=Issue Status as of Sep 25, 2017|borderColor=#ccc|titleBGColor=#6CB33F|bgColor=#EEEEEE}
+
+*ISSUE DESCRIPTION AND IMPACT*
+During initial sync, if a {{renameCollection}} operation is found during oplog application, the initial sync process is aborted and restarted to prevent data divergence in replica set nodes (see below for an example).
+
+In addition to the [{{renameCollection}} command|https://docs.mongodb.com/manual/reference/command/renameCollection/#dbcmd.renameCollection], operations such as [aggregations using {{$out}}|https://docs.mongodb.com/manual/reference/operator/aggregation/out/] and [MapReduce with output to a collection|https://docs.mongodb.com/manual/reference/method/db.collection.mapReduce/#out-options] may implicitly use {{renameCollection}} operations to create their output collections.
+
+Users who attempt to [resync a node|https://docs.mongodb.com/manual/core/replica-set-sync/] and, before the process is complete, run any of the of the operations above, may see their initial sync process abort and restart. In extreme cases (e.g.: if users are constantly running aggregations to new collections) initial sync operations may never complete.
+
+*DIAGNOSIS AND AFFECTED VERSIONS*
+This change was made in SERVER-26117 and affects MongoDB 3.2.12 and newer. On initial sync, users may encounter the following error message:
+{noformat}
+2017-09-05T17:56:04.348+0000 E REPL     [repl writer worker 5] Error applying operation: OplogOperationUnsupported: Applying renameCollection not supported in initial sync: { ts: Timestamp 1504588941000|592, h: 4948566672906734558, v: 2, op: ""c"", ns: ""graphs.$cmd"", o: { renameCollection: ""graphs.tmp.agg_out.989"", to: ""graphs.graphs_temp"", stayTemp: false, dropTarget: true } } ({ ts: Timestamp 1504588941000|592, h: 4948566672906734558, v: 2, op: ""c"", ns: ""graphs.$cmd"", o: { renameCollection: ""graphs.tmp.agg_out.989"", to: ""graphs.graphs_temp"", stayTemp: false, dropTarget: true } })
+2017-09-05T17:56:04.348+0000 E REPL     [replication-168] Failed to apply batch due to 'OplogOperationUnsupported: error applying batch: Applying renameCollection not supported in initial sync: { ts: Timestamp 1504588941000|592, h: 4948566672906734558, v: 2, op: ""c"", ns: ""graphs.$cmd"", o: { renameCollection: ""graphs.tmp.agg_out.989"", to: ""graphs.graphs_temp"", stayTemp: false, dropTarget: true } }'
+{noformat}
+
+*RATIONALE*
+Prior to SERVER-26117, allowing the {{renameCollection}} operation to complete could cause data divergence. Here's an example of a situation that may occur using aggregation:
+
+# User performs an aggregation against the {{test.foo}} using {{$out}} to a {{test.aggResults}} collection.
+# The aggregation starts generating results, and writes documents {{A}} and {{B}} to the temporary {{test.tmp.agg_out.1}} collection.
+# User adds a node to the replica set, and the node begins the initial sync process.
+# Initial syncing node records {{minvalid}}, then lists all databases and collections that it needs to clone, discovers {{test.tmp.agg_out.1}}.
+# The user’s aggregation continues, writing documents {{C}} and {{D}} to test.tmp.agg_out.1.
+# The user’s aggregation completes, renaming {{test.tmp.agg_out.1}} to {{test.aggResults}}.
+# The initial sync clones all the collections it knows about in the test database. This includes an attempt to clone {{test.tmp.agg_out.1}}, however it discovers no documents on the sync source for that collection, as it has already been renamed to {{test.aggResults}} on the sync source.
+# Note the initial syncing node does *not* attempt to clone {{test.aggResults}} because that collection didn’t exist when it listed the collections it needed to clone in step 4.
+# The initial sync finishes data cloning and moves on to oplog application.  It replicates the inserts of documents {{C}} and {{D}} to {{test.tmp.agg_out.1}} (which implicitly creates that collection).
+# The initial sync encounters the {{renameCollection}} oplog entry and proceeds, renaming its copy of {{test.tmp.agg_out.1}} to {{test.aggResults}}
+# Initial sync finishes
+
+At this point the {{test.aggResults}} collection on the primary/sync source contains the documents {{A}}, {{B}}, {{C}} and {{D}}. On the newly added node however, that collection only contains the documents {{C}} and {{D}}, and while it believes itself consistent with the primary and caught up, reads from that node will return incomplete results. Additionally, if the user now does any writes to documents {{A}} or {{B}} this may cause the newly added node to crash as it won’t have any record of {{A}} or {{B}}.
+
+
+*REMEDIATION AND WORKAROUNDS*
+Users of {{renameCollection}} and aggregation with {{$out}} affected by this behavior need to pause the use of these features in order to completean initial sync operation.
+
+Users mapReduce() may also pause their mapReduce() operations. Alternatively, they may use [Output to a collection with an action|https://docs.mongodb.com/manual/reference/method/db.collection.mapReduce/#output-to-a-collection-with-an-action] as a workaround, as this avoids the {{renameCollection}} operation performed internally by the {{out}} option of {{mapReduce}}. For example:
+{noformat}
+db.outputcollection.drop()
+// The output collection can't be empty, so insert a marker document
+db.outputcollection.insert({marker:1})
+db.mycollection.mapReduce(myMapFunction, myReduceFunction, { out: { merge : ""outputcollection"" } })
+{noformat}
+
+*FIX VERSION* 
+A fix for this behavior is included in MongoDB 3.6.
+
+{panel}",Task,Major - P3,2,0,45,0,1,0,1,47.18899305555556,47.18899305555556,7.888888888888889,0.2,0.2,0
+DOCS-9165,Add a warning to the Encryption at Rest page Indicating not to Copy Datafiles From GCM Encrypted Databases,"On https://docs.mongodb.com/manual/core/security-encryption-at-rest/ we describe that we support two encryption modes in MongoDB Encryption At Rest: AES256-CBC and AES256-GCM.
+
+We should have an 'important' box on https://docs.mongodb.com/manual/core/security-encryption-at-rest/ indicating that while using AES256-GCM, administrators should not make copies of their datafiles.",Task,Minor - P4,1,0,1,0,4,1,0,273.92565972222224,273.92565972222224,7.888888888888889,0.25,0.25,0

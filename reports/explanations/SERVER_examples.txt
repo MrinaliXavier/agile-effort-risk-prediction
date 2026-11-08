@@ -1,0 +1,61 @@
+PROJECT SERVER - Stage 1: LightGBM (Tabular + TF-IDF) | Stage 2: Random Forest (+ Team SP + Model SP) | label: spilled
+
+--- highest predicted risk ---
+Ticket SERVER-61107: Serialize concurrent accesses to `Socket` in `TCPResetAfterConnectionIsSilentlyS
+  Chance of missing its first sprint: 90%  (this project's usual rate: 45%)
+  The team had not estimated it at commitment; the model estimates 1.2 SP
+  What drives the risk (percentage points of probability; + raises it, - lowers it):
+    +15.7 pts  time in backlog before the sprint = 31.1 days (first status change after 0.0 days)
+    +13.1 pts  team's estimate at commitment = not estimated
+    +5.9 pts  number of labels = 2.0
+    +4.0 pts  sprint length (days) = 21.0
+    -3.5 pts  issue type = Bug
+    -3.4 pts  model's effort estimate (SP) = 1.2
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    -0.111  (x0.89)  reporter's earlier tickets = 20.0
+    +0.048  (x1.05)  word 'thread'
+    -0.044  (x0.96)  issue type = Bug
+    -0.025  (x0.98)  description length (characters) = 470.0
+    -0.024  (x0.98)  word 'mongodb mongo'
+    +0.022  (x1.02)  word 'connection'
+  ACTUAL OUTCOME: missed its sprint
+
+--- lowest predicted risk ---
+Ticket SERVER-59870: Append to Windows bin paths file in setup multiversion
+  Chance of missing its first sprint: 4%  (this project's usual rate: 45%)
+  Team committed 1 SP; the model estimates 1.1 SP - 1.1x the team's estimate
+  What drives the risk (percentage points of probability; + raises it, - lowers it):
+    -12.9 pts  model's effort estimate (SP) = 1.1
+    -7.9 pts  time in backlog before the sprint = 0.0 days
+    -7.2 pts  issue type = Bug
+    -6.2 pts  team's estimate at commitment = 1.0
+    -3.9 pts  number of labels = 0.0
+    -3.1 pts  description length (characters) = 131.0
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    -0.125  (x0.88)  reporter's earlier tickets = 31.0
+    -0.051  (x0.95)  issue type = Bug
+    -0.047  (x0.95)  description length (characters) = 131.0
+    +0.006  (x1.01)  word 'script'
+    -0.006  (x0.99)  number of components = 1.0
+    -0.005  (x1.00)  issue type is not New Feature
+  ACTUAL OUTCOME: finished in its sprint
+
+--- model thinks most under-estimated by the team ---
+Ticket SERVER-59827: random_moveChunk_index_operations fails to ignore BackgroundOperationInProgressF
+  Chance of missing its first sprint: 57%  (this project's usual rate: 45%)
+  Team committed 1 SP; the model estimates 3.4 SP - 3.4x the team's estimate
+  What drives the risk (percentage points of probability; + raises it, - lowers it):
+    -8.4 pts  team's estimate at commitment = 1.0
+    +7.7 pts  model's effort estimate (SP) = 3.4
+    +6.8 pts  time in backlog before the sprint = 40.9 days (first status change after 0.0 days)
+    +3.7 pts  sprint length (days) = 14.0
+    -3.7 pts  issue type = Bug
+    -2.8 pts  description length (characters) = 5761.0
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.247  (x1.28)  word 'index'
+    +0.165  (x1.18)  reporter's earlier tickets = 5.0
+    +0.054  (x1.06)  word 'error'
+    +0.037  (x1.04)  word 'concurrency'
+    +0.037  (x1.04)  description length (characters) = 5761.0
+    -0.013  (x0.99)  issue type = Bug
+  ACTUAL OUTCOME: finished in its sprint

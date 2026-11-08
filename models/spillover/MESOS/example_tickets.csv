@@ -1,0 +1,56 @@
+key,summary,description,issuetype,priority,num_components,num_labels,reporter_prev_issue_count,early_status_changes,early_assignee_changes,early_priority_changes,early_comment_count,first_status_change_days_imputed,backlog_days,sprint_length_days,story_points,sp_team_commit,spilled
+MESOS-3066,Replicated registry needs a representation of maintenance schedules,"In order to persist maintenance schedules across failovers of the master, the schedule information must be kept in the replicated registry.
+
+This means adding an additional message in the Registry protobuf in src/master/registry.proto.  The status of each individual slave's maintenance will also be persisted in this way.
+{code}
+message Maintenance {
+  message HostStatus {
+    required string hostname = 1;
+
+    // True if the slave is deactivated for maintenance.
+    // False if the slave is draining in preparation for maintenance.
+    required bool is_down = 2;  // Or an enum
+  }
+
+  message Schedule {
+    // The set of affected slave(s).
+    repeated HostStatus hosts = 1;
+
+    // Interval in which this set of slaves is expected to be down for.
+    optional Unavailability interval = 2;
+  }
+
+  message Schedules {
+    repeated Schedule schedules;
+  }
+
+  optional Schedules schedules = 1;
+}
+{code}
+
+Note: There can be multiple SlaveID's attached to a single hostname.",Task,Major,2,1,5,3,1,0,1,0.8860153587962963,5.034890659722223,13.874461493055556,3.0,3.0,1
+MESOS-2491,Persist the reservation state on the slave,"h3. Goal
+
+The goal for this task is to persist the reservation state stored on the master on the corresponding slave. The {{needCheckpointing}} predicate is used to capture the condition for which a resource needs to be checkpointed. Currently the only condition is {{isPersistentVolume}}. We'll update this to include dynamically reserved resources.
+
+h3. Expected Outcome
+
+* The dynamically reserved resources will be persisted on the slave.",Task,Major,2,1,6,1,0,0,0,3.836215416666666,7.643961921296297,13.999600613425926,5.0,,1
+MESOS-7561,Add storage resource provider specific information in ResourceProviderInfo.,"For storage resource provider, there will be some specific configuration information. For instance, the most important one is the `ContainerConfig` of the CSI Plugin container.
+
+That config information will be sent to the corresponding agent that will use the resources provided by the resource provider. For storage resource provider particularly, the agent needs to launch the CSI Node Plugin to mount the volumes.
+
+Comparing to adding first class storage resource provider information, an alternative is to add a generic labels field in ResourceProviderInfo and let resource provider itself figure out the format of the labels. However, I believe a first class solution is better and more clear.",Task,Major,1,2,124,3,1,0,1,144.8546172337963,144.85587930555553,13.999632789351852,2.0,2.0,1
+MESOS-9925,Default executor takes a couple of seconds to start and subscribe Mesos agent,"When launching a task group, it may take 6 seconds for default executor to start and subscribe Mesos agent:
+{code:java}
+# Agent log:
+I0730 01:18:57.908911 10107 containerizer.cpp:3302] Transitioning the state of container 593f6750-e36d-4838-89c7-34c77b30ba99 from FETCHING to RUNNING
+I0730 01:19:03.829246 10073 http.cpp:1115] HTTP POST for /slave(1)/api/v1/executor from 10.0.49.2:36798
+
+# Executor stderr:
+Marked '/' as rslave
+I0730 01:19:03.617830 10438 executor.cpp:206] Version: 1.9.0
+I0730 01:19:03.842535 10464 default_executor.cpp:205] Received SUBSCRIBED event
+{code}
+This is obviously too long which may affect the performance of launching task groups.",Bug,Major,1,1,38,3,1,0,2,1.8413954976851847,1.8420926620370373,13.999975625,2.0,2.0,1
+MESOS-5138,Fix Nvidia GPU test build for namespace change of MasterDetector,An update to master the day after all of the Nvidia GPU stuff landed has a build error in the Nvidia GPU tests. The namespace that MasterDetector lives in has changed and the test needs to be updated to pull in the class from the proper namespace now.,Bug,Major,0,2,15,0,0,0,0,0.0,0.0,13.999940046296295,1.0,1.0,0

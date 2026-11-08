@@ -1,0 +1,61 @@
+PROJECT MESOS - Stage 1: Ridge (Tabular + TF-IDF) | Stage 2: Random Forest (+ Team SP + Model SP) | label: spilled
+
+--- highest predicted risk ---
+Ticket MESOS-9864: Add enchanced multi-role capability support to python bindings.
+  Chance of missing its first sprint: 93%  (this project's usual rate: 65%)
+  Team committed 5 SP; the model estimates 3.4 SP - 0.7x the team's estimate
+  What drives the risk (percentage points of probability; + raises it, - lowers it):
+    +8.6 pts  reporter's earlier tickets = 2.0
+    +7.5 pts  time in backlog before the sprint = 22.0 days (first status change after 5.9 days)
+    +6.7 pts  model's effort estimate (SP) = 3.4
+    +6.3 pts  team's estimate at commitment = 5.0
+    +6.2 pts  number of labels = 2.0
+    +3.7 pts  sprint length (days) = 14.0
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.164  (x1.18)  word 'support'
+    +0.125  (x1.13)  issue type = Task
+    +0.037  (x1.04)  word 'role'
+    -0.034  (x0.97)  word 'add'
+    -0.026  (x0.97)  issue type is not Improvement
+    +0.022  (x1.02)  number of labels = 2.0
+  ACTUAL OUTCOME: finished in its sprint
+
+--- lowest predicted risk ---
+Ticket MESOS-9939: PersistentVolumeEndpointsTest.DynamicReservation is flaky.
+  Chance of missing its first sprint: 12%  (this project's usual rate: 65%)
+  Team committed 1 SP; the model estimates 2.2 SP - 2.2x the team's estimate
+  What drives the risk (percentage points of probability; + raises it, - lowers it):
+    -17.3 pts  description length (characters) = 35690.0
+    -9.1 pts  reporter's earlier tickets = 101.0
+    -8.0 pts  model's effort estimate (SP) = 2.2
+    -5.7 pts  time in backlog before the sprint = 0.6 days (first status change after 0.0 days)
+    +4.6 pts  number of labels = 2.0
+    +3.4 pts  sprint length (days) = 14.0
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    -0.068  (x0.93)  issue type is not Task
+    +0.043  (x1.04)  reporter's earlier tickets = 101.0
+    -0.040  (x0.96)  description length (characters) = 35690.0
+    -0.026  (x0.97)  issue type is not Improvement
+    +0.022  (x1.02)  number of labels = 2.0
+    -0.020  (x0.98)  number of components = 0.0
+  ACTUAL OUTCOME: missed its sprint
+
+--- model thinks most under-estimated by the team ---
+Ticket MESOS-9616: `Filters.refuse_seconds` declines resources not in offers.
+  Chance of missing its first sprint: 72%  (this project's usual rate: 65%)
+  Team committed 1 SP; the model estimates 4.0 SP - 4.0x the team's estimate
+  What drives the risk (percentage points of probability; + raises it, - lowers it):
+    +13.0 pts  time in backlog before the sprint = 6.1 days
+    +7.7 pts  number of labels = 4.0
+    -7.5 pts  reporter's earlier tickets = 101.0
+    +7.3 pts  model's effort estimate (SP) = 4.0
+    +1.9 pts  description length (characters) = 917.0
+    -1.5 pts  team's estimate at commitment = 1.0
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.087  (x1.09)  word 'resources'
+    +0.084  (x1.09)  number of labels = 4.0
+    +0.069  (x1.07)  word 'http'
+    -0.068  (x0.93)  issue type is not Task
+    +0.065  (x1.07)  word 'scheduler'
+    +0.054  (x1.06)  word 'task'
+  ACTUAL OUTCOME: missed its sprint

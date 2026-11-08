@@ -1,0 +1,203 @@
+[
+  {
+    "key": "JBIDE-27716",
+    "probability": 0.8174,
+    "team_sp_at_commitment": null,
+    "model_sp": 4.51,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "number of components",
+        "shap": 1.6282,
+        "value": 8.0
+      },
+      {
+        "feature": "team's estimate at commitment",
+        "shap": 0.3643,
+        "value": "not estimated"
+      },
+      {
+        "feature": "has a description",
+        "shap": -0.3583,
+        "value": 0.0
+      },
+      {
+        "feature": "issue type = Task",
+        "shap": 0.1577,
+        "value": null
+      },
+      {
+        "feature": "assignee changes before commitment",
+        "shap": -0.0936,
+        "value": 0.0
+      },
+      {
+        "feature": "priority = Blocker",
+        "shap": -0.065,
+        "value": null
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "priority = Blocker",
+        "shap_log_sp": -0.111
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap_log_sp": 0.0845
+      },
+      {
+        "feature": "word 'target platform'",
+        "shap_log_sp": 0.0296
+      },
+      {
+        "feature": "description length (characters)",
+        "shap_log_sp": 0.0285
+      },
+      {
+        "feature": "word 'target'",
+        "shap_log_sp": 0.0274
+      },
+      {
+        "feature": "word 'fix'",
+        "shap_log_sp": -0.0253
+      }
+    ],
+    "example": "highest predicted risk",
+    "actual_outcome": 0
+  },
+  {
+    "key": "JBIDE-27730",
+    "probability": 0.1174,
+    "team_sp_at_commitment": 1.0,
+    "model_sp": 4.4,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "team's estimate at commitment",
+        "shap": -0.9244,
+        "value": 1.0
+      },
+      {
+        "feature": "description length (characters)",
+        "shap": -0.5054,
+        "value": 7580.0
+      },
+      {
+        "feature": "priority = Critical",
+        "shap": -0.3148,
+        "value": null
+      },
+      {
+        "feature": "summary length (characters)",
+        "shap": -0.1974,
+        "value": 36.0
+      },
+      {
+        "feature": "assignee changes before commitment",
+        "shap": 0.1077,
+        "value": 1.0
+      },
+      {
+        "feature": "has a description",
+        "shap": 0.1011,
+        "value": 1.0
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "reporter's earlier tickets",
+        "shap_log_sp": 0.0591
+      },
+      {
+        "feature": "word 'native'",
+        "shap_log_sp": -0.0486
+      },
+      {
+        "feature": "word 'org eclipse'",
+        "shap_log_sp": -0.0469
+      },
+      {
+        "feature": "description length (characters)",
+        "shap_log_sp": 0.024
+      },
+      {
+        "feature": "issue type is not Feature Request",
+        "shap_log_sp": -0.0133
+      },
+      {
+        "feature": "word 'command'",
+        "shap_log_sp": 0.0113
+      }
+    ],
+    "example": "lowest predicted risk",
+    "actual_outcome": 1
+  },
+  {
+    "key": "JBIDE-27691",
+    "probability": 0.491,
+    "team_sp_at_commitment": 1.0,
+    "model_sp": 7.95,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "team's estimate at commitment",
+        "shap": -0.9244,
+        "value": 1.0
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": 0.4536,
+        "value": 8.0
+      },
+      {
+        "feature": "issue type = Feature Request",
+        "shap": 0.3413,
+        "value": null
+      },
+      {
+        "feature": "number of components",
+        "shap": 0.1723,
+        "value": 2.0
+      },
+      {
+        "feature": "has a description",
+        "shap": 0.1011,
+        "value": 1.0
+      },
+      {
+        "feature": "assignee changes before commitment",
+        "shap": -0.0936,
+        "value": 0.0
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "word 'ci'",
+        "shap_log_sp": 0.1723
+      },
+      {
+        "feature": "issue type = Feature Request",
+        "shap_log_sp": 0.146
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap_log_sp": 0.1136
+      },
+      {
+        "feature": "word 'platform'",
+        "shap_log_sp": 0.0212
+      },
+      {
+        "feature": "summary length (characters)",
+        "shap_log_sp": 0.0193
+      },
+      {
+        "feature": "description length (characters)",
+        "shap_log_sp": -0.0189
+      }
+    ],
+    "example": "model thinks most under-estimated by the team",
+    "actual_outcome": 0
+  }
+]

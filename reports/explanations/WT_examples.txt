@@ -1,0 +1,61 @@
+PROJECT WT - Stage 1: LightGBM (Tabular + TF-IDF) | Stage 2: Logistic Regression (+ Team SP + Model SP) | label: spilled
+
+--- highest predicted risk ---
+Ticket WT-7832: Add an encryptor extension that uses the libsodium cryptography library.
+  Chance of missing its first sprint: 90%  (this project's usual rate: 41%)
+  The team had not estimated it at commitment; the model estimates 3.2 SP
+  What drives the risk (log-odds; + raises it, - lowers it):
+    +0.937  issue type = New Feature
+    +0.747  assignee changes before commitment = 4.0
+    +0.651  team's estimate at commitment = not estimated
+    +0.190  reporter's earlier tickets = 2.0
+    -0.117  number of labels = 0.0
+    -0.095  issue type is not Task
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    -0.099  (x0.91)  description length (characters) = 144.0
+    +0.066  (x1.07)  issue type = New Feature
+    +0.022  (x1.02)  word 'open'
+    -0.020  (x0.98)  word 'prepared'
+    -0.016  (x0.98)  reporter's earlier tickets = 2.0
+    +0.012  (x1.01)  word 'add'
+  ACTUAL OUTCOME: finished in its sprint
+
+--- lowest predicted risk ---
+Ticket WT-8390: Assert table cannot be NULL within config_table in test/format
+  Chance of missing its first sprint: 7%  (this project's usual rate: 41%)
+  Team committed 2 SP; the model estimates 2.4 SP - 1.2x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    -1.536  priority = Trivial - P5
+    -0.786  team's estimate at commitment = 2.0
+    +0.293  issue type = Technical Debt
+    -0.267  model's effort estimate (SP) = 2.4
+    -0.117  number of labels = 0.0
+    -0.095  issue type is not Task
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    -0.111  (x0.90)  priority = Trivial - P5
+    -0.095  (x0.91)  description length (characters) = 109.0
+    -0.058  (x0.94)  word 'null'
+    -0.021  (x0.98)  word 'value'
+    +0.018  (x1.02)  summary length (characters) = 62.0
+    +0.013  (x1.01)  word 'format'
+  ACTUAL OUTCOME: finished in its sprint
+
+--- model thinks most under-estimated by the team ---
+Ticket WT-7964: Fix rollback to stable incorrectly not rolling back updates at snap_max
+  Chance of missing its first sprint: 22%  (this project's usual rate: 41%)
+  Team committed 1 SP; the model estimates 4.5 SP - 4.5x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    -1.338  team's estimate at commitment = 1.0
+    -0.283  reporter's earlier tickets = 121.0
+    +0.248  number of labels = 1.0
+    +0.160  model's effort estimate (SP) = 4.5
+    -0.095  issue type is not Task
+    -0.067  issue type is not Improvement
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.118  (x1.13)  word 'snapshot'
+    +0.067  (x1.07)  summary length (characters) = 71.0
+    +0.048  (x1.05)  description length (characters) = 1378.0
+    -0.046  (x0.95)  word 'code'
+    +0.045  (x1.05)  word 'checkpoint'
+    -0.025  (x0.98)  word 'rollback stable'
+  ACTUAL OUTCOME: finished in its sprint

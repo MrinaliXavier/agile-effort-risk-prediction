@@ -1,0 +1,153 @@
+key,summary,description,issuetype,priority,num_components,num_labels,reporter_prev_issue_count,early_status_changes,early_assignee_changes,early_priority_changes,early_comment_count,first_status_change_days_imputed,backlog_days,sprint_length_days,story_points,sp_team_commit,spilled
+QTBUG-91074,NMEA - add support for satellite system distinguishing,"QNmeaSatelliteInfoSource parses NMEA data but does not distinguish between satellite systems. This results in incorrect reporting of satellites in view and satellites in use if the device supports multiple systems.
+
+The normal pattern for InView/InUse detection is the following:
+ # Parse InView - save to list.
+ # Parse InUse (gets only IDs) - use the IDs to extract full info from InView list.
+
+Now when we have multiple systems the following happens:
+ # Parse InView GPS - save to list.
+ # Prase InView GLONASS - save to list, overriding InView GPS.
+ # *Parse InUse GPS -> the IDs can't be found.*
+
+To fix this issue we do not need to override the list at step 2, but have separate lists for each satellite system. And join all the lists when notifying about data changes.
+
+The satellites can be distinguished by the first letters of the NMEA sentence:
+ * $GP*** is used for GPS
+ * $GL*** - for GLONASS
+ * $GN*** - for a combination of multiple satellite systems
+
+List of talker ids: [https://gpsd.gitlab.io/gpsd/NMEA.html#_talker_ids]
+
+One problem here is that GSA messages (satellites in use) come as $GNGSA in this case. Each message holds IDs of one satellite system. So if we have GPS and GLONASS working, we will receive 2 consecutive messages.
+
+The trick is to distinguish, which one represents which system. Specially if some of them have no fix (the list of IDs is empty). The _System ID_ field was added only in NMEA 4.11, which is not supported by many devices.
+
+One possible solution is to use the satellite id range to determine the satellite system: https://gpsd.gitlab.io/gpsd/NMEA.html#_satellite_ids
+
+The enum for satellite systems already exists. See QGeoSatelliteInfo::SatelliteSystem. We should probably consider extending it to contain more satellite systems (even untested ones).
+
+Now when we move the QNmeaSatelliteInfoSource into the library and implement virtual methods for nmea parsing, this fix needs to be done before feature freeze for Qt 6.2, as it's a potential BC breaking change (need to add more parameters to the parsing methods)",Bug,P2: Important,1,0,11,2,0,1,0,7.055231481481481,7.983473171296297,12.90120275462963,13.0,13.0,0
+QTBUG-85597,qdoc: Add support for documenting QML properties as required,"Q_PROPERTY macro now supports the REQUIRED keyword - this is relevant for QML types, where the type cannot be instatiated without declaring all required properties.
+
+QDoc needs to parse the REQUIRED keyword as set associated QML properties as required, and also introduce a new command, \required, to do this explicitly in the docs.",Task,P2: Important,1,0,30,0,0,0,0,0.0,0.0,27.946026064814813,12.0,12.0,0
+QTBUG-93848,QNetworkInformation: Behind connectivity portal,"Notify, where available, if the device is connected to a network where further action is required to get internet access. Examples include Wi-Fi on planes and trains where you need to accept the terms of use before you can access the internet.",User Story,P2: Important,1,0,14,1,0,0,0,0.0322916666666666,1.1158796296296296,12.901388888888889,13.0,13.0,1
+QTBUG-91707,[Reg 5.15->6.0] Recursive QMap as MetaType cannot have key with custom operator== ,"The following code no longer compiles with MSVC (2019):
+
+{noformat}
+class Input {
+public:
+    bool operator==(const Input &a) const
+    {
+        return false;
+    }
+    bool operator!=(const Input &a) const { return !(*this == a); }
+};
+
+class ModeMapping : public QMap<Input, ModeMapping>
+{
+};
+
+Q_DECLARE_METATYPE(ModeMapping)
+{noformat}
+
+This compiles with Qt 5, but no longer with Qt 6:
+
+{noformat}
+C:\PROGRA~2\MICROS~1\2019\BUILDT~1\VC\Tools\MSVC\1427~1.291\bin\HostX86\x64\cl.exe  /nologo /TP -DQT_CORE_LIB -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_WIN64 -I. -IC:\Users\ziller\Documents\untitled2 -Iuntitled2_autogen\include -IC:\Qt\6.1.0\msvc2019_64\include\QtCore -IC:\Qt\6.1.0\msvc2019_64\include -IC:\Qt\6.1.0\msvc2019_64\mkspecs\win32-msvc /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1   -Zc:__cplusplus -permissive- -utf-8 -std:c++17 /showIncludes /FoCMakeFiles\untitled2.dir\main.cpp.obj /FdCMakeFiles\untitled2.dir\ /FS -c C:\Users\ziller\Documents\untitled2\main.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include\type_traits(54): error C2039: 'value': is not a member of 'QTypeTraits::has_operator_equal<T>'
+        with
+        [
+            T=Ty
+        ]
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qtypeinfo.h(326): note: see declaration of 'QTypeTraits::has_operator_equal<T>'
+        with
+        [
+            T=Ty
+        ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include\type_traits(61): note: see reference to class template instantiation 'std::_Conjunction<true,_First,QTypeTraits::has_operator_equal<T>>' being compiled
+        with
+        [
+            _First=QTypeTraits::has_operator_equal<Input>,
+            T=Ty
+        ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include\type_traits(66): note: see reference to class template instantiation 'std::conjunction<QTypeTraits::has_operator_equal<Key>,QTypeTraits::has_operator_equal<T>>' being compiled
+        with
+        [
+            Key=Input,
+            T=Ty
+        ]
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qtypeinfo.h(334): note: see reference to variable template 'const bool conjunction_v<QTypeTraits::has_operator_equal<Input>,QTypeTraits::has_operator_equal<ModeMapping> >' being compiled
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qmap.h(280): note: see reference to alias template instantiation 'QTypeTraits::compare_eq_result<Input,ModeMapping>' being compiled
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qmap.h(291): note: see reference to function template instantiation 'enable_if<std::conjunction_v<QTypeTraits::has_operator_equal<T>,QTypeTraits::has_operator_equal<AT>>,bool>::type operator !=(const QMap<Input,ModeMapping> &,const QMap<Input,ModeMapping> &)' being compiled
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qtypeinfo.h(324): note: see reference to alias template instantiation 'QTypeTraits::detail::expand_operator_equal<Ty>' being compiled
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qtypeinfo.h(326): note: see reference to class template instantiation 'QTypeTraits::has_operator_equal<T>' being compiled
+        with
+        [
+            T=Ty
+        ]
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qmetatype.h(2126): note: see reference to variable template 'const bool has_operator_equal_v<ModeMapping>' being compiled
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qmetatype.h(2328): note: see reference to class template instantiation 'QtPrivate::QMetaTypeInterfaceWrapper<Ty>' being compiled
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qmetatype.h(2389): note: see reference to function template instantiation 'const QtPrivate::QMetaTypeInterface *QtPrivate::qMetaTypeInterfaceForType<T>(void)' being compiled
+        with
+        [
+            T=ModeMapping
+        ]
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qmetatype.h(1146): note: see reference to function template instantiation 'QMetaType QMetaType::fromType<T>(void)' being compiled
+        with
+        [
+            T=ModeMapping
+        ]
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qmetatype.h(1170): note: see reference to function template instantiation 'int qRegisterNormalizedMetaType<T>(const QByteArray &)' being compiled
+        with
+        [
+            T=ModeMapping
+        ]
+C:\Users\ziller\Documents\untitled2\main.cpp(18): note: see reference to function template instantiation 'int qRegisterMetaType<ModeMapping>(const char *)' being compiled
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include\type_traits(54): error C2065: 'value': undeclared identifier
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include\type_traits(54): error C2975: '_First_value': invalid template argument for 'std::_Conjunction', expected compile-time constant expression
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include\type_traits(47): note: see declaration of '_First_value'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include\type_traits(61): error C2504: 'QTypeTraits::has_operator_equal<T>': base class undefined
+        with
+        [
+            T=Ty
+        ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include\type_traits(66): error C2039: 'value': is not a member of 'std::conjunction<QTypeTraits::has_operator_equal<Key>,QTypeTraits::has_operator_equal<T>>'
+        with
+        [
+            Key=Input,
+            T=Ty
+        ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include\type_traits(66): note: see declaration of 'std::conjunction<QTypeTraits::has_operator_equal<Key>,QTypeTraits::has_operator_equal<T>>'
+        with
+        [
+            Key=Input,
+            T=Ty
+        ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include\type_traits(66): error C2065: 'value': undeclared identifier
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include\type_traits(66): error C2131: expression did not evaluate to a constant
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include\type_traits(66): note: a non-constant (sub-)expression was encountered
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qtypeinfo.h(253): error C2976: 'QTypeTraits::detail::expand_operator_equal_container': too few template arguments
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qtypeinfo.h(257): note: see declaration of 'QTypeTraits::detail::expand_operator_equal_container'
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qtypeinfo.h(324): error C3770: 'unknown-type': is not a valid base class
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qtypeinfo.h(326): error C2039: 'value': is not a member of 'QTypeTraits::has_operator_equal<T>'
+        with
+        [
+            T=Ty
+        ]
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qtypeinfo.h(326): note: see declaration of 'QTypeTraits::has_operator_equal<T>'
+        with
+        [
+            T=Ty
+        ]
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qtypeinfo.h(326): error C2065: 'value': undeclared identifier
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qtypeinfo.h(326): error C2131: expression did not evaluate to a constant
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qtypeinfo.h(326): note: a non-constant (sub-)expression was encountered
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qmetatype.h(2265): error C2976: 'QtPrivate::QEqualityOperatorForType': too few template arguments
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qmetatype.h(2128): note: see declaration of 'QtPrivate::QEqualityOperatorForType'
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qmetatype.h(2265): error C2975: 'unnamed-parameter': invalid template argument for 'QtPrivate::QEqualityOperatorForType', expected compile-time constant expression
+C:\Qt\6.1.0\msvc2019_64\include\QtCore/qmetatype.h(2126): note: see declaration of 'unnamed-parameter'
+ninja: build stopped: subcommand failed.{noformat}
+
+Real-life example of this is ""class ModeMapping : public QMap<Input, ModeMapping>"" in FakeVim in Qt Creator (https://code.qt.io/cgit/qt-creator/qt-creator.git/tree/src/plugins/fakevim/fakevimhandler.cpp#n1632)",Bug,P1: Critical,1,1,0,0,2,1,15,169.06631944444445,169.06631944444445,13.0,13.0,,0
+QTBUG-82687,QDoc: Add unit test(s) for Utilities,The utilities namespace in QDoc should have some simple tests.,Task,P2: Important,1,0,9,0,0,0,0,0.0,0.0,13.791666666666666,5.0,5.0,0

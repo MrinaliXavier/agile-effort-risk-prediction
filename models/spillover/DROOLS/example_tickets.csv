@@ -1,0 +1,21 @@
+key,summary,description,issuetype,priority,num_components,num_labels,reporter_prev_issue_count,early_status_changes,early_assignee_changes,early_priority_changes,early_comment_count,first_status_change_days_imputed,backlog_days,sprint_length_days,story_points,sp_team_commit,spilled
+DROOLS-3921,QCon Presentation,"Complete slides and possibly source code example (both *deliverables*) for the presentation:
+
+bq. *Your Program as a Transpiler: Applying Compiler Design to Everyday Programming*
+bq. Many languages “transpile” into other languages, but compilers are still often seen as arcane pieces of software that only a master of the dark arts could write. But at the end of the day, both are programs that translate code from a programming language to another.
+bq. So what does make a transpiler simple and a compiler hard? What can we learn from these complex pieces of software? And are they really that complex?
+bq. The lessons we can learn from language implementation design patterns are really within the reach of everyone; not only can they apply to daily programming problems, but they are also key to really understand the basis of exciting new technologies such as the GraalVM project and the Quarkus stack. In our experience on the Drools and jBPM projects, we have come across many opportunities to apply programming language development techniques to a broader context. In this talk, we will see some of these examples.
+",Task,Major,0,0,25,0,0,0,0,3.769453622685185,3.769453622685185,20.99965517361111,3.0,3.0,0
+DROOLS-5006,"[DMN Designer] Code Completion - When users leave it opened, it never disappears","When users leave it opened, it never disappears.
+
+*Steps to reproduce:*
+ !2020-02-04 15.34.09.gif|width=800! ",Bug,Major,1,1,137,0,0,0,1,44.14987268518519,44.14987268518519,18.95694444444445,3.0,3.0,0
+DROOLS-6540,DMN string join FEEL function,,Feature Request,Major,1,0,317,0,0,0,0,0.0,0.0,18.49861111111111,2.0,2.0,0
+DROOLS-5421,DMN FEEL perf opt EvaluationContext.current(),,Task,Major,1,0,205,0,0,0,0,0.0,0.0,18.99809991898148,3.0,3.0,0
+DROOLS-4932,DMN DT Analysis skip gap for unconstrained string,"For a Decision Table such as:
+ !screenshot-1.png|thumbnail! 
+it does not make sense to compute Gap analysis because of the unconstrained string in the first column.
+
+However, DT static analysis still make sense for a table such as:
+ !screenshot-2.png|thumbnail! 
+where, while excluding gap analysis, still make sense to compute overlap, masked, misleading, etc.",Enhancement,Major,1,0,158,0,0,0,0,0.0,0.0,18.99845172453704,3.0,3.0,0

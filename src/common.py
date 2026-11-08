@@ -69,9 +69,12 @@ def add_full_text(df):
     return df
 
 
-def build_preprocessor(num_features, use_text=False):
+def build_preprocessor(num_features, use_text=False, cat_baselines=None):
+    """cat_baselines: reference category per CAT_FEATURES column (default: the XD ones).
+    In the multi-project pipeline each project passes its own (most common in training)."""
+    baselines = cat_baselines if cat_baselines is not None else CAT_BASELINES
     transformers = [
-        ("cat", OneHotEncoder(drop=CAT_BASELINES, handle_unknown="ignore"), CAT_FEATURES),
+        ("cat", OneHotEncoder(drop=baselines, handle_unknown="ignore"), CAT_FEATURES),
         ("num", StandardScaler(), num_features),
     ]
     if use_text:
@@ -112,15 +115,17 @@ RISK_CANDIDATES = {
 RISK_VARIANTS = {"No Effort": STAGE2_BASE_NUM_FEATURES, "+ Pred Effort": STAGE2_NUM_FEATURES_WITH_EFFORT}
 
 
-def build_effort_pipeline(name):
+def build_effort_pipeline(name, cat_baselines=None):
     use_text, factory = EFFORT_CANDIDATES[name]
-    return Pipeline([("preprocessor", build_preprocessor(STAGE1_NUM_FEATURES, use_text)),
+    return Pipeline([("preprocessor", build_preprocessor(STAGE1_NUM_FEATURES, use_text, cat_baselines)),
                      ("model", factory())])
 
 
-def build_risk_pipeline(family, with_effort=True):
-    num = STAGE2_NUM_FEATURES_WITH_EFFORT if with_effort else STAGE2_BASE_NUM_FEATURES
-    return Pipeline([("preprocessor", build_preprocessor(num)),
+def build_risk_pipeline(family, with_effort=True, cat_baselines=None, num_features=None):
+    """num_features overrides the feature list (used by the estimation-gap variants)."""
+    num = num_features if num_features is not None else (
+        STAGE2_NUM_FEATURES_WITH_EFFORT if with_effort else STAGE2_BASE_NUM_FEATURES)
+    return Pipeline([("preprocessor", build_preprocessor(num, cat_baselines=cat_baselines)),
                      ("model", RISK_CANDIDATES[family]())])
 
 
@@ -136,16 +141,62 @@ def predict_effort(pipe, df):
     return np.expm1(pipe.predict(df)).clip(min=0)
 
 
-def oof_effort_predictions(df, effort_name, n_splits=5):
+def oof_effort_predictions(df, effort_name, n_splits=5, cat_baselines=None):
     """Out-of-fold predicted effort: no row is predicted by a model that saw it."""
     df = df.reset_index(drop=True)
     oof = np.zeros(len(df))
     kf = KFold(n_splits=n_splits, shuffle=True, random_state=RANDOM_SEED)
     for tr_idx, te_idx in kf.split(df):
-        pipe = build_effort_pipeline(effort_name)
+        pipe = build_effort_pipeline(effort_name, cat_baselines)
         pipe.fit(df.iloc[tr_idx], np.log1p(df.iloc[tr_idx]["story_points"].values))
         oof[te_idx] = predict_effort(pipe, df.iloc[te_idx])
     return oof
+
+
+# -----------------------------------------------------------------------------
+# ESTIMATION FEATURES (multi-project pipeline)
+#   log_sp_team    = log(1 + team Story Points AT PREDICTION TIME)   (0 if not yet estimated)
+#   log_sp_model   = log(1 + Stage-1 predicted Story Points)
+#   estimation_gap = log_sp_team - log_sp_model
+#       gap < 0 : the model reads the ticket as BIGGER than the team committed to
+#                 (possible under-estimation -> hypothesised higher delay risk)
+#   sp_missing_team = 1 if the team had not estimated the ticket yet (gap set to 0)
+#   log_sp_final   = log(1 + FINAL Story Points) - LEAKAGE CHECK ONLY: the final value can be a
+#                    re-estimate made after the prediction point, so it must never be a real feature.
+# -----------------------------------------------------------------------------
+def add_estimate_features(df, team_col="sp_team_day5"):
+    df = df.copy()
+    team = df[team_col]
+    df["sp_missing_team"] = team.isna().astype(int)
+    df["log_sp_team"] = np.log1p(team.fillna(0).clip(lower=0))
+    df["log_sp_model"] = np.log1p(df["pred_effort"].clip(lower=0))
+    df["estimation_gap"] = np.where(team.isna(), 0.0, df["log_sp_team"] - df["log_sp_model"])
+    df["log_sp_final"] = np.log1p(df["story_points"].clip(lower=0))
+    return df
+
+
+PROPOSED_VARIANT = "+ Team SP + Model SP"
+LEAKAGE_VARIANT = "+ Final SP + Model SP (leakage check)"
+
+
+def make_risk_variants(base):
+    """Stage-2 feature sets for the ablation. base = features shared by every variant."""
+    return {
+        "No Effort": base,
+        "+ Pred Effort": base + ["pred_effort"],
+        "+ Team SP": base + ["log_sp_team", "sp_missing_team"],
+        "+ Estimation Gap": base + ["estimation_gap", "sp_missing_team"],
+        PROPOSED_VARIANT: base + ["log_sp_team", "log_sp_model", "sp_missing_team"],
+        LEAKAGE_VARIANT: base + ["log_sp_final", "log_sp_model"],
+    }
+
+
+MP_RISK_VARIANTS = make_risk_variants(STAGE2_BASE_NUM_FEATURES)
+
+
+def most_common_baselines(train_df):
+    """Reference category per CAT_FEATURES column = its most common value in training."""
+    return [train_df[c].mode().iloc[0] for c in CAT_FEATURES]
 
 
 def risk_population(df):
@@ -229,7 +280,11 @@ def shap_values_positive_class(model, X_background, X_explain):
 
     X_background, X_explain = to_dense(X_background), to_dense(X_explain)
     if isinstance(model, LogisticRegression):
-        values = shap.LinearExplainer(model, X_background).shap_values(X_explain)
+        try:
+            masker = shap.maskers.Independent(X_background, max_samples=len(X_background))
+        except AttributeError:
+            masker = X_background
+        values = shap.LinearExplainer(model, masker).shap_values(X_explain)
     else:
         values = shap.TreeExplainer(model).shap_values(X_explain)
     if isinstance(values, list):          # older SHAP: one array per class

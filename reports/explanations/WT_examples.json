@@ -1,0 +1,203 @@
+[
+  {
+    "key": "WT-7832",
+    "probability": 0.8964,
+    "team_sp_at_commitment": null,
+    "model_sp": 3.23,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "issue type = New Feature",
+        "shap": 0.9373,
+        "value": null
+      },
+      {
+        "feature": "assignee changes before commitment",
+        "shap": 0.7469,
+        "value": 4.0
+      },
+      {
+        "feature": "team's estimate at commitment",
+        "shap": 0.651,
+        "value": "not estimated"
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap": 0.1901,
+        "value": 2.0
+      },
+      {
+        "feature": "number of labels",
+        "shap": -0.1166,
+        "value": 0.0
+      },
+      {
+        "feature": "issue type is not Task",
+        "shap": -0.0952,
+        "value": null
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "description length (characters)",
+        "shap_log_sp": -0.0989
+      },
+      {
+        "feature": "issue type = New Feature",
+        "shap_log_sp": 0.0661
+      },
+      {
+        "feature": "word 'open'",
+        "shap_log_sp": 0.0219
+      },
+      {
+        "feature": "word 'prepared'",
+        "shap_log_sp": -0.0202
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap_log_sp": -0.0164
+      },
+      {
+        "feature": "word 'add'",
+        "shap_log_sp": 0.0117
+      }
+    ],
+    "example": "highest predicted risk",
+    "actual_outcome": 0
+  },
+  {
+    "key": "WT-8390",
+    "probability": 0.0734,
+    "team_sp_at_commitment": 2.0,
+    "model_sp": 2.36,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "priority = Trivial - P5",
+        "shap": -1.5361,
+        "value": null
+      },
+      {
+        "feature": "team's estimate at commitment",
+        "shap": -0.7862,
+        "value": 2.0
+      },
+      {
+        "feature": "issue type = Technical Debt",
+        "shap": 0.2927,
+        "value": null
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": -0.2668,
+        "value": 2.4
+      },
+      {
+        "feature": "number of labels",
+        "shap": -0.1166,
+        "value": 0.0
+      },
+      {
+        "feature": "issue type is not Task",
+        "shap": -0.0952,
+        "value": null
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "priority = Trivial - P5",
+        "shap_log_sp": -0.1105
+      },
+      {
+        "feature": "description length (characters)",
+        "shap_log_sp": -0.0953
+      },
+      {
+        "feature": "word 'null'",
+        "shap_log_sp": -0.0583
+      },
+      {
+        "feature": "word 'value'",
+        "shap_log_sp": -0.0213
+      },
+      {
+        "feature": "summary length (characters)",
+        "shap_log_sp": 0.0181
+      },
+      {
+        "feature": "word 'format'",
+        "shap_log_sp": 0.0135
+      }
+    ],
+    "example": "lowest predicted risk",
+    "actual_outcome": 0
+  },
+  {
+    "key": "WT-7964",
+    "probability": 0.2174,
+    "team_sp_at_commitment": 1.0,
+    "model_sp": 4.49,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "team's estimate at commitment",
+        "shap": -1.3376,
+        "value": 1.0
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap": -0.2829,
+        "value": 121.0
+      },
+      {
+        "feature": "number of labels",
+        "shap": 0.2478,
+        "value": 1.0
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": 0.1599,
+        "value": 4.5
+      },
+      {
+        "feature": "issue type is not Task",
+        "shap": -0.0952,
+        "value": null
+      },
+      {
+        "feature": "issue type is not Improvement",
+        "shap": -0.0666,
+        "value": null
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "word 'snapshot'",
+        "shap_log_sp": 0.1181
+      },
+      {
+        "feature": "summary length (characters)",
+        "shap_log_sp": 0.0669
+      },
+      {
+        "feature": "description length (characters)",
+        "shap_log_sp": 0.0482
+      },
+      {
+        "feature": "word 'code'",
+        "shap_log_sp": -0.0464
+      },
+      {
+        "feature": "word 'checkpoint'",
+        "shap_log_sp": 0.0445
+      },
+      {
+        "feature": "word 'rollback stable'",
+        "shap_log_sp": -0.025
+      }
+    ],
+    "example": "model thinks most under-estimated by the team",
+    "actual_outcome": 0
+  }
+]

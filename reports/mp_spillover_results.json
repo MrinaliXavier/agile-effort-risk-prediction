@@ -1,0 +1,5148 @@
+{
+  "label": "spillover",
+  "per_project": [
+    {
+      "project": "EVG",
+      "n_tickets": 5891,
+      "reference_categories": [
+        "Task",
+        "Major - P3"
+      ],
+      "n_test": 883,
+      "test_delay_rate": 0.433,
+      "effort_model": "Ridge (Tabular + TF-IDF)",
+      "effort_val_mae": {
+        "Ridge (Tabular Only)": 0.9265,
+        "Ridge (Tabular + TF-IDF)": 0.8834,
+        "LightGBM (Tabular Only)": 0.908,
+        "LightGBM (Tabular + TF-IDF)": 0.906
+      },
+      "risk_family": "Logistic Regression",
+      "risk_val_auc": {
+        "Logistic Regression (No Effort)": 0.5971,
+        "Logistic Regression (+ Pred Effort)": 0.6181,
+        "Logistic Regression (+ Team SP)": 0.6655,
+        "Logistic Regression (+ Estimation Gap)": 0.6566,
+        "Logistic Regression (+ Team SP + Model SP)": 0.6711,
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": 0.6238,
+        "Random Forest (No Effort)": 0.5577,
+        "Random Forest (+ Pred Effort)": 0.5714,
+        "Random Forest (+ Team SP)": 0.6204,
+        "Random Forest (+ Estimation Gap)": 0.5989,
+        "Random Forest (+ Team SP + Model SP)": 0.6156,
+        "Random Forest (+ Final SP + Model SP (leakage check))": 0.6266,
+        "LightGBM (No Effort)": 0.5425,
+        "LightGBM (+ Pred Effort)": 0.5504,
+        "LightGBM (+ Team SP)": 0.58,
+        "LightGBM (+ Estimation Gap)": 0.5914,
+        "LightGBM (+ Team SP + Model SP)": 0.592,
+        "LightGBM (+ Final SP + Model SP (leakage check))": 0.6222
+      },
+      "effort_test": {
+        "MAE": 0.9386,
+        "RMSE": 1.436,
+        "MdAE": 0.5465,
+        "R2": -0.0675,
+        "PRED(25)%": 37.26,
+        "MdMRE%": 35.98
+      },
+      "effort_test_dummy": {
+        "MAE": 0.8743,
+        "RMSE": 1.3957,
+        "MdAE": 1.0,
+        "R2": -0.0083,
+        "PRED(25)%": 44.05,
+        "MdMRE%": 50.0
+      },
+      "team_sp_known_test_pct": 84.8,
+      "risk_test": {
+        "Logistic Regression (No Effort)": {
+          "ROC-AUC": 0.6323,
+          "PR-AUC": 0.55,
+          "Accuracy": 0.5991,
+          "AtRisk-Precision": 0.5317,
+          "AtRisk-Recall": 0.6152,
+          "AtRisk-F1": 0.5704,
+          "Macro-F1": 0.5973,
+          "Brier": 0.2442
+        },
+        "Logistic Regression (+ Pred Effort)": {
+          "ROC-AUC": 0.6287,
+          "PR-AUC": 0.5438,
+          "Accuracy": 0.5946,
+          "AtRisk-Precision": 0.5252,
+          "AtRisk-Recall": 0.6545,
+          "AtRisk-F1": 0.5828,
+          "Macro-F1": 0.5942,
+          "Brier": 0.2451
+        },
+        "Logistic Regression (+ Team SP)": {
+          "ROC-AUC": 0.7035,
+          "PR-AUC": 0.6366,
+          "Accuracy": 0.6455,
+          "AtRisk-Precision": 0.5703,
+          "AtRisk-Recall": 0.733,
+          "AtRisk-F1": 0.6415,
+          "Macro-F1": 0.6455,
+          "Brier": 0.2264
+        },
+        "Logistic Regression (+ Estimation Gap)": {
+          "ROC-AUC": 0.6984,
+          "PR-AUC": 0.6267,
+          "Accuracy": 0.6421,
+          "AtRisk-Precision": 0.5682,
+          "AtRisk-Recall": 0.7199,
+          "AtRisk-F1": 0.6351,
+          "Macro-F1": 0.642,
+          "Brier": 0.2275
+        },
+        "Logistic Regression (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.7008,
+          "PR-AUC": 0.6305,
+          "Accuracy": 0.6353,
+          "AtRisk-Precision": 0.5595,
+          "AtRisk-Recall": 0.7382,
+          "AtRisk-F1": 0.6366,
+          "Macro-F1": 0.6353,
+          "Brier": 0.2274
+        },
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.6586,
+          "PR-AUC": 0.5782,
+          "Accuracy": 0.6161,
+          "AtRisk-Precision": 0.5441,
+          "AtRisk-Recall": 0.6937,
+          "AtRisk-F1": 0.6099,
+          "Macro-F1": 0.616,
+          "Brier": 0.239
+        },
+        "Random Forest (No Effort)": {
+          "ROC-AUC": 0.5954,
+          "PR-AUC": 0.5052,
+          "Accuracy": 0.5764,
+          "AtRisk-Precision": 0.5128,
+          "AtRisk-Recall": 0.4188,
+          "AtRisk-F1": 0.4611,
+          "Macro-F1": 0.5561,
+          "Brier": 0.2431
+        },
+        "Random Forest (+ Pred Effort)": {
+          "ROC-AUC": 0.5733,
+          "PR-AUC": 0.4825,
+          "Accuracy": 0.5629,
+          "AtRisk-Precision": 0.4935,
+          "AtRisk-Recall": 0.4005,
+          "AtRisk-F1": 0.4422,
+          "Macro-F1": 0.5414,
+          "Brier": 0.2474
+        },
+        "Random Forest (+ Team SP)": {
+          "ROC-AUC": 0.6621,
+          "PR-AUC": 0.5694,
+          "Accuracy": 0.6353,
+          "AtRisk-Precision": 0.592,
+          "AtRisk-Recall": 0.5052,
+          "AtRisk-F1": 0.5452,
+          "Macro-F1": 0.6204,
+          "Brier": 0.2279
+        },
+        "Random Forest (+ Estimation Gap)": {
+          "ROC-AUC": 0.6802,
+          "PR-AUC": 0.5946,
+          "Accuracy": 0.6478,
+          "AtRisk-Precision": 0.6047,
+          "AtRisk-Recall": 0.5366,
+          "AtRisk-F1": 0.5687,
+          "Macro-F1": 0.6355,
+          "Brier": 0.2226
+        },
+        "Random Forest (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.6654,
+          "PR-AUC": 0.5735,
+          "Accuracy": 0.6376,
+          "AtRisk-Precision": 0.5928,
+          "AtRisk-Recall": 0.5183,
+          "AtRisk-F1": 0.5531,
+          "Macro-F1": 0.6242,
+          "Brier": 0.2273
+        },
+        "Random Forest (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.6719,
+          "PR-AUC": 0.5737,
+          "Accuracy": 0.6319,
+          "AtRisk-Precision": 0.5781,
+          "AtRisk-Recall": 0.5524,
+          "AtRisk-F1": 0.5649,
+          "Macro-F1": 0.623,
+          "Brier": 0.2262
+        },
+        "LightGBM (No Effort)": {
+          "ROC-AUC": 0.5967,
+          "PR-AUC": 0.5076,
+          "Accuracy": 0.5719,
+          "AtRisk-Precision": 0.5047,
+          "AtRisk-Recall": 0.5681,
+          "AtRisk-F1": 0.5345,
+          "Macro-F1": 0.5691,
+          "Brier": 0.2522
+        },
+        "LightGBM (+ Pred Effort)": {
+          "ROC-AUC": 0.5857,
+          "PR-AUC": 0.4994,
+          "Accuracy": 0.5674,
+          "AtRisk-Precision": 0.5,
+          "AtRisk-Recall": 0.5654,
+          "AtRisk-F1": 0.5307,
+          "Macro-F1": 0.5647,
+          "Brier": 0.256
+        },
+        "LightGBM (+ Team SP)": {
+          "ROC-AUC": 0.6616,
+          "PR-AUC": 0.5604,
+          "Accuracy": 0.6059,
+          "AtRisk-Precision": 0.5371,
+          "AtRisk-Recall": 0.644,
+          "AtRisk-F1": 0.5857,
+          "Macro-F1": 0.605,
+          "Brier": 0.2367
+        },
+        "LightGBM (+ Estimation Gap)": {
+          "ROC-AUC": 0.6581,
+          "PR-AUC": 0.5635,
+          "Accuracy": 0.6149,
+          "AtRisk-Precision": 0.5465,
+          "AtRisk-Recall": 0.6466,
+          "AtRisk-F1": 0.5923,
+          "Macro-F1": 0.6138,
+          "Brier": 0.2369
+        },
+        "LightGBM (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.6605,
+          "PR-AUC": 0.5745,
+          "Accuracy": 0.6059,
+          "AtRisk-Precision": 0.5363,
+          "AtRisk-Recall": 0.6571,
+          "AtRisk-F1": 0.5906,
+          "Macro-F1": 0.6053,
+          "Brier": 0.2366
+        },
+        "LightGBM (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.6728,
+          "PR-AUC": 0.5924,
+          "Accuracy": 0.6183,
+          "AtRisk-Precision": 0.5484,
+          "AtRisk-Recall": 0.6675,
+          "AtRisk-F1": 0.6021,
+          "Macro-F1": 0.6177,
+          "Brier": 0.2338
+        }
+      },
+      "comparisons": {
+        "Logistic Regression|H1 team estimate": {
+          "delta": 0.0712,
+          "ci_low": 0.0476,
+          "ci_high": 0.0974,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|H2 model estimate beyond team": {
+          "delta": -0.0026,
+          "ci_low": -0.0084,
+          "ci_high": 0.0027,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Estimation gap alone": {
+          "delta": 0.0661,
+          "ci_low": 0.043,
+          "ci_high": 0.0908,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|Original design (pred effort)": {
+          "delta": -0.0036,
+          "ci_low": -0.0183,
+          "ci_high": 0.01,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Both estimates vs none": {
+          "delta": 0.0685,
+          "ci_low": 0.0447,
+          "ci_high": 0.0945,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.0422,
+          "ci_low": -0.0616,
+          "ci_high": -0.0248,
+          "sig_pos": false,
+          "sig_neg": true
+        },
+        "Random Forest|H1 team estimate": {
+          "delta": 0.0666,
+          "ci_low": 0.0339,
+          "ci_high": 0.1018,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Random Forest|H2 model estimate beyond team": {
+          "delta": 0.0033,
+          "ci_low": -0.0185,
+          "ci_high": 0.0266,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Estimation gap alone": {
+          "delta": 0.0847,
+          "ci_low": 0.0529,
+          "ci_high": 0.1177,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Random Forest|Original design (pred effort)": {
+          "delta": -0.0221,
+          "ci_low": -0.0507,
+          "ci_high": 0.0093,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Both estimates vs none": {
+          "delta": 0.07,
+          "ci_low": 0.0365,
+          "ci_high": 0.1077,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Random Forest|Leakage: final SP vs prediction-time SP": {
+          "delta": 0.0065,
+          "ci_low": -0.0164,
+          "ci_high": 0.0294,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|H1 team estimate": {
+          "delta": 0.0649,
+          "ci_low": 0.0341,
+          "ci_high": 0.0986,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "LightGBM|H2 model estimate beyond team": {
+          "delta": -0.0011,
+          "ci_low": -0.0195,
+          "ci_high": 0.0195,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Estimation gap alone": {
+          "delta": 0.0614,
+          "ci_low": 0.0294,
+          "ci_high": 0.0963,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "LightGBM|Original design (pred effort)": {
+          "delta": -0.011,
+          "ci_low": -0.0389,
+          "ci_high": 0.017,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Both estimates vs none": {
+          "delta": 0.0638,
+          "ci_low": 0.0338,
+          "ci_high": 0.097,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "LightGBM|Leakage: final SP vs prediction-time SP": {
+          "delta": 0.0123,
+          "ci_low": -0.0115,
+          "ci_high": 0.035,
+          "sig_pos": false,
+          "sig_neg": false
+        }
+      },
+      "h3_n_unestimated": 134,
+      "h3": {
+        "Logistic Regression": {
+          "delta": 0.0086,
+          "ci_low": -0.0173,
+          "ci_high": 0.0317,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest": {
+          "delta": 0.0175,
+          "ci_low": -0.0439,
+          "ci_high": 0.0818,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM": {
+          "delta": -0.0209,
+          "ci_low": -0.0804,
+          "ci_high": 0.0382,
+          "sig_pos": false,
+          "sig_neg": false
+        }
+      },
+      "logistic_coefs": {
+        "gap_variant": {
+          "estimation_gap": 0.4466
+        },
+        "both_variant": {
+          "log_sp_team": 0.6292,
+          "log_sp_model": 0.1256
+        },
+        "team_variant": {
+          "log_sp_team": 0.662
+        }
+      }
+    },
+    {
+      "project": "XD",
+      "n_tickets": 2140,
+      "reference_categories": [
+        "Story",
+        "Minor"
+      ],
+      "n_test": 320,
+      "test_delay_rate": 0.403,
+      "effort_model": "Ridge (Tabular + TF-IDF)",
+      "effort_val_mae": {
+        "Ridge (Tabular Only)": 1.7918,
+        "Ridge (Tabular + TF-IDF)": 1.7436,
+        "LightGBM (Tabular Only)": 1.9231,
+        "LightGBM (Tabular + TF-IDF)": 1.8271
+      },
+      "risk_family": "Logistic Regression",
+      "risk_val_auc": {
+        "Logistic Regression (No Effort)": 0.5763,
+        "Logistic Regression (+ Pred Effort)": 0.6297,
+        "Logistic Regression (+ Team SP)": 0.6135,
+        "Logistic Regression (+ Estimation Gap)": 0.5961,
+        "Logistic Regression (+ Team SP + Model SP)": 0.6457,
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": 0.6563,
+        "Random Forest (No Effort)": 0.5742,
+        "Random Forest (+ Pred Effort)": 0.5882,
+        "Random Forest (+ Team SP)": 0.6105,
+        "Random Forest (+ Estimation Gap)": 0.5845,
+        "Random Forest (+ Team SP + Model SP)": 0.6148,
+        "Random Forest (+ Final SP + Model SP (leakage check))": 0.6229,
+        "LightGBM (No Effort)": 0.5778,
+        "LightGBM (+ Pred Effort)": 0.6057,
+        "LightGBM (+ Team SP)": 0.5972,
+        "LightGBM (+ Estimation Gap)": 0.5971,
+        "LightGBM (+ Team SP + Model SP)": 0.6129,
+        "LightGBM (+ Final SP + Model SP (leakage check))": 0.6351
+      },
+      "effort_test": {
+        "MAE": 1.5535,
+        "RMSE": 2.0116,
+        "MdAE": 1.2032,
+        "R2": 0.1959,
+        "PRED(25)%": 31.25,
+        "MdMRE%": 41.23
+      },
+      "effort_test_dummy": {
+        "MAE": 1.7,
+        "RMSE": 2.2625,
+        "MdAE": 2.0,
+        "R2": -0.0171,
+        "PRED(25)%": 25.94,
+        "MdMRE%": 50.0
+      },
+      "team_sp_known_test_pct": 100.0,
+      "risk_test": {
+        "Logistic Regression (No Effort)": {
+          "ROC-AUC": 0.5696,
+          "PR-AUC": 0.473,
+          "Accuracy": 0.5062,
+          "AtRisk-Precision": 0.435,
+          "AtRisk-Recall": 0.7519,
+          "AtRisk-F1": 0.5511,
+          "Macro-F1": 0.5013,
+          "Brier": 0.2424
+        },
+        "Logistic Regression (+ Pred Effort)": {
+          "ROC-AUC": 0.5981,
+          "PR-AUC": 0.5264,
+          "Accuracy": 0.5344,
+          "AtRisk-Precision": 0.4462,
+          "AtRisk-Recall": 0.6434,
+          "AtRisk-F1": 0.527,
+          "Macro-F1": 0.5343,
+          "Brier": 0.2479
+        },
+        "Logistic Regression (+ Team SP)": {
+          "ROC-AUC": 0.598,
+          "PR-AUC": 0.511,
+          "Accuracy": 0.5219,
+          "AtRisk-Precision": 0.431,
+          "AtRisk-Recall": 0.5814,
+          "AtRisk-F1": 0.495,
+          "Macro-F1": 0.5205,
+          "Brier": 0.2404
+        },
+        "Logistic Regression (+ Estimation Gap)": {
+          "ROC-AUC": 0.5787,
+          "PR-AUC": 0.4877,
+          "Accuracy": 0.5375,
+          "AtRisk-Precision": 0.4444,
+          "AtRisk-Recall": 0.5891,
+          "AtRisk-F1": 0.5067,
+          "Macro-F1": 0.5357,
+          "Brier": 0.2408
+        },
+        "Logistic Regression (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.61,
+          "PR-AUC": 0.5443,
+          "Accuracy": 0.5312,
+          "AtRisk-Precision": 0.4439,
+          "AtRisk-Recall": 0.6434,
+          "AtRisk-F1": 0.5253,
+          "Macro-F1": 0.5312,
+          "Brier": 0.2466
+        },
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.6049,
+          "PR-AUC": 0.5305,
+          "Accuracy": 0.5437,
+          "AtRisk-Precision": 0.4497,
+          "AtRisk-Recall": 0.5891,
+          "AtRisk-F1": 0.5101,
+          "Macro-F1": 0.5416,
+          "Brier": 0.2483
+        },
+        "Random Forest (No Effort)": {
+          "ROC-AUC": 0.5665,
+          "PR-AUC": 0.4336,
+          "Accuracy": 0.5719,
+          "AtRisk-Precision": 0.4535,
+          "AtRisk-Recall": 0.3023,
+          "AtRisk-F1": 0.3628,
+          "Macro-F1": 0.5202,
+          "Brier": 0.2487
+        },
+        "Random Forest (+ Pred Effort)": {
+          "ROC-AUC": 0.5504,
+          "PR-AUC": 0.4417,
+          "Accuracy": 0.5531,
+          "AtRisk-Precision": 0.4186,
+          "AtRisk-Recall": 0.2791,
+          "AtRisk-F1": 0.3349,
+          "Macro-F1": 0.4992,
+          "Brier": 0.2547
+        },
+        "Random Forest (+ Team SP)": {
+          "ROC-AUC": 0.5846,
+          "PR-AUC": 0.4772,
+          "Accuracy": 0.5875,
+          "AtRisk-Precision": 0.4769,
+          "AtRisk-Recall": 0.2403,
+          "AtRisk-F1": 0.3196,
+          "Macro-F1": 0.5118,
+          "Brier": 0.2429
+        },
+        "Random Forest (+ Estimation Gap)": {
+          "ROC-AUC": 0.5572,
+          "PR-AUC": 0.4357,
+          "Accuracy": 0.5781,
+          "AtRisk-Precision": 0.45,
+          "AtRisk-Recall": 0.2093,
+          "AtRisk-F1": 0.2857,
+          "Macro-F1": 0.4932,
+          "Brier": 0.2509
+        },
+        "Random Forest (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.5811,
+          "PR-AUC": 0.4879,
+          "Accuracy": 0.5906,
+          "AtRisk-Precision": 0.4815,
+          "AtRisk-Recall": 0.2016,
+          "AtRisk-F1": 0.2842,
+          "Macro-F1": 0.4988,
+          "Brier": 0.2424
+        },
+        "Random Forest (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.5738,
+          "PR-AUC": 0.4706,
+          "Accuracy": 0.5844,
+          "AtRisk-Precision": 0.475,
+          "AtRisk-Recall": 0.2946,
+          "AtRisk-F1": 0.3636,
+          "Macro-F1": 0.5275,
+          "Brier": 0.2474
+        },
+        "LightGBM (No Effort)": {
+          "ROC-AUC": 0.5735,
+          "PR-AUC": 0.4489,
+          "Accuracy": 0.5625,
+          "AtRisk-Precision": 0.4545,
+          "AtRisk-Recall": 0.4264,
+          "AtRisk-F1": 0.44,
+          "Macro-F1": 0.5405,
+          "Brier": 0.282
+        },
+        "LightGBM (+ Pred Effort)": {
+          "ROC-AUC": 0.5743,
+          "PR-AUC": 0.4786,
+          "Accuracy": 0.5813,
+          "AtRisk-Precision": 0.4779,
+          "AtRisk-Recall": 0.4186,
+          "AtRisk-F1": 0.4463,
+          "Macro-F1": 0.5548,
+          "Brier": 0.2788
+        },
+        "LightGBM (+ Team SP)": {
+          "ROC-AUC": 0.5804,
+          "PR-AUC": 0.4903,
+          "Accuracy": 0.5625,
+          "AtRisk-Precision": 0.4522,
+          "AtRisk-Recall": 0.4031,
+          "AtRisk-F1": 0.4262,
+          "Macro-F1": 0.5363,
+          "Brier": 0.2762
+        },
+        "LightGBM (+ Estimation Gap)": {
+          "ROC-AUC": 0.5869,
+          "PR-AUC": 0.4686,
+          "Accuracy": 0.5906,
+          "AtRisk-Precision": 0.4919,
+          "AtRisk-Recall": 0.4729,
+          "AtRisk-F1": 0.4822,
+          "Macro-F1": 0.5719,
+          "Brier": 0.2748
+        },
+        "LightGBM (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.5642,
+          "PR-AUC": 0.4716,
+          "Accuracy": 0.575,
+          "AtRisk-Precision": 0.466,
+          "AtRisk-Recall": 0.3721,
+          "AtRisk-F1": 0.4138,
+          "Macro-F1": 0.5402,
+          "Brier": 0.287
+        },
+        "LightGBM (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.5674,
+          "PR-AUC": 0.4878,
+          "Accuracy": 0.5687,
+          "AtRisk-Precision": 0.4579,
+          "AtRisk-Recall": 0.3798,
+          "AtRisk-F1": 0.4153,
+          "Macro-F1": 0.5368,
+          "Brier": 0.2848
+        }
+      },
+      "comparisons": {
+        "Logistic Regression|H1 team estimate": {
+          "delta": 0.0284,
+          "ci_low": -0.0182,
+          "ci_high": 0.0793,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|H2 model estimate beyond team": {
+          "delta": 0.012,
+          "ci_low": -0.0261,
+          "ci_high": 0.0495,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Estimation gap alone": {
+          "delta": 0.0091,
+          "ci_low": -0.032,
+          "ci_high": 0.0515,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Original design (pred effort)": {
+          "delta": 0.0285,
+          "ci_low": -0.0275,
+          "ci_high": 0.0843,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Both estimates vs none": {
+          "delta": 0.0404,
+          "ci_low": -0.0151,
+          "ci_high": 0.0983,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.005,
+          "ci_low": -0.0235,
+          "ci_high": 0.0109,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|H1 team estimate": {
+          "delta": 0.018,
+          "ci_low": -0.0227,
+          "ci_high": 0.0577,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|H2 model estimate beyond team": {
+          "delta": -0.0035,
+          "ci_low": -0.0424,
+          "ci_high": 0.038,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Estimation gap alone": {
+          "delta": -0.0093,
+          "ci_low": -0.045,
+          "ci_high": 0.0241,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Original design (pred effort)": {
+          "delta": -0.0162,
+          "ci_low": -0.0577,
+          "ci_high": 0.0207,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Both estimates vs none": {
+          "delta": 0.0146,
+          "ci_low": -0.0313,
+          "ci_high": 0.0628,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.0073,
+          "ci_low": -0.0392,
+          "ci_high": 0.0251,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|H1 team estimate": {
+          "delta": 0.0069,
+          "ci_low": -0.0253,
+          "ci_high": 0.041,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|H2 model estimate beyond team": {
+          "delta": -0.0162,
+          "ci_low": -0.0522,
+          "ci_high": 0.019,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Estimation gap alone": {
+          "delta": 0.0133,
+          "ci_low": -0.0217,
+          "ci_high": 0.0473,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Original design (pred effort)": {
+          "delta": 0.0008,
+          "ci_low": -0.0378,
+          "ci_high": 0.0371,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Both estimates vs none": {
+          "delta": -0.0093,
+          "ci_low": -0.0495,
+          "ci_high": 0.0334,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Leakage: final SP vs prediction-time SP": {
+          "delta": 0.0032,
+          "ci_low": -0.0265,
+          "ci_high": 0.032,
+          "sig_pos": false,
+          "sig_neg": false
+        }
+      },
+      "h3_n_unestimated": 0,
+      "h3": {},
+      "logistic_coefs": {
+        "gap_variant": {
+          "estimation_gap": 0.1795
+        },
+        "both_variant": {
+          "log_sp_team": 0.1954,
+          "log_sp_model": 0.4661
+        },
+        "team_variant": {
+          "log_sp_team": 0.2988
+        }
+      }
+    },
+    {
+      "project": "MESOS",
+      "n_tickets": 2417,
+      "reference_categories": [
+        "Bug",
+        "Major"
+      ],
+      "n_test": 362,
+      "test_delay_rate": 0.555,
+      "effort_model": "Ridge (Tabular + TF-IDF)",
+      "effort_val_mae": {
+        "Ridge (Tabular Only)": 1.3624,
+        "Ridge (Tabular + TF-IDF)": 1.3265,
+        "LightGBM (Tabular Only)": 1.3834,
+        "LightGBM (Tabular + TF-IDF)": 1.3428
+      },
+      "risk_family": "Random Forest",
+      "risk_val_auc": {
+        "Logistic Regression (No Effort)": 0.5536,
+        "Logistic Regression (+ Pred Effort)": 0.5557,
+        "Logistic Regression (+ Team SP)": 0.5651,
+        "Logistic Regression (+ Estimation Gap)": 0.5619,
+        "Logistic Regression (+ Team SP + Model SP)": 0.5628,
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": 0.5914,
+        "Random Forest (No Effort)": 0.5841,
+        "Random Forest (+ Pred Effort)": 0.6068,
+        "Random Forest (+ Team SP)": 0.6172,
+        "Random Forest (+ Estimation Gap)": 0.5795,
+        "Random Forest (+ Team SP + Model SP)": 0.6285,
+        "Random Forest (+ Final SP + Model SP (leakage check))": 0.6346,
+        "LightGBM (No Effort)": 0.6027,
+        "LightGBM (+ Pred Effort)": 0.613,
+        "LightGBM (+ Team SP)": 0.6263,
+        "LightGBM (+ Estimation Gap)": 0.6169,
+        "LightGBM (+ Team SP + Model SP)": 0.6018,
+        "LightGBM (+ Final SP + Model SP (leakage check))": 0.6169
+      },
+      "effort_test": {
+        "MAE": 1.3724,
+        "RMSE": 1.8914,
+        "MdAE": 1.0635,
+        "R2": 0.0667,
+        "PRED(25)%": 36.74,
+        "MdMRE%": 34.62
+      },
+      "effort_test_dummy": {
+        "MAE": 1.3923,
+        "RMSE": 1.9875,
+        "MdAE": 1.0,
+        "R2": -0.0306,
+        "PRED(25)%": 32.32,
+        "MdMRE%": 40.0
+      },
+      "team_sp_known_test_pct": 94.5,
+      "risk_test": {
+        "Logistic Regression (No Effort)": {
+          "ROC-AUC": 0.5774,
+          "PR-AUC": 0.6091,
+          "Accuracy": 0.5359,
+          "AtRisk-Precision": 0.5988,
+          "AtRisk-Recall": 0.4975,
+          "AtRisk-F1": 0.5435,
+          "Macro-F1": 0.5358,
+          "Brier": 0.2573
+        },
+        "Logistic Regression (+ Pred Effort)": {
+          "ROC-AUC": 0.5767,
+          "PR-AUC": 0.615,
+          "Accuracy": 0.5359,
+          "AtRisk-Precision": 0.5988,
+          "AtRisk-Recall": 0.4975,
+          "AtRisk-F1": 0.5435,
+          "Macro-F1": 0.5358,
+          "Brier": 0.2584
+        },
+        "Logistic Regression (+ Team SP)": {
+          "ROC-AUC": 0.613,
+          "PR-AUC": 0.6309,
+          "Accuracy": 0.5773,
+          "AtRisk-Precision": 0.6319,
+          "AtRisk-Recall": 0.5721,
+          "AtRisk-F1": 0.6005,
+          "Macro-F1": 0.5759,
+          "Brier": 0.251
+        },
+        "Logistic Regression (+ Estimation Gap)": {
+          "ROC-AUC": 0.6074,
+          "PR-AUC": 0.624,
+          "Accuracy": 0.5773,
+          "AtRisk-Precision": 0.6333,
+          "AtRisk-Recall": 0.5672,
+          "AtRisk-F1": 0.5984,
+          "Macro-F1": 0.5762,
+          "Brier": 0.2519
+        },
+        "Logistic Regression (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.6101,
+          "PR-AUC": 0.6302,
+          "Accuracy": 0.5746,
+          "AtRisk-Precision": 0.6328,
+          "AtRisk-Recall": 0.5572,
+          "AtRisk-F1": 0.5926,
+          "Macro-F1": 0.5738,
+          "Brier": 0.2518
+        },
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.6321,
+          "PR-AUC": 0.6439,
+          "Accuracy": 0.5967,
+          "AtRisk-Precision": 0.6687,
+          "AtRisk-Recall": 0.5423,
+          "AtRisk-F1": 0.5989,
+          "Macro-F1": 0.5967,
+          "Brier": 0.2487
+        },
+        "Random Forest (No Effort)": {
+          "ROC-AUC": 0.5325,
+          "PR-AUC": 0.5623,
+          "Accuracy": 0.5718,
+          "AtRisk-Precision": 0.5927,
+          "AtRisk-Recall": 0.7313,
+          "AtRisk-F1": 0.6548,
+          "Macro-F1": 0.5456,
+          "Brier": 0.2622
+        },
+        "Random Forest (+ Pred Effort)": {
+          "ROC-AUC": 0.5352,
+          "PR-AUC": 0.5731,
+          "Accuracy": 0.5387,
+          "AtRisk-Precision": 0.5733,
+          "AtRisk-Recall": 0.6617,
+          "AtRisk-F1": 0.6143,
+          "Macro-F1": 0.5202,
+          "Brier": 0.2633
+        },
+        "Random Forest (+ Team SP)": {
+          "ROC-AUC": 0.5523,
+          "PR-AUC": 0.5829,
+          "Accuracy": 0.558,
+          "AtRisk-Precision": 0.5858,
+          "AtRisk-Recall": 0.6965,
+          "AtRisk-F1": 0.6364,
+          "Macro-F1": 0.5365,
+          "Brier": 0.2605
+        },
+        "Random Forest (+ Estimation Gap)": {
+          "ROC-AUC": 0.5538,
+          "PR-AUC": 0.5952,
+          "Accuracy": 0.5746,
+          "AtRisk-Precision": 0.6017,
+          "AtRisk-Recall": 0.6915,
+          "AtRisk-F1": 0.6435,
+          "Macro-F1": 0.5581,
+          "Brier": 0.2557
+        },
+        "Random Forest (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.5383,
+          "PR-AUC": 0.5735,
+          "Accuracy": 0.547,
+          "AtRisk-Precision": 0.5761,
+          "AtRisk-Recall": 0.6965,
+          "AtRisk-F1": 0.6306,
+          "Macro-F1": 0.5225,
+          "Brier": 0.2637
+        },
+        "Random Forest (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.5608,
+          "PR-AUC": 0.6035,
+          "Accuracy": 0.5856,
+          "AtRisk-Precision": 0.6058,
+          "AtRisk-Recall": 0.7264,
+          "AtRisk-F1": 0.6606,
+          "Macro-F1": 0.5644,
+          "Brier": 0.2578
+        },
+        "LightGBM (No Effort)": {
+          "ROC-AUC": 0.5653,
+          "PR-AUC": 0.6072,
+          "Accuracy": 0.5635,
+          "AtRisk-Precision": 0.5923,
+          "AtRisk-Recall": 0.6866,
+          "AtRisk-F1": 0.6359,
+          "Macro-F1": 0.5456,
+          "Brier": 0.293
+        },
+        "LightGBM (+ Pred Effort)": {
+          "ROC-AUC": 0.5517,
+          "PR-AUC": 0.5691,
+          "Accuracy": 0.5552,
+          "AtRisk-Precision": 0.5935,
+          "AtRisk-Recall": 0.6318,
+          "AtRisk-F1": 0.612,
+          "Macro-F1": 0.5455,
+          "Brier": 0.298
+        },
+        "LightGBM (+ Team SP)": {
+          "ROC-AUC": 0.5633,
+          "PR-AUC": 0.5959,
+          "Accuracy": 0.547,
+          "AtRisk-Precision": 0.5808,
+          "AtRisk-Recall": 0.6617,
+          "AtRisk-F1": 0.6186,
+          "Macro-F1": 0.5304,
+          "Brier": 0.2916
+        },
+        "LightGBM (+ Estimation Gap)": {
+          "ROC-AUC": 0.5806,
+          "PR-AUC": 0.6279,
+          "Accuracy": 0.5635,
+          "AtRisk-Precision": 0.6029,
+          "AtRisk-Recall": 0.6269,
+          "AtRisk-F1": 0.6146,
+          "Macro-F1": 0.5557,
+          "Brier": 0.2909
+        },
+        "LightGBM (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.5627,
+          "PR-AUC": 0.5912,
+          "Accuracy": 0.5608,
+          "AtRisk-Precision": 0.5955,
+          "AtRisk-Recall": 0.6517,
+          "AtRisk-F1": 0.6223,
+          "Macro-F1": 0.5488,
+          "Brier": 0.2931
+        },
+        "LightGBM (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.6062,
+          "PR-AUC": 0.6242,
+          "Accuracy": 0.5829,
+          "AtRisk-Precision": 0.6225,
+          "AtRisk-Recall": 0.6318,
+          "AtRisk-F1": 0.6272,
+          "Macro-F1": 0.5769,
+          "Brier": 0.2763
+        }
+      },
+      "comparisons": {
+        "Logistic Regression|H1 team estimate": {
+          "delta": 0.0356,
+          "ci_low": 0.0077,
+          "ci_high": 0.0593,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|H2 model estimate beyond team": {
+          "delta": -0.0028,
+          "ci_low": -0.0122,
+          "ci_high": 0.0063,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Estimation gap alone": {
+          "delta": 0.03,
+          "ci_low": 0.0044,
+          "ci_high": 0.0514,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|Original design (pred effort)": {
+          "delta": -0.0008,
+          "ci_low": -0.0218,
+          "ci_high": 0.0186,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Both estimates vs none": {
+          "delta": 0.0327,
+          "ci_low": 0.0051,
+          "ci_high": 0.06,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|Leakage: final SP vs prediction-time SP": {
+          "delta": 0.0219,
+          "ci_low": 0.0046,
+          "ci_high": 0.0407,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Random Forest|H1 team estimate": {
+          "delta": 0.0198,
+          "ci_low": -0.016,
+          "ci_high": 0.0556,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|H2 model estimate beyond team": {
+          "delta": -0.014,
+          "ci_low": -0.0452,
+          "ci_high": 0.0198,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Estimation gap alone": {
+          "delta": 0.0213,
+          "ci_low": -0.0095,
+          "ci_high": 0.0544,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Original design (pred effort)": {
+          "delta": 0.0027,
+          "ci_low": -0.0295,
+          "ci_high": 0.035,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Both estimates vs none": {
+          "delta": 0.0057,
+          "ci_low": -0.031,
+          "ci_high": 0.0433,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Leakage: final SP vs prediction-time SP": {
+          "delta": 0.0225,
+          "ci_low": -0.0069,
+          "ci_high": 0.0514,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|H1 team estimate": {
+          "delta": -0.002,
+          "ci_low": -0.0367,
+          "ci_high": 0.0315,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|H2 model estimate beyond team": {
+          "delta": -0.0005,
+          "ci_low": -0.0347,
+          "ci_high": 0.0329,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Estimation gap alone": {
+          "delta": 0.0153,
+          "ci_low": -0.0233,
+          "ci_high": 0.0524,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Original design (pred effort)": {
+          "delta": -0.0136,
+          "ci_low": -0.05,
+          "ci_high": 0.0251,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Both estimates vs none": {
+          "delta": -0.0025,
+          "ci_low": -0.0449,
+          "ci_high": 0.0403,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Leakage: final SP vs prediction-time SP": {
+          "delta": 0.0434,
+          "ci_low": 0.0168,
+          "ci_high": 0.0743,
+          "sig_pos": true,
+          "sig_neg": false
+        }
+      },
+      "h3_n_unestimated": 20,
+      "h3": {},
+      "logistic_coefs": {
+        "gap_variant": {
+          "estimation_gap": 0.2801
+        },
+        "both_variant": {
+          "log_sp_team": 0.4826,
+          "log_sp_model": 0.2092
+        },
+        "team_variant": {
+          "log_sp_team": 0.5255
+        }
+      }
+    },
+    {
+      "project": "WT",
+      "n_tickets": 1963,
+      "reference_categories": [
+        "Bug",
+        "Major - P3"
+      ],
+      "n_test": 294,
+      "test_delay_rate": 0.371,
+      "effort_model": "LightGBM (Tabular + TF-IDF)",
+      "effort_val_mae": {
+        "Ridge (Tabular Only)": 1.8603,
+        "Ridge (Tabular + TF-IDF)": 1.7738,
+        "LightGBM (Tabular Only)": 1.8899,
+        "LightGBM (Tabular + TF-IDF)": 1.7617
+      },
+      "risk_family": "Logistic Regression",
+      "risk_val_auc": {
+        "Logistic Regression (No Effort)": 0.5707,
+        "Logistic Regression (+ Pred Effort)": 0.578,
+        "Logistic Regression (+ Team SP)": 0.6684,
+        "Logistic Regression (+ Estimation Gap)": 0.6714,
+        "Logistic Regression (+ Team SP + Model SP)": 0.6659,
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": 0.6707,
+        "Random Forest (No Effort)": 0.5327,
+        "Random Forest (+ Pred Effort)": 0.5016,
+        "Random Forest (+ Team SP)": 0.6178,
+        "Random Forest (+ Estimation Gap)": 0.6131,
+        "Random Forest (+ Team SP + Model SP)": 0.6128,
+        "Random Forest (+ Final SP + Model SP (leakage check))": 0.5859,
+        "LightGBM (No Effort)": 0.4685,
+        "LightGBM (+ Pred Effort)": 0.501,
+        "LightGBM (+ Team SP)": 0.5824,
+        "LightGBM (+ Estimation Gap)": 0.5656,
+        "LightGBM (+ Team SP + Model SP)": 0.603,
+        "LightGBM (+ Final SP + Model SP (leakage check))": 0.61
+      },
+      "effort_test": {
+        "MAE": 1.8374,
+        "RMSE": 2.3981,
+        "MdAE": 1.5093,
+        "R2": 0.1366,
+        "PRED(25)%": 31.29,
+        "MdMRE%": 39.82
+      },
+      "effort_test_dummy": {
+        "MAE": 1.9796,
+        "RMSE": 2.713,
+        "MdAE": 2.0,
+        "R2": -0.1051,
+        "PRED(25)%": 23.47,
+        "MdMRE%": 40.0
+      },
+      "team_sp_known_test_pct": 88.4,
+      "risk_test": {
+        "Logistic Regression (No Effort)": {
+          "ROC-AUC": 0.544,
+          "PR-AUC": 0.4532,
+          "Accuracy": 0.5544,
+          "AtRisk-Precision": 0.4,
+          "AtRisk-Recall": 0.4037,
+          "AtRisk-F1": 0.4018,
+          "Macro-F1": 0.5234,
+          "Brier": 0.2515
+        },
+        "Logistic Regression (+ Pred Effort)": {
+          "ROC-AUC": 0.5862,
+          "PR-AUC": 0.4896,
+          "Accuracy": 0.602,
+          "AtRisk-Precision": 0.46,
+          "AtRisk-Recall": 0.422,
+          "AtRisk-F1": 0.4402,
+          "Macro-F1": 0.5657,
+          "Brier": 0.2403
+        },
+        "Logistic Regression (+ Team SP)": {
+          "ROC-AUC": 0.7101,
+          "PR-AUC": 0.5289,
+          "Accuracy": 0.6735,
+          "AtRisk-Precision": 0.5565,
+          "AtRisk-Recall": 0.5872,
+          "AtRisk-F1": 0.5714,
+          "Macro-F1": 0.6538,
+          "Brier": 0.2143
+        },
+        "Logistic Regression (+ Estimation Gap)": {
+          "ROC-AUC": 0.6942,
+          "PR-AUC": 0.5214,
+          "Accuracy": 0.6531,
+          "AtRisk-Precision": 0.5294,
+          "AtRisk-Recall": 0.578,
+          "AtRisk-F1": 0.5526,
+          "Macro-F1": 0.6346,
+          "Brier": 0.2213
+        },
+        "Logistic Regression (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.7151,
+          "PR-AUC": 0.533,
+          "Accuracy": 0.6633,
+          "AtRisk-Precision": 0.5446,
+          "AtRisk-Recall": 0.5596,
+          "AtRisk-F1": 0.552,
+          "Macro-F1": 0.6411,
+          "Brier": 0.2118
+        },
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.67,
+          "PR-AUC": 0.5242,
+          "Accuracy": 0.6463,
+          "AtRisk-Precision": 0.5234,
+          "AtRisk-Recall": 0.5138,
+          "AtRisk-F1": 0.5185,
+          "Macro-F1": 0.6195,
+          "Brier": 0.2234
+        },
+        "Random Forest (No Effort)": {
+          "ROC-AUC": 0.5607,
+          "PR-AUC": 0.4399,
+          "Accuracy": 0.5476,
+          "AtRisk-Precision": 0.3929,
+          "AtRisk-Recall": 0.4037,
+          "AtRisk-F1": 0.3982,
+          "Macro-F1": 0.5179,
+          "Brier": 0.2476
+        },
+        "Random Forest (+ Pred Effort)": {
+          "ROC-AUC": 0.5871,
+          "PR-AUC": 0.461,
+          "Accuracy": 0.585,
+          "AtRisk-Precision": 0.4435,
+          "AtRisk-Recall": 0.4679,
+          "AtRisk-F1": 0.4554,
+          "Macro-F1": 0.5601,
+          "Brier": 0.2423
+        },
+        "Random Forest (+ Team SP)": {
+          "ROC-AUC": 0.6856,
+          "PR-AUC": 0.5323,
+          "Accuracy": 0.6565,
+          "AtRisk-Precision": 0.5351,
+          "AtRisk-Recall": 0.5596,
+          "AtRisk-F1": 0.5471,
+          "Macro-F1": 0.6352,
+          "Brier": 0.2193
+        },
+        "Random Forest (+ Estimation Gap)": {
+          "ROC-AUC": 0.6848,
+          "PR-AUC": 0.5172,
+          "Accuracy": 0.6463,
+          "AtRisk-Precision": 0.5203,
+          "AtRisk-Recall": 0.5872,
+          "AtRisk-F1": 0.5517,
+          "Macro-F1": 0.6298,
+          "Brier": 0.2205
+        },
+        "Random Forest (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.7226,
+          "PR-AUC": 0.5921,
+          "Accuracy": 0.6837,
+          "AtRisk-Precision": 0.5656,
+          "AtRisk-Recall": 0.633,
+          "AtRisk-F1": 0.5974,
+          "Macro-F1": 0.6684,
+          "Brier": 0.2083
+        },
+        "Random Forest (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.6512,
+          "PR-AUC": 0.5166,
+          "Accuracy": 0.5918,
+          "AtRisk-Precision": 0.4522,
+          "AtRisk-Recall": 0.4771,
+          "AtRisk-F1": 0.4643,
+          "Macro-F1": 0.5673,
+          "Brier": 0.2274
+        },
+        "LightGBM (No Effort)": {
+          "ROC-AUC": 0.5726,
+          "PR-AUC": 0.4347,
+          "Accuracy": 0.5782,
+          "AtRisk-Precision": 0.4299,
+          "AtRisk-Recall": 0.422,
+          "AtRisk-F1": 0.4259,
+          "Macro-F1": 0.5463,
+          "Brier": 0.2611
+        },
+        "LightGBM (+ Pred Effort)": {
+          "ROC-AUC": 0.5666,
+          "PR-AUC": 0.4415,
+          "Accuracy": 0.585,
+          "AtRisk-Precision": 0.4435,
+          "AtRisk-Recall": 0.4679,
+          "AtRisk-F1": 0.4554,
+          "Macro-F1": 0.5601,
+          "Brier": 0.2648
+        },
+        "LightGBM (+ Team SP)": {
+          "ROC-AUC": 0.7213,
+          "PR-AUC": 0.6156,
+          "Accuracy": 0.6735,
+          "AtRisk-Precision": 0.552,
+          "AtRisk-Recall": 0.633,
+          "AtRisk-F1": 0.5897,
+          "Macro-F1": 0.6593,
+          "Brier": 0.2174
+        },
+        "LightGBM (+ Estimation Gap)": {
+          "ROC-AUC": 0.6815,
+          "PR-AUC": 0.5101,
+          "Accuracy": 0.6395,
+          "AtRisk-Precision": 0.5118,
+          "AtRisk-Recall": 0.5963,
+          "AtRisk-F1": 0.5508,
+          "Macro-F1": 0.6249,
+          "Brier": 0.238
+        },
+        "LightGBM (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.6896,
+          "PR-AUC": 0.5657,
+          "Accuracy": 0.6463,
+          "AtRisk-Precision": 0.5203,
+          "AtRisk-Recall": 0.5872,
+          "AtRisk-F1": 0.5517,
+          "Macro-F1": 0.6298,
+          "Brier": 0.2316
+        },
+        "LightGBM (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.6797,
+          "PR-AUC": 0.5543,
+          "Accuracy": 0.6395,
+          "AtRisk-Precision": 0.513,
+          "AtRisk-Recall": 0.5413,
+          "AtRisk-F1": 0.5268,
+          "Macro-F1": 0.6178,
+          "Brier": 0.2369
+        }
+      },
+      "comparisons": {
+        "Logistic Regression|H1 team estimate": {
+          "delta": 0.1661,
+          "ci_low": 0.0976,
+          "ci_high": 0.2269,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|H2 model estimate beyond team": {
+          "delta": 0.005,
+          "ci_low": -0.0048,
+          "ci_high": 0.0157,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Estimation gap alone": {
+          "delta": 0.1502,
+          "ci_low": 0.0816,
+          "ci_high": 0.2099,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|Original design (pred effort)": {
+          "delta": 0.0422,
+          "ci_low": 0.0103,
+          "ci_high": 0.0779,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|Both estimates vs none": {
+          "delta": 0.171,
+          "ci_low": 0.1035,
+          "ci_high": 0.2331,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.0451,
+          "ci_low": -0.0954,
+          "ci_high": 0.0008,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|H1 team estimate": {
+          "delta": 0.1249,
+          "ci_low": 0.0707,
+          "ci_high": 0.1832,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Random Forest|H2 model estimate beyond team": {
+          "delta": 0.037,
+          "ci_low": 0.0116,
+          "ci_high": 0.065,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Random Forest|Estimation gap alone": {
+          "delta": 0.1241,
+          "ci_low": 0.0674,
+          "ci_high": 0.1879,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Random Forest|Original design (pred effort)": {
+          "delta": 0.0264,
+          "ci_low": -0.0187,
+          "ci_high": 0.0801,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Both estimates vs none": {
+          "delta": 0.1619,
+          "ci_low": 0.1042,
+          "ci_high": 0.2207,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Random Forest|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.0714,
+          "ci_low": -0.1127,
+          "ci_high": -0.0326,
+          "sig_pos": false,
+          "sig_neg": true
+        },
+        "LightGBM|H1 team estimate": {
+          "delta": 0.1487,
+          "ci_low": 0.0931,
+          "ci_high": 0.2054,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "LightGBM|H2 model estimate beyond team": {
+          "delta": -0.0317,
+          "ci_low": -0.0593,
+          "ci_high": -0.0061,
+          "sig_pos": false,
+          "sig_neg": true
+        },
+        "LightGBM|Estimation gap alone": {
+          "delta": 0.1089,
+          "ci_low": 0.0454,
+          "ci_high": 0.173,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "LightGBM|Original design (pred effort)": {
+          "delta": -0.006,
+          "ci_low": -0.048,
+          "ci_high": 0.0406,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Both estimates vs none": {
+          "delta": 0.117,
+          "ci_low": 0.0553,
+          "ci_high": 0.1725,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "LightGBM|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.0099,
+          "ci_low": -0.051,
+          "ci_high": 0.0318,
+          "sig_pos": false,
+          "sig_neg": false
+        }
+      },
+      "h3_n_unestimated": 34,
+      "h3": {
+        "Logistic Regression": {
+          "delta": 0.007,
+          "ci_low": -0.0632,
+          "ci_high": 0.0769,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest": {
+          "delta": -0.007,
+          "ci_low": -0.125,
+          "ci_high": 0.1181,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM": {
+          "delta": 0.0596,
+          "ci_low": -0.0913,
+          "ci_high": 0.1869,
+          "sig_pos": false,
+          "sig_neg": false
+        }
+      },
+      "logistic_coefs": {
+        "gap_variant": {
+          "estimation_gap": 0.5606
+        },
+        "both_variant": {
+          "log_sp_team": 0.9904,
+          "log_sp_model": 0.1647
+        },
+        "team_variant": {
+          "log_sp_team": 1.0453
+        }
+      }
+    },
+    {
+      "project": "DOCS",
+      "n_tickets": 1547,
+      "reference_categories": [
+        "Task",
+        "Major - P3"
+      ],
+      "n_test": 232,
+      "test_delay_rate": 0.431,
+      "effort_model": "LightGBM (Tabular + TF-IDF)",
+      "effort_val_mae": {
+        "Ridge (Tabular Only)": 1.0888,
+        "Ridge (Tabular + TF-IDF)": 0.7576,
+        "LightGBM (Tabular Only)": 0.9685,
+        "LightGBM (Tabular + TF-IDF)": 0.7226
+      },
+      "risk_family": "Logistic Regression",
+      "risk_val_auc": {
+        "Logistic Regression (No Effort)": 0.7225,
+        "Logistic Regression (+ Pred Effort)": 0.7186,
+        "Logistic Regression (+ Team SP)": 0.7713,
+        "Logistic Regression (+ Estimation Gap)": 0.8061,
+        "Logistic Regression (+ Team SP + Model SP)": 0.7628,
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": 0.7225,
+        "Random Forest (No Effort)": 0.739,
+        "Random Forest (+ Pred Effort)": 0.7339,
+        "Random Forest (+ Team SP)": 0.698,
+        "Random Forest (+ Estimation Gap)": 0.7469,
+        "Random Forest (+ Team SP + Model SP)": 0.7092,
+        "Random Forest (+ Final SP + Model SP (leakage check))": 0.7098,
+        "LightGBM (No Effort)": 0.6865,
+        "LightGBM (+ Pred Effort)": 0.6726,
+        "LightGBM (+ Team SP)": 0.6523,
+        "LightGBM (+ Estimation Gap)": 0.7307,
+        "LightGBM (+ Team SP + Model SP)": 0.6375,
+        "LightGBM (+ Final SP + Model SP (leakage check))": 0.6224
+      },
+      "effort_test": {
+        "MAE": 1.0908,
+        "RMSE": 1.4265,
+        "MdAE": 0.7878,
+        "R2": -1.4442,
+        "PRED(25)%": 25.43,
+        "MdMRE%": 52.95
+      },
+      "effort_test_dummy": {
+        "MAE": 1.5647,
+        "RMSE": 1.8076,
+        "MdAE": 1.5,
+        "R2": -2.9243,
+        "PRED(25)%": 0.0,
+        "MdMRE%": 75.0
+      },
+      "team_sp_known_test_pct": 87.5,
+      "risk_test": {
+        "Logistic Regression (No Effort)": {
+          "ROC-AUC": 0.6259,
+          "PR-AUC": 0.5102,
+          "Accuracy": 0.5517,
+          "AtRisk-Precision": 0.4881,
+          "AtRisk-Recall": 0.82,
+          "AtRisk-F1": 0.6119,
+          "Macro-F1": 0.5407,
+          "Brier": 0.2751
+        },
+        "Logistic Regression (+ Pred Effort)": {
+          "ROC-AUC": 0.6345,
+          "PR-AUC": 0.5261,
+          "Accuracy": 0.6034,
+          "AtRisk-Precision": 0.5351,
+          "AtRisk-Recall": 0.61,
+          "AtRisk-F1": 0.5701,
+          "Macro-F1": 0.601,
+          "Brier": 0.2592
+        },
+        "Logistic Regression (+ Team SP)": {
+          "ROC-AUC": 0.6811,
+          "PR-AUC": 0.5685,
+          "Accuracy": 0.569,
+          "AtRisk-Precision": 0.5,
+          "AtRisk-Recall": 0.92,
+          "AtRisk-F1": 0.6479,
+          "Macro-F1": 0.5462,
+          "Brier": 0.2942
+        },
+        "Logistic Regression (+ Estimation Gap)": {
+          "ROC-AUC": 0.6394,
+          "PR-AUC": 0.5155,
+          "Accuracy": 0.5302,
+          "AtRisk-Precision": 0.4759,
+          "AtRisk-Recall": 0.89,
+          "AtRisk-F1": 0.6202,
+          "Macro-F1": 0.5022,
+          "Brier": 0.3087
+        },
+        "Logistic Regression (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.6866,
+          "PR-AUC": 0.5895,
+          "Accuracy": 0.5948,
+          "AtRisk-Precision": 0.5172,
+          "AtRisk-Recall": 0.9,
+          "AtRisk-F1": 0.6569,
+          "Macro-F1": 0.5811,
+          "Brier": 0.2723
+        },
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.6765,
+          "PR-AUC": 0.5633,
+          "Accuracy": 0.5733,
+          "AtRisk-Precision": 0.5028,
+          "AtRisk-Recall": 0.9,
+          "AtRisk-F1": 0.6452,
+          "Macro-F1": 0.555,
+          "Brier": 0.2827
+        },
+        "Random Forest (No Effort)": {
+          "ROC-AUC": 0.7232,
+          "PR-AUC": 0.6276,
+          "Accuracy": 0.6422,
+          "AtRisk-Precision": 0.5563,
+          "AtRisk-Recall": 0.84,
+          "AtRisk-F1": 0.6693,
+          "Macro-F1": 0.6398,
+          "Brier": 0.2314
+        },
+        "Random Forest (+ Pred Effort)": {
+          "ROC-AUC": 0.7383,
+          "PR-AUC": 0.6631,
+          "Accuracy": 0.6466,
+          "AtRisk-Precision": 0.5608,
+          "AtRisk-Recall": 0.83,
+          "AtRisk-F1": 0.6694,
+          "Macro-F1": 0.6449,
+          "Brier": 0.2187
+        },
+        "Random Forest (+ Team SP)": {
+          "ROC-AUC": 0.7105,
+          "PR-AUC": 0.599,
+          "Accuracy": 0.6509,
+          "AtRisk-Precision": 0.5621,
+          "AtRisk-Recall": 0.86,
+          "AtRisk-F1": 0.6798,
+          "Macro-F1": 0.648,
+          "Brier": 0.2403
+        },
+        "Random Forest (+ Estimation Gap)": {
+          "ROC-AUC": 0.7092,
+          "PR-AUC": 0.6439,
+          "Accuracy": 0.5948,
+          "AtRisk-Precision": 0.5176,
+          "AtRisk-Recall": 0.88,
+          "AtRisk-F1": 0.6519,
+          "Macro-F1": 0.5837,
+          "Brier": 0.2445
+        },
+        "Random Forest (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.742,
+          "PR-AUC": 0.6206,
+          "Accuracy": 0.6681,
+          "AtRisk-Precision": 0.5782,
+          "AtRisk-Recall": 0.85,
+          "AtRisk-F1": 0.6883,
+          "Macro-F1": 0.6667,
+          "Brier": 0.2237
+        },
+        "Random Forest (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.7401,
+          "PR-AUC": 0.6613,
+          "Accuracy": 0.6121,
+          "AtRisk-Precision": 0.5294,
+          "AtRisk-Recall": 0.9,
+          "AtRisk-F1": 0.6667,
+          "Macro-F1": 0.6014,
+          "Brier": 0.2294
+        },
+        "LightGBM (No Effort)": {
+          "ROC-AUC": 0.6674,
+          "PR-AUC": 0.5723,
+          "Accuracy": 0.6034,
+          "AtRisk-Precision": 0.5278,
+          "AtRisk-Recall": 0.76,
+          "AtRisk-F1": 0.623,
+          "Macro-F1": 0.6024,
+          "Brier": 0.2834
+        },
+        "LightGBM (+ Pred Effort)": {
+          "ROC-AUC": 0.6993,
+          "PR-AUC": 0.6139,
+          "Accuracy": 0.6422,
+          "AtRisk-Precision": 0.5586,
+          "AtRisk-Recall": 0.81,
+          "AtRisk-F1": 0.6612,
+          "Macro-F1": 0.6411,
+          "Brier": 0.2569
+        },
+        "LightGBM (+ Team SP)": {
+          "ROC-AUC": 0.6625,
+          "PR-AUC": 0.5576,
+          "Accuracy": 0.6164,
+          "AtRisk-Precision": 0.5359,
+          "AtRisk-Recall": 0.82,
+          "AtRisk-F1": 0.6482,
+          "Macro-F1": 0.6132,
+          "Brier": 0.296
+        },
+        "LightGBM (+ Estimation Gap)": {
+          "ROC-AUC": 0.654,
+          "PR-AUC": 0.5636,
+          "Accuracy": 0.5517,
+          "AtRisk-Precision": 0.488,
+          "AtRisk-Recall": 0.81,
+          "AtRisk-F1": 0.609,
+          "Macro-F1": 0.5419,
+          "Brier": 0.3197
+        },
+        "LightGBM (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.6639,
+          "PR-AUC": 0.5633,
+          "Accuracy": 0.6164,
+          "AtRisk-Precision": 0.5369,
+          "AtRisk-Recall": 0.8,
+          "AtRisk-F1": 0.6426,
+          "Macro-F1": 0.6143,
+          "Brier": 0.2764
+        },
+        "LightGBM (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.6936,
+          "PR-AUC": 0.6015,
+          "Accuracy": 0.6034,
+          "AtRisk-Precision": 0.5244,
+          "AtRisk-Recall": 0.86,
+          "AtRisk-F1": 0.6515,
+          "Macro-F1": 0.5958,
+          "Brier": 0.2812
+        }
+      },
+      "comparisons": {
+        "Logistic Regression|H1 team estimate": {
+          "delta": 0.0552,
+          "ci_low": 0.0114,
+          "ci_high": 0.0998,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|H2 model estimate beyond team": {
+          "delta": 0.0055,
+          "ci_low": -0.021,
+          "ci_high": 0.0307,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Estimation gap alone": {
+          "delta": 0.0135,
+          "ci_low": -0.045,
+          "ci_high": 0.0725,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Original design (pred effort)": {
+          "delta": 0.0086,
+          "ci_low": -0.045,
+          "ci_high": 0.063,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Both estimates vs none": {
+          "delta": 0.0607,
+          "ci_low": 0.0135,
+          "ci_high": 0.1098,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.0101,
+          "ci_low": -0.0412,
+          "ci_high": 0.0219,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|H1 team estimate": {
+          "delta": -0.0128,
+          "ci_low": -0.0455,
+          "ci_high": 0.0196,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|H2 model estimate beyond team": {
+          "delta": 0.0316,
+          "ci_low": 0.0018,
+          "ci_high": 0.0611,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Random Forest|Estimation gap alone": {
+          "delta": -0.0141,
+          "ci_low": -0.0544,
+          "ci_high": 0.0219,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Original design (pred effort)": {
+          "delta": 0.0151,
+          "ci_low": -0.0156,
+          "ci_high": 0.0442,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Both estimates vs none": {
+          "delta": 0.0188,
+          "ci_low": -0.0191,
+          "ci_high": 0.0543,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.002,
+          "ci_low": -0.0344,
+          "ci_high": 0.0319,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|H1 team estimate": {
+          "delta": -0.0049,
+          "ci_low": -0.0401,
+          "ci_high": 0.0295,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|H2 model estimate beyond team": {
+          "delta": 0.0014,
+          "ci_low": -0.0343,
+          "ci_high": 0.0358,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Estimation gap alone": {
+          "delta": -0.0134,
+          "ci_low": -0.0582,
+          "ci_high": 0.0311,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Original design (pred effort)": {
+          "delta": 0.0319,
+          "ci_low": -0.0039,
+          "ci_high": 0.0674,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Both estimates vs none": {
+          "delta": -0.0035,
+          "ci_low": -0.0485,
+          "ci_high": 0.0401,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Leakage: final SP vs prediction-time SP": {
+          "delta": 0.0297,
+          "ci_low": -0.0087,
+          "ci_high": 0.0695,
+          "sig_pos": false,
+          "sig_neg": false
+        }
+      },
+      "h3_n_unestimated": 29,
+      "h3": {
+        "Logistic Regression": {
+          "delta": 0.0913,
+          "ci_low": -0.0052,
+          "ci_high": 0.202,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest": {
+          "delta": -0.0385,
+          "ci_low": -0.1191,
+          "ci_high": 0.0368,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM": {
+          "delta": -0.0913,
+          "ci_low": -0.2157,
+          "ci_high": 0.0404,
+          "sig_pos": false,
+          "sig_neg": false
+        }
+      },
+      "logistic_coefs": {
+        "gap_variant": {
+          "estimation_gap": 0.5502
+        },
+        "both_variant": {
+          "log_sp_team": 0.7853,
+          "log_sp_model": 0.3322
+        },
+        "team_variant": {
+          "log_sp_team": 0.9674
+        }
+      }
+    },
+    {
+      "project": "DEVELOPER",
+      "n_tickets": 1676,
+      "reference_categories": [
+        "Story",
+        "None"
+      ],
+      "n_test": 251,
+      "test_delay_rate": 0.53,
+      "effort_model": "Ridge (Tabular + TF-IDF)",
+      "effort_val_mae": {
+        "Ridge (Tabular Only)": 1.7052,
+        "Ridge (Tabular + TF-IDF)": 1.6173,
+        "LightGBM (Tabular Only)": 1.7628,
+        "LightGBM (Tabular + TF-IDF)": 1.744
+      },
+      "risk_family": "Logistic Regression",
+      "risk_val_auc": {
+        "Logistic Regression (No Effort)": 0.6504,
+        "Logistic Regression (+ Pred Effort)": 0.6477,
+        "Logistic Regression (+ Team SP)": 0.6183,
+        "Logistic Regression (+ Estimation Gap)": 0.6298,
+        "Logistic Regression (+ Team SP + Model SP)": 0.6182,
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": 0.6668,
+        "Random Forest (No Effort)": 0.6061,
+        "Random Forest (+ Pred Effort)": 0.6069,
+        "Random Forest (+ Team SP)": 0.5474,
+        "Random Forest (+ Estimation Gap)": 0.6088,
+        "Random Forest (+ Team SP + Model SP)": 0.5914,
+        "Random Forest (+ Final SP + Model SP (leakage check))": 0.5962,
+        "LightGBM (No Effort)": 0.5794,
+        "LightGBM (+ Pred Effort)": 0.5806,
+        "LightGBM (+ Team SP)": 0.53,
+        "LightGBM (+ Estimation Gap)": 0.5298,
+        "LightGBM (+ Team SP + Model SP)": 0.5408,
+        "LightGBM (+ Final SP + Model SP (leakage check))": 0.5492
+      },
+      "effort_test": {
+        "MAE": 1.619,
+        "RMSE": 2.0551,
+        "MdAE": 1.4938,
+        "R2": -0.1733,
+        "PRED(25)%": 22.31,
+        "MdMRE%": 66.26
+      },
+      "effort_test_dummy": {
+        "MAE": 1.4064,
+        "RMSE": 1.981,
+        "MdAE": 1.0,
+        "R2": -0.0902,
+        "PRED(25)%": 25.1,
+        "MdMRE%": 50.0
+      },
+      "team_sp_known_test_pct": 84.9,
+      "risk_test": {
+        "Logistic Regression (No Effort)": {
+          "ROC-AUC": 0.5872,
+          "PR-AUC": 0.6144,
+          "Accuracy": 0.5737,
+          "AtRisk-Precision": 0.6226,
+          "AtRisk-Recall": 0.4962,
+          "AtRisk-F1": 0.5523,
+          "Macro-F1": 0.5727,
+          "Brier": 0.2546
+        },
+        "Logistic Regression (+ Pred Effort)": {
+          "ROC-AUC": 0.5868,
+          "PR-AUC": 0.6327,
+          "Accuracy": 0.5896,
+          "AtRisk-Precision": 0.6596,
+          "AtRisk-Recall": 0.4662,
+          "AtRisk-F1": 0.5463,
+          "Macro-F1": 0.5859,
+          "Brier": 0.256
+        },
+        "Logistic Regression (+ Team SP)": {
+          "ROC-AUC": 0.603,
+          "PR-AUC": 0.6362,
+          "Accuracy": 0.5538,
+          "AtRisk-Precision": 0.6615,
+          "AtRisk-Recall": 0.3233,
+          "AtRisk-F1": 0.4343,
+          "Macro-F1": 0.533,
+          "Brier": 0.263
+        },
+        "Logistic Regression (+ Estimation Gap)": {
+          "ROC-AUC": 0.6002,
+          "PR-AUC": 0.6353,
+          "Accuracy": 0.5498,
+          "AtRisk-Precision": 0.6471,
+          "AtRisk-Recall": 0.3308,
+          "AtRisk-F1": 0.4378,
+          "Macro-F1": 0.5312,
+          "Brier": 0.2632
+        },
+        "Logistic Regression (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.6037,
+          "PR-AUC": 0.6423,
+          "Accuracy": 0.5657,
+          "AtRisk-Precision": 0.6935,
+          "AtRisk-Recall": 0.3233,
+          "AtRisk-F1": 0.441,
+          "Macro-F1": 0.543,
+          "Brier": 0.264
+        },
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.6293,
+          "PR-AUC": 0.6751,
+          "Accuracy": 0.5737,
+          "AtRisk-Precision": 0.697,
+          "AtRisk-Recall": 0.3459,
+          "AtRisk-F1": 0.4623,
+          "Macro-F1": 0.5546,
+          "Brier": 0.2572
+        },
+        "Random Forest (No Effort)": {
+          "ROC-AUC": 0.6674,
+          "PR-AUC": 0.6529,
+          "Accuracy": 0.6096,
+          "AtRisk-Precision": 0.6496,
+          "AtRisk-Recall": 0.5714,
+          "AtRisk-F1": 0.608,
+          "Macro-F1": 0.6096,
+          "Brier": 0.2294
+        },
+        "Random Forest (+ Pred Effort)": {
+          "ROC-AUC": 0.6745,
+          "PR-AUC": 0.6553,
+          "Accuracy": 0.5737,
+          "AtRisk-Precision": 0.6383,
+          "AtRisk-Recall": 0.4511,
+          "AtRisk-F1": 0.5286,
+          "Macro-F1": 0.5698,
+          "Brier": 0.2314
+        },
+        "Random Forest (+ Team SP)": {
+          "ROC-AUC": 0.6957,
+          "PR-AUC": 0.7072,
+          "Accuracy": 0.5817,
+          "AtRisk-Precision": 0.6458,
+          "AtRisk-Recall": 0.4662,
+          "AtRisk-F1": 0.5415,
+          "Macro-F1": 0.5784,
+          "Brier": 0.2254
+        },
+        "Random Forest (+ Estimation Gap)": {
+          "ROC-AUC": 0.7023,
+          "PR-AUC": 0.6967,
+          "Accuracy": 0.6175,
+          "AtRisk-Precision": 0.7033,
+          "AtRisk-Recall": 0.4812,
+          "AtRisk-F1": 0.5714,
+          "Macro-F1": 0.6131,
+          "Brier": 0.2251
+        },
+        "Random Forest (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.6978,
+          "PR-AUC": 0.7058,
+          "Accuracy": 0.5976,
+          "AtRisk-Precision": 0.686,
+          "AtRisk-Recall": 0.4436,
+          "AtRisk-F1": 0.5388,
+          "Macro-F1": 0.591,
+          "Brier": 0.2265
+        },
+        "Random Forest (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.7304,
+          "PR-AUC": 0.7291,
+          "Accuracy": 0.6414,
+          "AtRisk-Precision": 0.7471,
+          "AtRisk-Recall": 0.4887,
+          "AtRisk-F1": 0.5909,
+          "Macro-F1": 0.6359,
+          "Brier": 0.2196
+        },
+        "LightGBM (No Effort)": {
+          "ROC-AUC": 0.6472,
+          "PR-AUC": 0.6367,
+          "Accuracy": 0.6056,
+          "AtRisk-Precision": 0.6466,
+          "AtRisk-Recall": 0.5639,
+          "AtRisk-F1": 0.6024,
+          "Macro-F1": 0.6056,
+          "Brier": 0.2591
+        },
+        "LightGBM (+ Pred Effort)": {
+          "ROC-AUC": 0.6699,
+          "PR-AUC": 0.641,
+          "Accuracy": 0.6215,
+          "AtRisk-Precision": 0.6696,
+          "AtRisk-Recall": 0.5639,
+          "AtRisk-F1": 0.6122,
+          "Macro-F1": 0.6213,
+          "Brier": 0.2481
+        },
+        "LightGBM (+ Team SP)": {
+          "ROC-AUC": 0.6226,
+          "PR-AUC": 0.6523,
+          "Accuracy": 0.5737,
+          "AtRisk-Precision": 0.6327,
+          "AtRisk-Recall": 0.4662,
+          "AtRisk-F1": 0.5368,
+          "Macro-F1": 0.571,
+          "Brier": 0.2719
+        },
+        "LightGBM (+ Estimation Gap)": {
+          "ROC-AUC": 0.6703,
+          "PR-AUC": 0.6841,
+          "Accuracy": 0.5896,
+          "AtRisk-Precision": 0.6744,
+          "AtRisk-Recall": 0.4361,
+          "AtRisk-F1": 0.5297,
+          "Macro-F1": 0.5829,
+          "Brier": 0.2621
+        },
+        "LightGBM (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.6499,
+          "PR-AUC": 0.65,
+          "Accuracy": 0.5737,
+          "AtRisk-Precision": 0.63,
+          "AtRisk-Recall": 0.4737,
+          "AtRisk-F1": 0.5408,
+          "Macro-F1": 0.5715,
+          "Brier": 0.264
+        },
+        "LightGBM (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.6517,
+          "PR-AUC": 0.6513,
+          "Accuracy": 0.5896,
+          "AtRisk-Precision": 0.65,
+          "AtRisk-Recall": 0.4887,
+          "AtRisk-F1": 0.5579,
+          "Macro-F1": 0.5875,
+          "Brier": 0.2635
+        }
+      },
+      "comparisons": {
+        "Logistic Regression|H1 team estimate": {
+          "delta": 0.0159,
+          "ci_low": -0.0169,
+          "ci_high": 0.0501,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|H2 model estimate beyond team": {
+          "delta": 0.0006,
+          "ci_low": -0.0083,
+          "ci_high": 0.0085,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Estimation gap alone": {
+          "delta": 0.013,
+          "ci_low": -0.0231,
+          "ci_high": 0.05,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Original design (pred effort)": {
+          "delta": -0.0004,
+          "ci_low": -0.0188,
+          "ci_high": 0.0165,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Both estimates vs none": {
+          "delta": 0.0165,
+          "ci_low": -0.0187,
+          "ci_high": 0.0507,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Leakage: final SP vs prediction-time SP": {
+          "delta": 0.0256,
+          "ci_low": -0.0034,
+          "ci_high": 0.0561,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|H1 team estimate": {
+          "delta": 0.0284,
+          "ci_low": -0.0116,
+          "ci_high": 0.0656,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|H2 model estimate beyond team": {
+          "delta": 0.0021,
+          "ci_low": -0.0321,
+          "ci_high": 0.0375,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Estimation gap alone": {
+          "delta": 0.035,
+          "ci_low": -0.0065,
+          "ci_high": 0.0771,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Original design (pred effort)": {
+          "delta": 0.0071,
+          "ci_low": -0.0295,
+          "ci_high": 0.0425,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Both estimates vs none": {
+          "delta": 0.0305,
+          "ci_low": -0.0105,
+          "ci_high": 0.0712,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Leakage: final SP vs prediction-time SP": {
+          "delta": 0.0326,
+          "ci_low": -0.0026,
+          "ci_high": 0.0692,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|H1 team estimate": {
+          "delta": -0.0246,
+          "ci_low": -0.0675,
+          "ci_high": 0.0176,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|H2 model estimate beyond team": {
+          "delta": 0.0273,
+          "ci_low": -0.0169,
+          "ci_high": 0.0692,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Estimation gap alone": {
+          "delta": 0.0231,
+          "ci_low": -0.0279,
+          "ci_high": 0.0724,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Original design (pred effort)": {
+          "delta": 0.0227,
+          "ci_low": -0.0168,
+          "ci_high": 0.06,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Both estimates vs none": {
+          "delta": 0.0027,
+          "ci_low": -0.0528,
+          "ci_high": 0.0549,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Leakage: final SP vs prediction-time SP": {
+          "delta": 0.0018,
+          "ci_low": -0.046,
+          "ci_high": 0.047,
+          "sig_pos": false,
+          "sig_neg": false
+        }
+      },
+      "h3_n_unestimated": 38,
+      "h3": {
+        "Logistic Regression": {
+          "delta": 0.0,
+          "ci_low": -0.0337,
+          "ci_high": 0.0371,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest": {
+          "delta": 0.0639,
+          "ci_low": -0.0513,
+          "ci_high": 0.1957,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM": {
+          "delta": 0.0426,
+          "ci_low": -0.0677,
+          "ci_high": 0.1625,
+          "sig_pos": false,
+          "sig_neg": false
+        }
+      },
+      "logistic_coefs": {
+        "gap_variant": {
+          "estimation_gap": 0.3121
+        },
+        "both_variant": {
+          "log_sp_team": 0.5768,
+          "log_sp_model": 0.1023
+        },
+        "team_variant": {
+          "log_sp_team": 0.6141
+        }
+      }
+    },
+    {
+      "project": "SERVER",
+      "n_tickets": 1548,
+      "reference_categories": [
+        "Task",
+        "Major - P3"
+      ],
+      "n_test": 232,
+      "test_delay_rate": 0.504,
+      "effort_model": "LightGBM (Tabular + TF-IDF)",
+      "effort_val_mae": {
+        "Ridge (Tabular Only)": 0.8875,
+        "Ridge (Tabular + TF-IDF)": 0.8259,
+        "LightGBM (Tabular Only)": 0.8243,
+        "LightGBM (Tabular + TF-IDF)": 0.7584
+      },
+      "risk_family": "Random Forest",
+      "risk_val_auc": {
+        "Logistic Regression (No Effort)": 0.631,
+        "Logistic Regression (+ Pred Effort)": 0.6457,
+        "Logistic Regression (+ Team SP)": 0.6511,
+        "Logistic Regression (+ Estimation Gap)": 0.6511,
+        "Logistic Regression (+ Team SP + Model SP)": 0.6531,
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": 0.6856,
+        "Random Forest (No Effort)": 0.6382,
+        "Random Forest (+ Pred Effort)": 0.6466,
+        "Random Forest (+ Team SP)": 0.6503,
+        "Random Forest (+ Estimation Gap)": 0.6514,
+        "Random Forest (+ Team SP + Model SP)": 0.6814,
+        "Random Forest (+ Final SP + Model SP (leakage check))": 0.6866,
+        "LightGBM (No Effort)": 0.6068,
+        "LightGBM (+ Pred Effort)": 0.6275,
+        "LightGBM (+ Team SP)": 0.6394,
+        "LightGBM (+ Estimation Gap)": 0.6348,
+        "LightGBM (+ Team SP + Model SP)": 0.6551,
+        "LightGBM (+ Final SP + Model SP (leakage check))": 0.6479
+      },
+      "effort_test": {
+        "MAE": 0.856,
+        "RMSE": 1.1914,
+        "MdAE": 0.6496,
+        "R2": 0.0943,
+        "PRED(25)%": 30.6,
+        "MdMRE%": 41.08
+      },
+      "effort_test_dummy": {
+        "MAE": 0.9828,
+        "RMSE": 1.3032,
+        "MdAE": 1.0,
+        "R2": -0.0836,
+        "PRED(25)%": 25.86,
+        "MdMRE%": 100.0
+      },
+      "team_sp_known_test_pct": 82.3,
+      "risk_test": {
+        "Logistic Regression (No Effort)": {
+          "ROC-AUC": 0.6498,
+          "PR-AUC": 0.5908,
+          "Accuracy": 0.6336,
+          "AtRisk-Precision": 0.6311,
+          "AtRisk-Recall": 0.6581,
+          "AtRisk-F1": 0.6444,
+          "Macro-F1": 0.6333,
+          "Brier": 0.235
+        },
+        "Logistic Regression (+ Pred Effort)": {
+          "ROC-AUC": 0.7061,
+          "PR-AUC": 0.6658,
+          "Accuracy": 0.6767,
+          "AtRisk-Precision": 0.678,
+          "AtRisk-Recall": 0.6838,
+          "AtRisk-F1": 0.6809,
+          "Macro-F1": 0.6767,
+          "Brier": 0.2196
+        },
+        "Logistic Regression (+ Team SP)": {
+          "ROC-AUC": 0.7434,
+          "PR-AUC": 0.7114,
+          "Accuracy": 0.6552,
+          "AtRisk-Precision": 0.6762,
+          "AtRisk-Recall": 0.6068,
+          "AtRisk-F1": 0.6396,
+          "Macro-F1": 0.6545,
+          "Brier": 0.2067
+        },
+        "Logistic Regression (+ Estimation Gap)": {
+          "ROC-AUC": 0.7243,
+          "PR-AUC": 0.6851,
+          "Accuracy": 0.6595,
+          "AtRisk-Precision": 0.6792,
+          "AtRisk-Recall": 0.6154,
+          "AtRisk-F1": 0.6457,
+          "Macro-F1": 0.659,
+          "Brier": 0.2146
+        },
+        "Logistic Regression (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.7586,
+          "PR-AUC": 0.7295,
+          "Accuracy": 0.7026,
+          "AtRisk-Precision": 0.7182,
+          "AtRisk-Recall": 0.6752,
+          "AtRisk-F1": 0.696,
+          "Macro-F1": 0.7024,
+          "Brier": 0.201
+        },
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.771,
+          "PR-AUC": 0.7587,
+          "Accuracy": 0.7198,
+          "AtRisk-Precision": 0.7453,
+          "AtRisk-Recall": 0.6752,
+          "AtRisk-F1": 0.7085,
+          "Macro-F1": 0.7194,
+          "Brier": 0.1986
+        },
+        "Random Forest (No Effort)": {
+          "ROC-AUC": 0.719,
+          "PR-AUC": 0.7042,
+          "Accuracy": 0.6466,
+          "AtRisk-Precision": 0.6446,
+          "AtRisk-Recall": 0.6667,
+          "AtRisk-F1": 0.6555,
+          "Macro-F1": 0.6463,
+          "Brier": 0.2147
+        },
+        "Random Forest (+ Pred Effort)": {
+          "ROC-AUC": 0.7423,
+          "PR-AUC": 0.703,
+          "Accuracy": 0.7155,
+          "AtRisk-Precision": 0.704,
+          "AtRisk-Recall": 0.7521,
+          "AtRisk-F1": 0.7273,
+          "Macro-F1": 0.715,
+          "Brier": 0.2067
+        },
+        "Random Forest (+ Team SP)": {
+          "ROC-AUC": 0.7211,
+          "PR-AUC": 0.6981,
+          "Accuracy": 0.681,
+          "AtRisk-Precision": 0.6777,
+          "AtRisk-Recall": 0.7009,
+          "AtRisk-F1": 0.6891,
+          "Macro-F1": 0.6808,
+          "Brier": 0.2141
+        },
+        "Random Forest (+ Estimation Gap)": {
+          "ROC-AUC": 0.725,
+          "PR-AUC": 0.716,
+          "Accuracy": 0.6638,
+          "AtRisk-Precision": 0.6822,
+          "AtRisk-Recall": 0.6239,
+          "AtRisk-F1": 0.6518,
+          "Macro-F1": 0.6634,
+          "Brier": 0.2121
+        },
+        "Random Forest (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.7485,
+          "PR-AUC": 0.7444,
+          "Accuracy": 0.6681,
+          "AtRisk-Precision": 0.6818,
+          "AtRisk-Recall": 0.641,
+          "AtRisk-F1": 0.6608,
+          "Macro-F1": 0.6679,
+          "Brier": 0.2033
+        },
+        "Random Forest (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.7452,
+          "PR-AUC": 0.7331,
+          "Accuracy": 0.6767,
+          "AtRisk-Precision": 0.681,
+          "AtRisk-Recall": 0.6752,
+          "AtRisk-F1": 0.6781,
+          "Macro-F1": 0.6767,
+          "Brier": 0.2046
+        },
+        "LightGBM (No Effort)": {
+          "ROC-AUC": 0.7032,
+          "PR-AUC": 0.6571,
+          "Accuracy": 0.6897,
+          "AtRisk-Precision": 0.68,
+          "AtRisk-Recall": 0.7265,
+          "AtRisk-F1": 0.7025,
+          "Macro-F1": 0.6891,
+          "Brier": 0.2273
+        },
+        "LightGBM (+ Pred Effort)": {
+          "ROC-AUC": 0.7258,
+          "PR-AUC": 0.7137,
+          "Accuracy": 0.694,
+          "AtRisk-Precision": 0.6825,
+          "AtRisk-Recall": 0.735,
+          "AtRisk-F1": 0.7078,
+          "Macro-F1": 0.6933,
+          "Brier": 0.2234
+        },
+        "LightGBM (+ Team SP)": {
+          "ROC-AUC": 0.724,
+          "PR-AUC": 0.726,
+          "Accuracy": 0.6724,
+          "AtRisk-Precision": 0.6589,
+          "AtRisk-Recall": 0.7265,
+          "AtRisk-F1": 0.6911,
+          "Macro-F1": 0.6712,
+          "Brier": 0.2214
+        },
+        "LightGBM (+ Estimation Gap)": {
+          "ROC-AUC": 0.7177,
+          "PR-AUC": 0.7275,
+          "Accuracy": 0.6638,
+          "AtRisk-Precision": 0.6639,
+          "AtRisk-Recall": 0.6752,
+          "AtRisk-F1": 0.6695,
+          "Macro-F1": 0.6637,
+          "Brier": 0.2233
+        },
+        "LightGBM (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.7525,
+          "PR-AUC": 0.7596,
+          "Accuracy": 0.6897,
+          "AtRisk-Precision": 0.6991,
+          "AtRisk-Recall": 0.6752,
+          "AtRisk-F1": 0.687,
+          "Macro-F1": 0.6896,
+          "Brier": 0.21
+        },
+        "LightGBM (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.7186,
+          "PR-AUC": 0.7387,
+          "Accuracy": 0.6552,
+          "AtRisk-Precision": 0.6457,
+          "AtRisk-Recall": 0.7009,
+          "AtRisk-F1": 0.6721,
+          "Macro-F1": 0.6542,
+          "Brier": 0.2248
+        }
+      },
+      "comparisons": {
+        "Logistic Regression|H1 team estimate": {
+          "delta": 0.0936,
+          "ci_low": 0.045,
+          "ci_high": 0.1428,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|H2 model estimate beyond team": {
+          "delta": 0.0152,
+          "ci_low": -0.0045,
+          "ci_high": 0.0349,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Estimation gap alone": {
+          "delta": 0.0745,
+          "ci_low": 0.0288,
+          "ci_high": 0.1218,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|Original design (pred effort)": {
+          "delta": 0.0563,
+          "ci_low": 0.0217,
+          "ci_high": 0.0923,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|Both estimates vs none": {
+          "delta": 0.1088,
+          "ci_low": 0.0572,
+          "ci_high": 0.1602,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|Leakage: final SP vs prediction-time SP": {
+          "delta": 0.0124,
+          "ci_low": -0.0151,
+          "ci_high": 0.0426,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|H1 team estimate": {
+          "delta": 0.0021,
+          "ci_low": -0.0382,
+          "ci_high": 0.0457,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|H2 model estimate beyond team": {
+          "delta": 0.0274,
+          "ci_low": -0.0043,
+          "ci_high": 0.0573,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Estimation gap alone": {
+          "delta": 0.0061,
+          "ci_low": -0.0384,
+          "ci_high": 0.0572,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Original design (pred effort)": {
+          "delta": 0.0233,
+          "ci_low": -0.0131,
+          "ci_high": 0.0621,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Both estimates vs none": {
+          "delta": 0.0295,
+          "ci_low": -0.0115,
+          "ci_high": 0.0739,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.0033,
+          "ci_low": -0.0452,
+          "ci_high": 0.0368,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|H1 team estimate": {
+          "delta": 0.0208,
+          "ci_low": -0.0211,
+          "ci_high": 0.0707,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|H2 model estimate beyond team": {
+          "delta": 0.0285,
+          "ci_low": -0.0157,
+          "ci_high": 0.0712,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Estimation gap alone": {
+          "delta": 0.0145,
+          "ci_low": -0.036,
+          "ci_high": 0.0677,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Original design (pred effort)": {
+          "delta": 0.0226,
+          "ci_low": -0.0169,
+          "ci_high": 0.0653,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Both estimates vs none": {
+          "delta": 0.0493,
+          "ci_low": 0.0067,
+          "ci_high": 0.0971,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "LightGBM|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.0339,
+          "ci_low": -0.07,
+          "ci_high": 0.0039,
+          "sig_pos": false,
+          "sig_neg": false
+        }
+      },
+      "h3_n_unestimated": 41,
+      "h3": {
+        "Logistic Regression": {
+          "delta": 0.005,
+          "ci_low": -0.0643,
+          "ci_high": 0.0805,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest": {
+          "delta": 0.0563,
+          "ci_low": -0.0308,
+          "ci_high": 0.1558,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM": {
+          "delta": 0.0375,
+          "ci_low": -0.0662,
+          "ci_high": 0.1545,
+          "sig_pos": false,
+          "sig_neg": false
+        }
+      },
+      "logistic_coefs": {
+        "gap_variant": {
+          "estimation_gap": 0.3114
+        },
+        "both_variant": {
+          "log_sp_team": 0.453,
+          "log_sp_model": 0.2764
+        },
+        "team_variant": {
+          "log_sp_team": 0.5627
+        }
+      }
+    },
+    {
+      "project": "DROOLS",
+      "n_tickets": 1523,
+      "reference_categories": [
+        "Bug",
+        "Major"
+      ],
+      "n_test": 226,
+      "test_delay_rate": 0.372,
+      "effort_model": "Ridge (Tabular + TF-IDF)",
+      "effort_val_mae": {
+        "Ridge (Tabular Only)": 1.3516,
+        "Ridge (Tabular + TF-IDF)": 1.3427,
+        "LightGBM (Tabular Only)": 1.3776,
+        "LightGBM (Tabular + TF-IDF)": 1.3673
+      },
+      "risk_family": "Logistic Regression",
+      "risk_val_auc": {
+        "Logistic Regression (No Effort)": 0.6846,
+        "Logistic Regression (+ Pred Effort)": 0.6876,
+        "Logistic Regression (+ Team SP)": 0.6817,
+        "Logistic Regression (+ Estimation Gap)": 0.6757,
+        "Logistic Regression (+ Team SP + Model SP)": 0.6838,
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": 0.6901,
+        "Random Forest (No Effort)": 0.5767,
+        "Random Forest (+ Pred Effort)": 0.6208,
+        "Random Forest (+ Team SP)": 0.5873,
+        "Random Forest (+ Estimation Gap)": 0.5846,
+        "Random Forest (+ Team SP + Model SP)": 0.6143,
+        "Random Forest (+ Final SP + Model SP (leakage check))": 0.6107,
+        "LightGBM (No Effort)": 0.5589,
+        "LightGBM (+ Pred Effort)": 0.583,
+        "LightGBM (+ Team SP)": 0.5812,
+        "LightGBM (+ Estimation Gap)": 0.6041,
+        "LightGBM (+ Team SP + Model SP)": 0.5729,
+        "LightGBM (+ Final SP + Model SP (leakage check))": 0.61
+      },
+      "effort_test": {
+        "MAE": 1.2023,
+        "RMSE": 1.5044,
+        "MdAE": 1.0099,
+        "R2": 0.085,
+        "PRED(25)%": 28.32,
+        "MdMRE%": 40.41
+      },
+      "effort_test_dummy": {
+        "MAE": 1.2522,
+        "RMSE": 1.6171,
+        "MdAE": 1.0,
+        "R2": -0.0572,
+        "PRED(25)%": 30.09,
+        "MdMRE%": 50.0
+      },
+      "team_sp_known_test_pct": 72.1,
+      "risk_test": {
+        "Logistic Regression (No Effort)": {
+          "ROC-AUC": 0.597,
+          "PR-AUC": 0.4487,
+          "Accuracy": 0.6018,
+          "AtRisk-Precision": 0.4483,
+          "AtRisk-Recall": 0.3095,
+          "AtRisk-F1": 0.3662,
+          "Macro-F1": 0.5379,
+          "Brier": 0.2362
+        },
+        "Logistic Regression (+ Pred Effort)": {
+          "ROC-AUC": 0.6123,
+          "PR-AUC": 0.4582,
+          "Accuracy": 0.615,
+          "AtRisk-Precision": 0.4746,
+          "AtRisk-Recall": 0.3333,
+          "AtRisk-F1": 0.3916,
+          "Macro-F1": 0.555,
+          "Brier": 0.2343
+        },
+        "Logistic Regression (+ Team SP)": {
+          "ROC-AUC": 0.6658,
+          "PR-AUC": 0.4962,
+          "Accuracy": 0.6549,
+          "AtRisk-Precision": 0.5405,
+          "AtRisk-Recall": 0.4762,
+          "AtRisk-F1": 0.5063,
+          "Macro-F1": 0.6205,
+          "Brier": 0.2218
+        },
+        "Logistic Regression (+ Estimation Gap)": {
+          "ROC-AUC": 0.6553,
+          "PR-AUC": 0.4914,
+          "Accuracy": 0.6283,
+          "AtRisk-Precision": 0.5,
+          "AtRisk-Recall": 0.3929,
+          "AtRisk-F1": 0.44,
+          "Macro-F1": 0.5809,
+          "Brier": 0.2237
+        },
+        "Logistic Regression (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.6709,
+          "PR-AUC": 0.4985,
+          "Accuracy": 0.6504,
+          "AtRisk-Precision": 0.5373,
+          "AtRisk-Recall": 0.4286,
+          "AtRisk-F1": 0.4768,
+          "Macro-F1": 0.6072,
+          "Brier": 0.2208
+        },
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.6339,
+          "PR-AUC": 0.4651,
+          "Accuracy": 0.6283,
+          "AtRisk-Precision": 0.5,
+          "AtRisk-Recall": 0.2738,
+          "AtRisk-F1": 0.3538,
+          "Macro-F1": 0.5465,
+          "Brier": 0.2311
+        },
+        "Random Forest (No Effort)": {
+          "ROC-AUC": 0.5341,
+          "PR-AUC": 0.3856,
+          "Accuracy": 0.5708,
+          "AtRisk-Precision": 0.4,
+          "AtRisk-Recall": 0.3095,
+          "AtRisk-F1": 0.349,
+          "Macro-F1": 0.5144,
+          "Brier": 0.2546
+        },
+        "Random Forest (+ Pred Effort)": {
+          "ROC-AUC": 0.5233,
+          "PR-AUC": 0.4137,
+          "Accuracy": 0.5841,
+          "AtRisk-Precision": 0.4265,
+          "AtRisk-Recall": 0.3452,
+          "AtRisk-F1": 0.3816,
+          "Macro-F1": 0.5341,
+          "Brier": 0.253
+        },
+        "Random Forest (+ Team SP)": {
+          "ROC-AUC": 0.6066,
+          "PR-AUC": 0.4342,
+          "Accuracy": 0.6018,
+          "AtRisk-Precision": 0.4615,
+          "AtRisk-Recall": 0.4286,
+          "AtRisk-F1": 0.4444,
+          "Macro-F1": 0.567,
+          "Brier": 0.2343
+        },
+        "Random Forest (+ Estimation Gap)": {
+          "ROC-AUC": 0.5659,
+          "PR-AUC": 0.3975,
+          "Accuracy": 0.5575,
+          "AtRisk-Precision": 0.3974,
+          "AtRisk-Recall": 0.369,
+          "AtRisk-F1": 0.3827,
+          "Macro-F1": 0.5189,
+          "Brier": 0.244
+        },
+        "Random Forest (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.6128,
+          "PR-AUC": 0.4563,
+          "Accuracy": 0.5973,
+          "AtRisk-Precision": 0.4493,
+          "AtRisk-Recall": 0.369,
+          "AtRisk-F1": 0.4052,
+          "Macro-F1": 0.5504,
+          "Brier": 0.23
+        },
+        "Random Forest (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.5172,
+          "PR-AUC": 0.4041,
+          "Accuracy": 0.5708,
+          "AtRisk-Precision": 0.386,
+          "AtRisk-Recall": 0.2619,
+          "AtRisk-F1": 0.3121,
+          "Macro-F1": 0.5001,
+          "Brier": 0.2512
+        },
+        "LightGBM (No Effort)": {
+          "ROC-AUC": 0.5995,
+          "PR-AUC": 0.4559,
+          "Accuracy": 0.6283,
+          "AtRisk-Precision": 0.5,
+          "AtRisk-Recall": 0.2262,
+          "AtRisk-F1": 0.3115,
+          "Macro-F1": 0.5285,
+          "Brier": 0.2611
+        },
+        "LightGBM (+ Pred Effort)": {
+          "ROC-AUC": 0.5586,
+          "PR-AUC": 0.4263,
+          "Accuracy": 0.5885,
+          "AtRisk-Precision": 0.4043,
+          "AtRisk-Recall": 0.2262,
+          "AtRisk-F1": 0.2901,
+          "Macro-F1": 0.5002,
+          "Brier": 0.2846
+        },
+        "LightGBM (+ Team SP)": {
+          "ROC-AUC": 0.6688,
+          "PR-AUC": 0.4975,
+          "Accuracy": 0.6549,
+          "AtRisk-Precision": 0.56,
+          "AtRisk-Recall": 0.3333,
+          "AtRisk-F1": 0.4179,
+          "Macro-F1": 0.5863,
+          "Brier": 0.2369
+        },
+        "LightGBM (+ Estimation Gap)": {
+          "ROC-AUC": 0.5873,
+          "PR-AUC": 0.4244,
+          "Accuracy": 0.5929,
+          "AtRisk-Precision": 0.4231,
+          "AtRisk-Recall": 0.2619,
+          "AtRisk-F1": 0.3235,
+          "Macro-F1": 0.5162,
+          "Brier": 0.2689
+        },
+        "LightGBM (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.6278,
+          "PR-AUC": 0.4683,
+          "Accuracy": 0.5973,
+          "AtRisk-Precision": 0.4364,
+          "AtRisk-Recall": 0.2857,
+          "AtRisk-F1": 0.3453,
+          "Macro-F1": 0.5273,
+          "Brier": 0.2579
+        },
+        "LightGBM (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.5944,
+          "PR-AUC": 0.4599,
+          "Accuracy": 0.6106,
+          "AtRisk-Precision": 0.4565,
+          "AtRisk-Recall": 0.25,
+          "AtRisk-F1": 0.3231,
+          "Macro-F1": 0.5249,
+          "Brier": 0.2713
+        }
+      },
+      "comparisons": {
+        "Logistic Regression|H1 team estimate": {
+          "delta": 0.0688,
+          "ci_low": 0.0162,
+          "ci_high": 0.1179,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|H2 model estimate beyond team": {
+          "delta": 0.005,
+          "ci_low": -0.0047,
+          "ci_high": 0.0146,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Estimation gap alone": {
+          "delta": 0.0584,
+          "ci_low": 0.0086,
+          "ci_high": 0.1061,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|Original design (pred effort)": {
+          "delta": 0.0153,
+          "ci_low": 0.0001,
+          "ci_high": 0.0324,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|Both estimates vs none": {
+          "delta": 0.0739,
+          "ci_low": 0.0219,
+          "ci_high": 0.1231,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.037,
+          "ci_low": -0.0769,
+          "ci_high": 0.0017,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|H1 team estimate": {
+          "delta": 0.0725,
+          "ci_low": 0.006,
+          "ci_high": 0.1377,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Random Forest|H2 model estimate beyond team": {
+          "delta": 0.0062,
+          "ci_low": -0.0409,
+          "ci_high": 0.0522,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Estimation gap alone": {
+          "delta": 0.0318,
+          "ci_low": -0.0297,
+          "ci_high": 0.0964,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Original design (pred effort)": {
+          "delta": -0.0108,
+          "ci_low": -0.0567,
+          "ci_high": 0.0322,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Both estimates vs none": {
+          "delta": 0.0787,
+          "ci_low": 0.0085,
+          "ci_high": 0.1536,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Random Forest|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.0956,
+          "ci_low": -0.1627,
+          "ci_high": -0.0322,
+          "sig_pos": false,
+          "sig_neg": true
+        },
+        "LightGBM|H1 team estimate": {
+          "delta": 0.0694,
+          "ci_low": 0.0113,
+          "ci_high": 0.1345,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "LightGBM|H2 model estimate beyond team": {
+          "delta": -0.0411,
+          "ci_low": -0.0993,
+          "ci_high": 0.01,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Estimation gap alone": {
+          "delta": -0.0122,
+          "ci_low": -0.0677,
+          "ci_high": 0.0491,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Original design (pred effort)": {
+          "delta": -0.0409,
+          "ci_low": -0.0821,
+          "ci_high": -0.0041,
+          "sig_pos": false,
+          "sig_neg": true
+        },
+        "LightGBM|Both estimates vs none": {
+          "delta": 0.0283,
+          "ci_low": -0.0324,
+          "ci_high": 0.0858,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.0334,
+          "ci_low": -0.0854,
+          "ci_high": 0.0187,
+          "sig_pos": false,
+          "sig_neg": false
+        }
+      },
+      "h3_n_unestimated": 63,
+      "h3": {
+        "Logistic Regression": {
+          "delta": 0.0185,
+          "ci_low": -0.0227,
+          "ci_high": 0.0619,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest": {
+          "delta": -0.0437,
+          "ci_low": -0.1703,
+          "ci_high": 0.0609,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM": {
+          "delta": -0.0514,
+          "ci_low": -0.1808,
+          "ci_high": 0.0848,
+          "sig_pos": false,
+          "sig_neg": false
+        }
+      },
+      "logistic_coefs": {
+        "gap_variant": {
+          "estimation_gap": 0.3708
+        },
+        "both_variant": {
+          "log_sp_team": 0.724,
+          "log_sp_model": 0.1436
+        },
+        "team_variant": {
+          "log_sp_team": 0.7568
+        }
+      }
+    },
+    {
+      "project": "JBIDE",
+      "n_tickets": 1390,
+      "reference_categories": [
+        "Bug",
+        "Major"
+      ],
+      "n_test": 208,
+      "test_delay_rate": 0.486,
+      "effort_model": "LightGBM (Tabular + TF-IDF)",
+      "effort_val_mae": {
+        "Ridge (Tabular Only)": 2.5539,
+        "Ridge (Tabular + TF-IDF)": 2.5078,
+        "LightGBM (Tabular Only)": 2.429,
+        "LightGBM (Tabular + TF-IDF)": 2.4128
+      },
+      "risk_family": "Logistic Regression",
+      "risk_val_auc": {
+        "Logistic Regression (No Effort)": 0.5595,
+        "Logistic Regression (+ Pred Effort)": 0.5911,
+        "Logistic Regression (+ Team SP)": 0.6484,
+        "Logistic Regression (+ Estimation Gap)": 0.6319,
+        "Logistic Regression (+ Team SP + Model SP)": 0.6525,
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": 0.6845,
+        "Random Forest (No Effort)": 0.555,
+        "Random Forest (+ Pred Effort)": 0.5683,
+        "Random Forest (+ Team SP)": 0.5512,
+        "Random Forest (+ Estimation Gap)": 0.5995,
+        "Random Forest (+ Team SP + Model SP)": 0.6173,
+        "Random Forest (+ Final SP + Model SP (leakage check))": 0.6689,
+        "LightGBM (No Effort)": 0.5325,
+        "LightGBM (+ Pred Effort)": 0.5461,
+        "LightGBM (+ Team SP)": 0.5778,
+        "LightGBM (+ Estimation Gap)": 0.5721,
+        "LightGBM (+ Team SP + Model SP)": 0.5912,
+        "LightGBM (+ Final SP + Model SP (leakage check))": 0.638
+      },
+      "effort_test": {
+        "MAE": 2.5175,
+        "RMSE": 3.1786,
+        "MdAE": 2.291,
+        "R2": -0.0531,
+        "PRED(25)%": 18.27,
+        "MdMRE%": 66.48
+      },
+      "effort_test_dummy": {
+        "MAE": 2.6827,
+        "RMSE": 3.3584,
+        "MdAE": 2.0,
+        "R2": -0.1756,
+        "PRED(25)%": 13.94,
+        "MdMRE%": 66.67
+      },
+      "team_sp_known_test_pct": 79.8,
+      "risk_test": {
+        "Logistic Regression (No Effort)": {
+          "ROC-AUC": 0.5407,
+          "PR-AUC": 0.5498,
+          "Accuracy": 0.5577,
+          "AtRisk-Precision": 0.5616,
+          "AtRisk-Recall": 0.4059,
+          "AtRisk-F1": 0.4713,
+          "Macro-F1": 0.5455,
+          "Brier": 0.2507
+        },
+        "Logistic Regression (+ Pred Effort)": {
+          "ROC-AUC": 0.5893,
+          "PR-AUC": 0.5836,
+          "Accuracy": 0.5673,
+          "AtRisk-Precision": 0.6,
+          "AtRisk-Recall": 0.3267,
+          "AtRisk-F1": 0.4231,
+          "Macro-F1": 0.5385,
+          "Brier": 0.2452
+        },
+        "Logistic Regression (+ Team SP)": {
+          "ROC-AUC": 0.5585,
+          "PR-AUC": 0.5388,
+          "Accuracy": 0.5721,
+          "AtRisk-Precision": 0.5938,
+          "AtRisk-Recall": 0.3762,
+          "AtRisk-F1": 0.4606,
+          "Macro-F1": 0.553,
+          "Brier": 0.2638
+        },
+        "Logistic Regression (+ Estimation Gap)": {
+          "ROC-AUC": 0.5444,
+          "PR-AUC": 0.5316,
+          "Accuracy": 0.5433,
+          "AtRisk-Precision": 0.5484,
+          "AtRisk-Recall": 0.3366,
+          "AtRisk-F1": 0.4172,
+          "Macro-F1": 0.5208,
+          "Brier": 0.2648
+        },
+        "Logistic Regression (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.5824,
+          "PR-AUC": 0.571,
+          "Accuracy": 0.601,
+          "AtRisk-Precision": 0.65,
+          "AtRisk-Recall": 0.3861,
+          "AtRisk-F1": 0.4845,
+          "Macro-F1": 0.5795,
+          "Brier": 0.2579
+        },
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.5635,
+          "PR-AUC": 0.5632,
+          "Accuracy": 0.5769,
+          "AtRisk-Precision": 0.6667,
+          "AtRisk-Recall": 0.2574,
+          "AtRisk-F1": 0.3714,
+          "Macro-F1": 0.5263,
+          "Brier": 0.264
+        },
+        "Random Forest (No Effort)": {
+          "ROC-AUC": 0.5019,
+          "PR-AUC": 0.5227,
+          "Accuracy": 0.5337,
+          "AtRisk-Precision": 0.5333,
+          "AtRisk-Recall": 0.3168,
+          "AtRisk-F1": 0.3975,
+          "Macro-F1": 0.5086,
+          "Brier": 0.2727
+        },
+        "Random Forest (+ Pred Effort)": {
+          "ROC-AUC": 0.5181,
+          "PR-AUC": 0.5301,
+          "Accuracy": 0.5673,
+          "AtRisk-Precision": 0.6,
+          "AtRisk-Recall": 0.3267,
+          "AtRisk-F1": 0.4231,
+          "Macro-F1": 0.5385,
+          "Brier": 0.2764
+        },
+        "Random Forest (+ Team SP)": {
+          "ROC-AUC": 0.5363,
+          "PR-AUC": 0.5472,
+          "Accuracy": 0.5288,
+          "AtRisk-Precision": 0.5306,
+          "AtRisk-Recall": 0.2574,
+          "AtRisk-F1": 0.3467,
+          "Macro-F1": 0.4891,
+          "Brier": 0.2734
+        },
+        "Random Forest (+ Estimation Gap)": {
+          "ROC-AUC": 0.5641,
+          "PR-AUC": 0.5718,
+          "Accuracy": 0.5481,
+          "AtRisk-Precision": 0.5745,
+          "AtRisk-Recall": 0.2673,
+          "AtRisk-F1": 0.3649,
+          "Macro-F1": 0.5071,
+          "Brier": 0.2715
+        },
+        "Random Forest (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.5446,
+          "PR-AUC": 0.5737,
+          "Accuracy": 0.5721,
+          "AtRisk-Precision": 0.6154,
+          "AtRisk-Recall": 0.3168,
+          "AtRisk-F1": 0.4183,
+          "Macro-F1": 0.5399,
+          "Brier": 0.2759
+        },
+        "Random Forest (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.5259,
+          "PR-AUC": 0.5556,
+          "Accuracy": 0.5433,
+          "AtRisk-Precision": 0.5652,
+          "AtRisk-Recall": 0.2574,
+          "AtRisk-F1": 0.3537,
+          "Macro-F1": 0.5003,
+          "Brier": 0.2846
+        },
+        "LightGBM (No Effort)": {
+          "ROC-AUC": 0.5016,
+          "PR-AUC": 0.4881,
+          "Accuracy": 0.5529,
+          "AtRisk-Precision": 0.55,
+          "AtRisk-Recall": 0.4356,
+          "AtRisk-F1": 0.4862,
+          "Macro-F1": 0.5452,
+          "Brier": 0.3201
+        },
+        "LightGBM (+ Pred Effort)": {
+          "ROC-AUC": 0.5335,
+          "PR-AUC": 0.5365,
+          "Accuracy": 0.5096,
+          "AtRisk-Precision": 0.494,
+          "AtRisk-Recall": 0.4059,
+          "AtRisk-F1": 0.4457,
+          "Macro-F1": 0.503,
+          "Brier": 0.3171
+        },
+        "LightGBM (+ Team SP)": {
+          "ROC-AUC": 0.5834,
+          "PR-AUC": 0.5725,
+          "Accuracy": 0.5481,
+          "AtRisk-Precision": 0.5556,
+          "AtRisk-Recall": 0.3465,
+          "AtRisk-F1": 0.4268,
+          "Macro-F1": 0.5269,
+          "Brier": 0.2927
+        },
+        "LightGBM (+ Estimation Gap)": {
+          "ROC-AUC": 0.557,
+          "PR-AUC": 0.5586,
+          "Accuracy": 0.5577,
+          "AtRisk-Precision": 0.5714,
+          "AtRisk-Recall": 0.3564,
+          "AtRisk-F1": 0.439,
+          "Macro-F1": 0.537,
+          "Brier": 0.3067
+        },
+        "LightGBM (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.5441,
+          "PR-AUC": 0.5477,
+          "Accuracy": 0.5625,
+          "AtRisk-Precision": 0.5781,
+          "AtRisk-Recall": 0.3663,
+          "AtRisk-F1": 0.4485,
+          "Macro-F1": 0.543,
+          "Brier": 0.3136
+        },
+        "LightGBM (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.5637,
+          "PR-AUC": 0.5453,
+          "Accuracy": 0.5673,
+          "AtRisk-Precision": 0.5965,
+          "AtRisk-Recall": 0.3366,
+          "AtRisk-F1": 0.4304,
+          "Macro-F1": 0.5408,
+          "Brier": 0.319
+        }
+      },
+      "comparisons": {
+        "Logistic Regression|H1 team estimate": {
+          "delta": 0.0179,
+          "ci_low": -0.04,
+          "ci_high": 0.0815,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|H2 model estimate beyond team": {
+          "delta": 0.0239,
+          "ci_low": 0.0059,
+          "ci_high": 0.043,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|Estimation gap alone": {
+          "delta": 0.0037,
+          "ci_low": -0.0523,
+          "ci_high": 0.0638,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Original design (pred effort)": {
+          "delta": 0.0487,
+          "ci_low": 0.0033,
+          "ci_high": 0.0998,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Logistic Regression|Both estimates vs none": {
+          "delta": 0.0417,
+          "ci_low": -0.0156,
+          "ci_high": 0.1056,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.0189,
+          "ci_low": -0.0628,
+          "ci_high": 0.0281,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|H1 team estimate": {
+          "delta": 0.0344,
+          "ci_low": -0.0201,
+          "ci_high": 0.0919,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|H2 model estimate beyond team": {
+          "delta": 0.0083,
+          "ci_low": -0.0367,
+          "ci_high": 0.0526,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Estimation gap alone": {
+          "delta": 0.0622,
+          "ci_low": -0.0021,
+          "ci_high": 0.1251,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Original design (pred effort)": {
+          "delta": 0.0163,
+          "ci_low": -0.0372,
+          "ci_high": 0.061,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Both estimates vs none": {
+          "delta": 0.0428,
+          "ci_low": -0.0174,
+          "ci_high": 0.1036,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.0187,
+          "ci_low": -0.0625,
+          "ci_high": 0.0213,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|H1 team estimate": {
+          "delta": 0.0818,
+          "ci_low": 0.0253,
+          "ci_high": 0.1351,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "LightGBM|H2 model estimate beyond team": {
+          "delta": -0.0393,
+          "ci_low": -0.0927,
+          "ci_high": 0.0048,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Estimation gap alone": {
+          "delta": 0.0553,
+          "ci_low": -0.0107,
+          "ci_high": 0.1201,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Original design (pred effort)": {
+          "delta": 0.0318,
+          "ci_low": -0.0206,
+          "ci_high": 0.0812,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Both estimates vs none": {
+          "delta": 0.0425,
+          "ci_low": -0.0246,
+          "ci_high": 0.1014,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Leakage: final SP vs prediction-time SP": {
+          "delta": 0.0196,
+          "ci_low": -0.0313,
+          "ci_high": 0.0688,
+          "sig_pos": false,
+          "sig_neg": false
+        }
+      },
+      "h3_n_unestimated": 42,
+      "h3": {
+        "Logistic Regression": {
+          "delta": 0.0686,
+          "ci_low": -0.0249,
+          "ci_high": 0.158,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest": {
+          "delta": 0.0595,
+          "ci_low": -0.0742,
+          "ci_high": 0.1888,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM": {
+          "delta": -0.0137,
+          "ci_low": -0.1614,
+          "ci_high": 0.1273,
+          "sig_pos": false,
+          "sig_neg": false
+        }
+      },
+      "logistic_coefs": {
+        "gap_variant": {
+          "estimation_gap": 0.4651
+        },
+        "both_variant": {
+          "log_sp_team": 0.704,
+          "log_sp_model": 0.2551
+        },
+        "team_variant": {
+          "log_sp_team": 0.8093
+        }
+      }
+    },
+    {
+      "project": "RHDEVDOCS",
+      "n_tickets": 1352,
+      "reference_categories": [
+        "Task",
+        "High"
+      ],
+      "n_test": 202,
+      "test_delay_rate": 0.668,
+      "effort_model": "Ridge (Tabular + TF-IDF)",
+      "effort_val_mae": {
+        "Ridge (Tabular Only)": 1.7864,
+        "Ridge (Tabular + TF-IDF)": 1.741,
+        "LightGBM (Tabular Only)": 1.8617,
+        "LightGBM (Tabular + TF-IDF)": 1.8105
+      },
+      "risk_family": "Logistic Regression",
+      "risk_val_auc": {
+        "Logistic Regression (No Effort)": 0.7126,
+        "Logistic Regression (+ Pred Effort)": 0.7358,
+        "Logistic Regression (+ Team SP)": 0.7575,
+        "Logistic Regression (+ Estimation Gap)": 0.7518,
+        "Logistic Regression (+ Team SP + Model SP)": 0.7578,
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": 0.7419,
+        "Random Forest (No Effort)": 0.6436,
+        "Random Forest (+ Pred Effort)": 0.6471,
+        "Random Forest (+ Team SP)": 0.7457,
+        "Random Forest (+ Estimation Gap)": 0.6969,
+        "Random Forest (+ Team SP + Model SP)": 0.7029,
+        "Random Forest (+ Final SP + Model SP (leakage check))": 0.7144,
+        "LightGBM (No Effort)": 0.6174,
+        "LightGBM (+ Pred Effort)": 0.6653,
+        "LightGBM (+ Team SP)": 0.7072,
+        "LightGBM (+ Estimation Gap)": 0.6412,
+        "LightGBM (+ Team SP + Model SP)": 0.6946,
+        "LightGBM (+ Final SP + Model SP (leakage check))": 0.697
+      },
+      "effort_test": {
+        "MAE": 1.9952,
+        "RMSE": 2.9211,
+        "MdAE": 1.4014,
+        "R2": 0.0015,
+        "PRED(25)%": 34.16,
+        "MdMRE%": 32.85
+      },
+      "effort_test_dummy": {
+        "MAE": 2.3119,
+        "RMSE": 3.4419,
+        "MdAE": 2.0,
+        "R2": -0.3863,
+        "PRED(25)%": 30.2,
+        "MdMRE%": 40.0
+      },
+      "team_sp_known_test_pct": 95.0,
+      "risk_test": {
+        "Logistic Regression (No Effort)": {
+          "ROC-AUC": 0.6785,
+          "PR-AUC": 0.8123,
+          "Accuracy": 0.6733,
+          "AtRisk-Precision": 0.7447,
+          "AtRisk-Recall": 0.7778,
+          "AtRisk-F1": 0.7609,
+          "Macro-F1": 0.6226,
+          "Brier": 0.2117
+        },
+        "Logistic Regression (+ Pred Effort)": {
+          "ROC-AUC": 0.6866,
+          "PR-AUC": 0.8125,
+          "Accuracy": 0.6683,
+          "AtRisk-Precision": 0.7576,
+          "AtRisk-Recall": 0.7407,
+          "AtRisk-F1": 0.7491,
+          "Macro-F1": 0.63,
+          "Brier": 0.2129
+        },
+        "Logistic Regression (+ Team SP)": {
+          "ROC-AUC": 0.6921,
+          "PR-AUC": 0.8308,
+          "Accuracy": 0.6485,
+          "AtRisk-Precision": 0.7319,
+          "AtRisk-Recall": 0.7481,
+          "AtRisk-F1": 0.7399,
+          "Macro-F1": 0.599,
+          "Brier": 0.2075
+        },
+        "Logistic Regression (+ Estimation Gap)": {
+          "ROC-AUC": 0.6858,
+          "PR-AUC": 0.829,
+          "Accuracy": 0.6337,
+          "AtRisk-Precision": 0.7163,
+          "AtRisk-Recall": 0.7481,
+          "AtRisk-F1": 0.7319,
+          "Macro-F1": 0.5769,
+          "Brier": 0.2091
+        },
+        "Logistic Regression (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.6968,
+          "PR-AUC": 0.8286,
+          "Accuracy": 0.6485,
+          "AtRisk-Precision": 0.7388,
+          "AtRisk-Recall": 0.7333,
+          "AtRisk-F1": 0.7361,
+          "Macro-F1": 0.6051,
+          "Brier": 0.2079
+        },
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.6849,
+          "PR-AUC": 0.8093,
+          "Accuracy": 0.6535,
+          "AtRisk-Precision": 0.7407,
+          "AtRisk-Recall": 0.7407,
+          "AtRisk-F1": 0.7407,
+          "Macro-F1": 0.6092,
+          "Brier": 0.2122
+        },
+        "Random Forest (No Effort)": {
+          "ROC-AUC": 0.6648,
+          "PR-AUC": 0.8115,
+          "Accuracy": 0.6386,
+          "AtRisk-Precision": 0.7183,
+          "AtRisk-Recall": 0.7556,
+          "AtRisk-F1": 0.7365,
+          "Macro-F1": 0.5808,
+          "Brier": 0.2155
+        },
+        "Random Forest (+ Pred Effort)": {
+          "ROC-AUC": 0.6393,
+          "PR-AUC": 0.7716,
+          "Accuracy": 0.6485,
+          "AtRisk-Precision": 0.7192,
+          "AtRisk-Recall": 0.7778,
+          "AtRisk-F1": 0.7473,
+          "Macro-F1": 0.585,
+          "Brier": 0.2181
+        },
+        "Random Forest (+ Team SP)": {
+          "ROC-AUC": 0.5776,
+          "PR-AUC": 0.7511,
+          "Accuracy": 0.6139,
+          "AtRisk-Precision": 0.6966,
+          "AtRisk-Recall": 0.7481,
+          "AtRisk-F1": 0.7214,
+          "Macro-F1": 0.5462,
+          "Brier": 0.2361
+        },
+        "Random Forest (+ Estimation Gap)": {
+          "ROC-AUC": 0.5973,
+          "PR-AUC": 0.7668,
+          "Accuracy": 0.599,
+          "AtRisk-Precision": 0.6824,
+          "AtRisk-Recall": 0.7481,
+          "AtRisk-F1": 0.7138,
+          "Macro-F1": 0.5222,
+          "Brier": 0.227
+        },
+        "Random Forest (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.6451,
+          "PR-AUC": 0.7848,
+          "Accuracy": 0.6337,
+          "AtRisk-Precision": 0.7075,
+          "AtRisk-Recall": 0.7704,
+          "AtRisk-F1": 0.7376,
+          "Macro-F1": 0.5655,
+          "Brier": 0.2183
+        },
+        "Random Forest (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.6329,
+          "PR-AUC": 0.7887,
+          "Accuracy": 0.6188,
+          "AtRisk-Precision": 0.7042,
+          "AtRisk-Recall": 0.7407,
+          "AtRisk-F1": 0.722,
+          "Macro-F1": 0.5579,
+          "Brier": 0.2212
+        },
+        "LightGBM (No Effort)": {
+          "ROC-AUC": 0.654,
+          "PR-AUC": 0.7751,
+          "Accuracy": 0.6931,
+          "AtRisk-Precision": 0.745,
+          "AtRisk-Recall": 0.8222,
+          "AtRisk-F1": 0.7817,
+          "Macro-F1": 0.6325,
+          "Brier": 0.2267
+        },
+        "LightGBM (+ Pred Effort)": {
+          "ROC-AUC": 0.6469,
+          "PR-AUC": 0.7311,
+          "Accuracy": 0.698,
+          "AtRisk-Precision": 0.7606,
+          "AtRisk-Recall": 0.8,
+          "AtRisk-F1": 0.7798,
+          "Macro-F1": 0.6497,
+          "Brier": 0.2298
+        },
+        "LightGBM (+ Team SP)": {
+          "ROC-AUC": 0.5981,
+          "PR-AUC": 0.7297,
+          "Accuracy": 0.599,
+          "AtRisk-Precision": 0.7015,
+          "AtRisk-Recall": 0.6963,
+          "AtRisk-F1": 0.6989,
+          "Macro-F1": 0.5494,
+          "Brier": 0.2577
+        },
+        "LightGBM (+ Estimation Gap)": {
+          "ROC-AUC": 0.6142,
+          "PR-AUC": 0.7403,
+          "Accuracy": 0.6683,
+          "AtRisk-Precision": 0.7429,
+          "AtRisk-Recall": 0.7704,
+          "AtRisk-F1": 0.7564,
+          "Macro-F1": 0.6185,
+          "Brier": 0.2477
+        },
+        "LightGBM (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.6083,
+          "PR-AUC": 0.7422,
+          "Accuracy": 0.5743,
+          "AtRisk-Precision": 0.6899,
+          "AtRisk-Recall": 0.6593,
+          "AtRisk-F1": 0.6742,
+          "Macro-F1": 0.53,
+          "Brier": 0.262
+        },
+        "LightGBM (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.5889,
+          "PR-AUC": 0.7214,
+          "Accuracy": 0.6188,
+          "AtRisk-Precision": 0.7197,
+          "AtRisk-Recall": 0.7037,
+          "AtRisk-F1": 0.7116,
+          "Macro-F1": 0.5748,
+          "Brier": 0.2723
+        }
+      },
+      "comparisons": {
+        "Logistic Regression|H1 team estimate": {
+          "delta": 0.0136,
+          "ci_low": -0.0293,
+          "ci_high": 0.0561,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|H2 model estimate beyond team": {
+          "delta": 0.0048,
+          "ci_low": -0.0114,
+          "ci_high": 0.0191,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Estimation gap alone": {
+          "delta": 0.0073,
+          "ci_low": -0.0361,
+          "ci_high": 0.0472,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Original design (pred effort)": {
+          "delta": 0.0081,
+          "ci_low": -0.0191,
+          "ci_high": 0.0333,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Both estimates vs none": {
+          "delta": 0.0184,
+          "ci_low": -0.0247,
+          "ci_high": 0.0603,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.0119,
+          "ci_low": -0.0353,
+          "ci_high": 0.0105,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|H1 team estimate": {
+          "delta": -0.0872,
+          "ci_low": -0.1573,
+          "ci_high": -0.0218,
+          "sig_pos": false,
+          "sig_neg": true
+        },
+        "Random Forest|H2 model estimate beyond team": {
+          "delta": 0.0675,
+          "ci_low": 0.0172,
+          "ci_high": 0.1198,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Random Forest|Estimation gap alone": {
+          "delta": -0.0675,
+          "ci_low": -0.1286,
+          "ci_high": -0.0086,
+          "sig_pos": false,
+          "sig_neg": true
+        },
+        "Random Forest|Original design (pred effort)": {
+          "delta": -0.0255,
+          "ci_low": -0.0767,
+          "ci_high": 0.0237,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Both estimates vs none": {
+          "delta": -0.0197,
+          "ci_low": -0.0873,
+          "ci_high": 0.042,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.0121,
+          "ci_low": -0.0614,
+          "ci_high": 0.0321,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|H1 team estimate": {
+          "delta": -0.0558,
+          "ci_low": -0.12,
+          "ci_high": 0.0114,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|H2 model estimate beyond team": {
+          "delta": 0.0102,
+          "ci_low": -0.0408,
+          "ci_high": 0.0599,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Estimation gap alone": {
+          "delta": -0.0398,
+          "ci_low": -0.1008,
+          "ci_high": 0.0183,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Original design (pred effort)": {
+          "delta": -0.0071,
+          "ci_low": -0.0606,
+          "ci_high": 0.0469,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Both estimates vs none": {
+          "delta": -0.0457,
+          "ci_low": -0.1189,
+          "ci_high": 0.025,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.0193,
+          "ci_low": -0.0652,
+          "ci_high": 0.0307,
+          "sig_pos": false,
+          "sig_neg": false
+        }
+      },
+      "h3_n_unestimated": 10,
+      "h3": {},
+      "logistic_coefs": {
+        "gap_variant": {
+          "estimation_gap": 0.3856
+        },
+        "both_variant": {
+          "log_sp_team": 0.5681,
+          "log_sp_model": 0.3303
+        },
+        "team_variant": {
+          "log_sp_team": 0.6662
+        }
+      }
+    },
+    {
+      "project": "BXMSDOC",
+      "n_tickets": 1223,
+      "reference_categories": [
+        "Task",
+        "Major"
+      ],
+      "n_test": 169,
+      "test_delay_rate": 0.491,
+      "effort_model": "LightGBM (Tabular + TF-IDF)",
+      "effort_val_mae": {
+        "Ridge (Tabular Only)": 1.3463,
+        "Ridge (Tabular + TF-IDF)": 1.2895,
+        "LightGBM (Tabular Only)": 1.2995,
+        "LightGBM (Tabular + TF-IDF)": 1.1642
+      },
+      "risk_family": "Logistic Regression",
+      "risk_val_auc": {
+        "Logistic Regression (No Effort)": 0.5427,
+        "Logistic Regression (+ Pred Effort)": 0.5566,
+        "Logistic Regression (+ Team SP)": 0.5873,
+        "Logistic Regression (+ Estimation Gap)": 0.5652,
+        "Logistic Regression (+ Team SP + Model SP)": 0.5939,
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": 0.5802,
+        "Random Forest (No Effort)": 0.4683,
+        "Random Forest (+ Pred Effort)": 0.4688,
+        "Random Forest (+ Team SP)": 0.4377,
+        "Random Forest (+ Estimation Gap)": 0.439,
+        "Random Forest (+ Team SP + Model SP)": 0.4666,
+        "Random Forest (+ Final SP + Model SP (leakage check))": 0.4623,
+        "LightGBM (No Effort)": 0.4943,
+        "LightGBM (+ Pred Effort)": 0.4706,
+        "LightGBM (+ Team SP)": 0.5216,
+        "LightGBM (+ Estimation Gap)": 0.4658,
+        "LightGBM (+ Team SP + Model SP)": 0.4958,
+        "LightGBM (+ Final SP + Model SP (leakage check))": 0.4868
+      },
+      "effort_test": {
+        "MAE": 0.9137,
+        "RMSE": 1.3225,
+        "MdAE": 0.6461,
+        "R2": 0.2072,
+        "PRED(25)%": 51.48,
+        "MdMRE%": 23.62
+      },
+      "effort_test_dummy": {
+        "MAE": 0.9882,
+        "RMSE": 1.4856,
+        "MdAE": 1.0,
+        "R2": -0.0004,
+        "PRED(25)%": 44.38,
+        "MdMRE%": 40.0
+      },
+      "team_sp_known_test_pct": 89.9,
+      "risk_test": {
+        "Logistic Regression (No Effort)": {
+          "ROC-AUC": 0.7223,
+          "PR-AUC": 0.6846,
+          "Accuracy": 0.645,
+          "AtRisk-Precision": 0.717,
+          "AtRisk-Recall": 0.4578,
+          "AtRisk-F1": 0.5588,
+          "Macro-F1": 0.6309,
+          "Brier": 0.2226
+        },
+        "Logistic Regression (+ Pred Effort)": {
+          "ROC-AUC": 0.7543,
+          "PR-AUC": 0.705,
+          "Accuracy": 0.6686,
+          "AtRisk-Precision": 0.7015,
+          "AtRisk-Recall": 0.5663,
+          "AtRisk-F1": 0.6267,
+          "Macro-F1": 0.6644,
+          "Brier": 0.2143
+        },
+        "Logistic Regression (+ Team SP)": {
+          "ROC-AUC": 0.7408,
+          "PR-AUC": 0.7151,
+          "Accuracy": 0.7101,
+          "AtRisk-Precision": 0.7237,
+          "AtRisk-Recall": 0.6627,
+          "AtRisk-F1": 0.6918,
+          "Macro-F1": 0.709,
+          "Brier": 0.2116
+        },
+        "Logistic Regression (+ Estimation Gap)": {
+          "ROC-AUC": 0.7221,
+          "PR-AUC": 0.7052,
+          "Accuracy": 0.6746,
+          "AtRisk-Precision": 0.7,
+          "AtRisk-Recall": 0.5904,
+          "AtRisk-F1": 0.6405,
+          "Macro-F1": 0.6716,
+          "Brier": 0.2164
+        },
+        "Logistic Regression (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.7609,
+          "PR-AUC": 0.7327,
+          "Accuracy": 0.6982,
+          "AtRisk-Precision": 0.7,
+          "AtRisk-Recall": 0.6747,
+          "AtRisk-F1": 0.6871,
+          "Macro-F1": 0.6978,
+          "Brier": 0.2068
+        },
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.7537,
+          "PR-AUC": 0.6982,
+          "Accuracy": 0.6746,
+          "AtRisk-Precision": 0.6944,
+          "AtRisk-Recall": 0.6024,
+          "AtRisk-F1": 0.6452,
+          "Macro-F1": 0.6723,
+          "Brier": 0.2107
+        },
+        "Random Forest (No Effort)": {
+          "ROC-AUC": 0.6192,
+          "PR-AUC": 0.5979,
+          "Accuracy": 0.5976,
+          "AtRisk-Precision": 0.6271,
+          "AtRisk-Recall": 0.4458,
+          "AtRisk-F1": 0.5211,
+          "Macro-F1": 0.5871,
+          "Brier": 0.2429
+        },
+        "Random Forest (+ Pred Effort)": {
+          "ROC-AUC": 0.6437,
+          "PR-AUC": 0.5882,
+          "Accuracy": 0.5858,
+          "AtRisk-Precision": 0.6032,
+          "AtRisk-Recall": 0.4578,
+          "AtRisk-F1": 0.5205,
+          "Macro-F1": 0.578,
+          "Brier": 0.2379
+        },
+        "Random Forest (+ Team SP)": {
+          "ROC-AUC": 0.6208,
+          "PR-AUC": 0.6312,
+          "Accuracy": 0.5799,
+          "AtRisk-Precision": 0.5811,
+          "AtRisk-Recall": 0.5181,
+          "AtRisk-F1": 0.5478,
+          "Macro-F1": 0.5778,
+          "Brier": 0.2388
+        },
+        "Random Forest (+ Estimation Gap)": {
+          "ROC-AUC": 0.6409,
+          "PR-AUC": 0.6482,
+          "Accuracy": 0.5562,
+          "AtRisk-Precision": 0.5606,
+          "AtRisk-Recall": 0.4458,
+          "AtRisk-F1": 0.4966,
+          "Macro-F1": 0.5499,
+          "Brier": 0.2347
+        },
+        "Random Forest (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.6337,
+          "PR-AUC": 0.6337,
+          "Accuracy": 0.574,
+          "AtRisk-Precision": 0.5965,
+          "AtRisk-Recall": 0.4096,
+          "AtRisk-F1": 0.4857,
+          "Macro-F1": 0.561,
+          "Brier": 0.2367
+        },
+        "Random Forest (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.6262,
+          "PR-AUC": 0.5935,
+          "Accuracy": 0.5444,
+          "AtRisk-Precision": 0.55,
+          "AtRisk-Recall": 0.3976,
+          "AtRisk-F1": 0.4615,
+          "Macro-F1": 0.5333,
+          "Brier": 0.2408
+        },
+        "LightGBM (No Effort)": {
+          "ROC-AUC": 0.5761,
+          "PR-AUC": 0.5498,
+          "Accuracy": 0.574,
+          "AtRisk-Precision": 0.5821,
+          "AtRisk-Recall": 0.4699,
+          "AtRisk-F1": 0.52,
+          "Macro-F1": 0.5685,
+          "Brier": 0.2872
+        },
+        "LightGBM (+ Pred Effort)": {
+          "ROC-AUC": 0.6542,
+          "PR-AUC": 0.592,
+          "Accuracy": 0.5799,
+          "AtRisk-Precision": 0.6071,
+          "AtRisk-Recall": 0.4096,
+          "AtRisk-F1": 0.4892,
+          "Macro-F1": 0.5662,
+          "Brier": 0.2707
+        },
+        "LightGBM (+ Team SP)": {
+          "ROC-AUC": 0.6284,
+          "PR-AUC": 0.598,
+          "Accuracy": 0.5976,
+          "AtRisk-Precision": 0.6056,
+          "AtRisk-Recall": 0.5181,
+          "AtRisk-F1": 0.5584,
+          "Macro-F1": 0.5944,
+          "Brier": 0.2723
+        },
+        "LightGBM (+ Estimation Gap)": {
+          "ROC-AUC": 0.6192,
+          "PR-AUC": 0.5981,
+          "Accuracy": 0.5562,
+          "AtRisk-Precision": 0.5667,
+          "AtRisk-Recall": 0.4096,
+          "AtRisk-F1": 0.4755,
+          "Macro-F1": 0.5455,
+          "Brier": 0.2768
+        },
+        "LightGBM (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.665,
+          "PR-AUC": 0.6317,
+          "Accuracy": 0.5858,
+          "AtRisk-Precision": 0.6,
+          "AtRisk-Recall": 0.4699,
+          "AtRisk-F1": 0.527,
+          "Macro-F1": 0.5793,
+          "Brier": 0.2613
+        },
+        "LightGBM (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.647,
+          "PR-AUC": 0.6228,
+          "Accuracy": 0.5976,
+          "AtRisk-Precision": 0.619,
+          "AtRisk-Recall": 0.4699,
+          "AtRisk-F1": 0.5342,
+          "Macro-F1": 0.59,
+          "Brier": 0.2617
+        }
+      },
+      "comparisons": {
+        "Logistic Regression|H1 team estimate": {
+          "delta": 0.0185,
+          "ci_low": -0.0254,
+          "ci_high": 0.0623,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|H2 model estimate beyond team": {
+          "delta": 0.02,
+          "ci_low": -0.0059,
+          "ci_high": 0.0441,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Estimation gap alone": {
+          "delta": -0.0003,
+          "ci_low": -0.0391,
+          "ci_high": 0.0395,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Original design (pred effort)": {
+          "delta": 0.0319,
+          "ci_low": -0.0052,
+          "ci_high": 0.0646,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Both estimates vs none": {
+          "delta": 0.0385,
+          "ci_low": -0.0122,
+          "ci_high": 0.0856,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.0071,
+          "ci_low": -0.0312,
+          "ci_high": 0.0201,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|H1 team estimate": {
+          "delta": 0.0016,
+          "ci_low": -0.0473,
+          "ci_high": 0.0522,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|H2 model estimate beyond team": {
+          "delta": 0.013,
+          "ci_low": -0.0422,
+          "ci_high": 0.0668,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Estimation gap alone": {
+          "delta": 0.0218,
+          "ci_low": -0.0292,
+          "ci_high": 0.0748,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Original design (pred effort)": {
+          "delta": 0.0245,
+          "ci_low": -0.0261,
+          "ci_high": 0.0715,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Both estimates vs none": {
+          "delta": 0.0146,
+          "ci_low": -0.0526,
+          "ci_high": 0.081,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.0075,
+          "ci_low": -0.0548,
+          "ci_high": 0.041,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|H1 team estimate": {
+          "delta": 0.0523,
+          "ci_low": 0.0011,
+          "ci_high": 0.1031,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "LightGBM|H2 model estimate beyond team": {
+          "delta": 0.0366,
+          "ci_low": -0.0043,
+          "ci_high": 0.0776,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Estimation gap alone": {
+          "delta": 0.0431,
+          "ci_low": -0.0143,
+          "ci_high": 0.1071,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Original design (pred effort)": {
+          "delta": 0.0782,
+          "ci_low": 0.0284,
+          "ci_high": 0.1334,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "LightGBM|Both estimates vs none": {
+          "delta": 0.089,
+          "ci_low": 0.0342,
+          "ci_high": 0.1509,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "LightGBM|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.0181,
+          "ci_low": -0.0686,
+          "ci_high": 0.0361,
+          "sig_pos": false,
+          "sig_neg": false
+        }
+      },
+      "h3_n_unestimated": 17,
+      "h3": {},
+      "logistic_coefs": {
+        "gap_variant": {
+          "estimation_gap": 0.1915
+        },
+        "both_variant": {
+          "log_sp_team": 0.241,
+          "log_sp_model": 0.2132
+        },
+        "team_variant": {
+          "log_sp_team": 0.338
+        }
+      }
+    },
+    {
+      "project": "KEYCLOAK",
+      "n_tickets": 904,
+      "reference_categories": [
+        "Task",
+        "Major"
+      ],
+      "n_test": 133,
+      "test_delay_rate": 0.421,
+      "effort_model": "Ridge (Tabular + TF-IDF)",
+      "effort_val_mae": {
+        "Ridge (Tabular Only)": 2.1052,
+        "Ridge (Tabular + TF-IDF)": 2.0126,
+        "LightGBM (Tabular Only)": 2.1963,
+        "LightGBM (Tabular + TF-IDF)": 2.1011
+      },
+      "risk_family": "Logistic Regression",
+      "risk_val_auc": {
+        "Logistic Regression (No Effort)": 0.5568,
+        "Logistic Regression (+ Pred Effort)": 0.5618,
+        "Logistic Regression (+ Team SP)": 0.5889,
+        "Logistic Regression (+ Estimation Gap)": 0.5924,
+        "Logistic Regression (+ Team SP + Model SP)": 0.5883,
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": 0.616,
+        "Random Forest (No Effort)": 0.521,
+        "Random Forest (+ Pred Effort)": 0.5455,
+        "Random Forest (+ Team SP)": 0.5364,
+        "Random Forest (+ Estimation Gap)": 0.5753,
+        "Random Forest (+ Team SP + Model SP)": 0.5686,
+        "Random Forest (+ Final SP + Model SP (leakage check))": 0.6119,
+        "LightGBM (No Effort)": 0.477,
+        "LightGBM (+ Pred Effort)": 0.4904,
+        "LightGBM (+ Team SP)": 0.5096,
+        "LightGBM (+ Estimation Gap)": 0.479,
+        "LightGBM (+ Team SP + Model SP)": 0.5009,
+        "LightGBM (+ Final SP + Model SP (leakage check))": 0.576
+      },
+      "effort_test": {
+        "MAE": 1.8722,
+        "RMSE": 2.5492,
+        "MdAE": 1.3774,
+        "R2": 0.2436,
+        "PRED(25)%": 21.05,
+        "MdMRE%": 53.72
+      },
+      "effort_test_dummy": {
+        "MAE": 2.203,
+        "RMSE": 2.9392,
+        "MdAE": 2.0,
+        "R2": -0.0055,
+        "PRED(25)%": 19.55,
+        "MdMRE%": 62.5
+      },
+      "team_sp_known_test_pct": 75.2,
+      "risk_test": {
+        "Logistic Regression (No Effort)": {
+          "ROC-AUC": 0.6642,
+          "PR-AUC": 0.5528,
+          "Accuracy": 0.6241,
+          "AtRisk-Precision": 0.5577,
+          "AtRisk-Recall": 0.5179,
+          "AtRisk-F1": 0.537,
+          "Macro-F1": 0.6103,
+          "Brier": 0.2335
+        },
+        "Logistic Regression (+ Pred Effort)": {
+          "ROC-AUC": 0.6626,
+          "PR-AUC": 0.5522,
+          "Accuracy": 0.6165,
+          "AtRisk-Precision": 0.551,
+          "AtRisk-Recall": 0.4821,
+          "AtRisk-F1": 0.5143,
+          "Macro-F1": 0.5988,
+          "Brier": 0.2334
+        },
+        "Logistic Regression (+ Team SP)": {
+          "ROC-AUC": 0.7231,
+          "PR-AUC": 0.6064,
+          "Accuracy": 0.6767,
+          "AtRisk-Precision": 0.614,
+          "AtRisk-Recall": 0.625,
+          "AtRisk-F1": 0.6195,
+          "Macro-F1": 0.6692,
+          "Brier": 0.2158
+        },
+        "Logistic Regression (+ Estimation Gap)": {
+          "ROC-AUC": 0.7243,
+          "PR-AUC": 0.6046,
+          "Accuracy": 0.6992,
+          "AtRisk-Precision": 0.66,
+          "AtRisk-Recall": 0.5893,
+          "AtRisk-F1": 0.6226,
+          "Macro-F1": 0.6863,
+          "Brier": 0.2134
+        },
+        "Logistic Regression (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.7217,
+          "PR-AUC": 0.6056,
+          "Accuracy": 0.6842,
+          "AtRisk-Precision": 0.625,
+          "AtRisk-Recall": 0.625,
+          "AtRisk-F1": 0.625,
+          "Macro-F1": 0.6761,
+          "Brier": 0.2161
+        },
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.7345,
+          "PR-AUC": 0.602,
+          "Accuracy": 0.6466,
+          "AtRisk-Precision": 0.6047,
+          "AtRisk-Recall": 0.4643,
+          "AtRisk-F1": 0.5253,
+          "Macro-F1": 0.6219,
+          "Brier": 0.2164
+        },
+        "Random Forest (No Effort)": {
+          "ROC-AUC": 0.6154,
+          "PR-AUC": 0.4814,
+          "Accuracy": 0.5564,
+          "AtRisk-Precision": 0.4651,
+          "AtRisk-Recall": 0.3571,
+          "AtRisk-F1": 0.404,
+          "Macro-F1": 0.5254,
+          "Brier": 0.2348
+        },
+        "Random Forest (+ Pred Effort)": {
+          "ROC-AUC": 0.6274,
+          "PR-AUC": 0.5054,
+          "Accuracy": 0.5789,
+          "AtRisk-Precision": 0.5,
+          "AtRisk-Recall": 0.3571,
+          "AtRisk-F1": 0.4167,
+          "Macro-F1": 0.5436,
+          "Brier": 0.236
+        },
+        "Random Forest (+ Team SP)": {
+          "ROC-AUC": 0.7143,
+          "PR-AUC": 0.5894,
+          "Accuracy": 0.6316,
+          "AtRisk-Precision": 0.5897,
+          "AtRisk-Recall": 0.4107,
+          "AtRisk-F1": 0.4842,
+          "Macro-F1": 0.5988,
+          "Brier": 0.2126
+        },
+        "Random Forest (+ Estimation Gap)": {
+          "ROC-AUC": 0.6753,
+          "PR-AUC": 0.5351,
+          "Accuracy": 0.6165,
+          "AtRisk-Precision": 0.5581,
+          "AtRisk-Recall": 0.4286,
+          "AtRisk-F1": 0.4848,
+          "Macro-F1": 0.5897,
+          "Brier": 0.2236
+        },
+        "Random Forest (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.6917,
+          "PR-AUC": 0.5599,
+          "Accuracy": 0.6692,
+          "AtRisk-Precision": 0.65,
+          "AtRisk-Recall": 0.4643,
+          "AtRisk-F1": 0.5417,
+          "Macro-F1": 0.6414,
+          "Brier": 0.2194
+        },
+        "Random Forest (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.6715,
+          "PR-AUC": 0.5374,
+          "Accuracy": 0.609,
+          "AtRisk-Precision": 0.5455,
+          "AtRisk-Recall": 0.4286,
+          "AtRisk-F1": 0.48,
+          "Macro-F1": 0.5834,
+          "Brier": 0.226
+        },
+        "LightGBM (No Effort)": {
+          "ROC-AUC": 0.6227,
+          "PR-AUC": 0.5079,
+          "Accuracy": 0.6015,
+          "AtRisk-Precision": 0.5405,
+          "AtRisk-Recall": 0.3571,
+          "AtRisk-F1": 0.4301,
+          "Macro-F1": 0.5619,
+          "Brier": 0.2674
+        },
+        "LightGBM (+ Pred Effort)": {
+          "ROC-AUC": 0.6078,
+          "PR-AUC": 0.4951,
+          "Accuracy": 0.5714,
+          "AtRisk-Precision": 0.4884,
+          "AtRisk-Recall": 0.375,
+          "AtRisk-F1": 0.4242,
+          "Macro-F1": 0.5415,
+          "Brier": 0.2894
+        },
+        "LightGBM (+ Team SP)": {
+          "ROC-AUC": 0.6364,
+          "PR-AUC": 0.5075,
+          "Accuracy": 0.6165,
+          "AtRisk-Precision": 0.5676,
+          "AtRisk-Recall": 0.375,
+          "AtRisk-F1": 0.4516,
+          "Macro-F1": 0.5784,
+          "Brier": 0.27
+        },
+        "LightGBM (+ Estimation Gap)": {
+          "ROC-AUC": 0.6814,
+          "PR-AUC": 0.5339,
+          "Accuracy": 0.6316,
+          "AtRisk-Precision": 0.5946,
+          "AtRisk-Recall": 0.3929,
+          "AtRisk-F1": 0.4731,
+          "Macro-F1": 0.5949,
+          "Brier": 0.2602
+        },
+        "LightGBM (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.6417,
+          "PR-AUC": 0.4941,
+          "Accuracy": 0.6165,
+          "AtRisk-Precision": 0.5676,
+          "AtRisk-Recall": 0.375,
+          "AtRisk-F1": 0.4516,
+          "Macro-F1": 0.5784,
+          "Brier": 0.2841
+        },
+        "LightGBM (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.6134,
+          "PR-AUC": 0.5193,
+          "Accuracy": 0.6391,
+          "AtRisk-Precision": 0.6,
+          "AtRisk-Recall": 0.4286,
+          "AtRisk-F1": 0.5,
+          "Macro-F1": 0.6088,
+          "Brier": 0.2902
+        }
+      },
+      "comparisons": {
+        "Logistic Regression|H1 team estimate": {
+          "delta": 0.0589,
+          "ci_low": -0.0186,
+          "ci_high": 0.1344,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|H2 model estimate beyond team": {
+          "delta": -0.0014,
+          "ci_low": -0.0054,
+          "ci_high": 0.0019,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Estimation gap alone": {
+          "delta": 0.0601,
+          "ci_low": -0.0163,
+          "ci_high": 0.1367,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Original design (pred effort)": {
+          "delta": -0.0016,
+          "ci_low": -0.016,
+          "ci_high": 0.0127,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Both estimates vs none": {
+          "delta": 0.0575,
+          "ci_low": -0.0203,
+          "ci_high": 0.1331,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Leakage: final SP vs prediction-time SP": {
+          "delta": 0.0128,
+          "ci_low": -0.039,
+          "ci_high": 0.0658,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|H1 team estimate": {
+          "delta": 0.0989,
+          "ci_low": 0.0343,
+          "ci_high": 0.1668,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Random Forest|H2 model estimate beyond team": {
+          "delta": -0.0226,
+          "ci_low": -0.0695,
+          "ci_high": 0.0227,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Estimation gap alone": {
+          "delta": 0.0599,
+          "ci_low": -0.0115,
+          "ci_high": 0.133,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Original design (pred effort)": {
+          "delta": 0.0121,
+          "ci_low": -0.0358,
+          "ci_high": 0.0636,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Both estimates vs none": {
+          "delta": 0.0763,
+          "ci_low": 0.0057,
+          "ci_high": 0.1475,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Random Forest|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.0202,
+          "ci_low": -0.0789,
+          "ci_high": 0.0366,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|H1 team estimate": {
+          "delta": 0.0137,
+          "ci_low": -0.0656,
+          "ci_high": 0.0901,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|H2 model estimate beyond team": {
+          "delta": 0.0053,
+          "ci_low": -0.0483,
+          "ci_high": 0.0616,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Estimation gap alone": {
+          "delta": 0.0587,
+          "ci_low": -0.0149,
+          "ci_high": 0.1299,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Original design (pred effort)": {
+          "delta": -0.0148,
+          "ci_low": -0.0824,
+          "ci_high": 0.0565,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Both estimates vs none": {
+          "delta": 0.019,
+          "ci_low": -0.0529,
+          "ci_high": 0.0909,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Leakage: final SP vs prediction-time SP": {
+          "delta": -0.0283,
+          "ci_low": -0.0796,
+          "ci_high": 0.0221,
+          "sig_pos": false,
+          "sig_neg": false
+        }
+      },
+      "h3_n_unestimated": 33,
+      "h3": {
+        "Logistic Regression": {
+          "delta": 0.0,
+          "ci_low": -0.0,
+          "ci_high": 0.0,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest": {
+          "delta": 0.0611,
+          "ci_low": -0.0735,
+          "ci_high": 0.2377,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM": {
+          "delta": -0.0037,
+          "ci_low": -0.1032,
+          "ci_high": 0.1067,
+          "sig_pos": false,
+          "sig_neg": false
+        }
+      },
+      "logistic_coefs": {
+        "gap_variant": {
+          "estimation_gap": 0.5273
+        },
+        "both_variant": {
+          "log_sp_team": 0.74,
+          "log_sp_model": 0.0709
+        },
+        "team_variant": {
+          "log_sp_team": 0.7472
+        }
+      }
+    },
+    {
+      "project": "QTBUG",
+      "n_tickets": 842,
+      "reference_categories": [
+        "Task",
+        "P2: Important"
+      ],
+      "n_test": 126,
+      "test_delay_rate": 0.611,
+      "effort_model": "LightGBM (Tabular + TF-IDF)",
+      "effort_val_mae": {
+        "Ridge (Tabular Only)": 5.6821,
+        "Ridge (Tabular + TF-IDF)": 5.2513,
+        "LightGBM (Tabular Only)": 5.464,
+        "LightGBM (Tabular + TF-IDF)": 5.2017
+      },
+      "risk_family": "Random Forest",
+      "risk_val_auc": {
+        "Logistic Regression (No Effort)": 0.577,
+        "Logistic Regression (+ Pred Effort)": 0.5904,
+        "Logistic Regression (+ Team SP)": 0.6098,
+        "Logistic Regression (+ Estimation Gap)": 0.6045,
+        "Logistic Regression (+ Team SP + Model SP)": 0.6174,
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": 0.6731,
+        "Random Forest (No Effort)": 0.6497,
+        "Random Forest (+ Pred Effort)": 0.6248,
+        "Random Forest (+ Team SP)": 0.6323,
+        "Random Forest (+ Estimation Gap)": 0.609,
+        "Random Forest (+ Team SP + Model SP)": 0.6441,
+        "Random Forest (+ Final SP + Model SP (leakage check))": 0.6931,
+        "LightGBM (No Effort)": 0.6081,
+        "LightGBM (+ Pred Effort)": 0.5849,
+        "LightGBM (+ Team SP)": 0.623,
+        "LightGBM (+ Estimation Gap)": 0.6111,
+        "LightGBM (+ Team SP + Model SP)": 0.6076,
+        "LightGBM (+ Final SP + Model SP (leakage check))": 0.6055
+      },
+      "effort_test": {
+        "MAE": 5.0063,
+        "RMSE": 7.6964,
+        "MdAE": 2.9439,
+        "R2": -0.1294,
+        "PRED(25)%": 26.19,
+        "MdMRE%": 42.48
+      },
+      "effort_test_dummy": {
+        "MAE": 5.6032,
+        "RMSE": 8.6327,
+        "MdAE": 3.0,
+        "R2": -0.4209,
+        "PRED(25)%": 21.43,
+        "MdMRE%": 61.54
+      },
+      "team_sp_known_test_pct": 42.1,
+      "risk_test": {
+        "Logistic Regression (No Effort)": {
+          "ROC-AUC": 0.6812,
+          "PR-AUC": 0.7592,
+          "Accuracy": 0.619,
+          "AtRisk-Precision": 0.7636,
+          "AtRisk-Recall": 0.5455,
+          "AtRisk-F1": 0.6364,
+          "Macro-F1": 0.6182,
+          "Brier": 0.2326
+        },
+        "Logistic Regression (+ Pred Effort)": {
+          "ROC-AUC": 0.6944,
+          "PR-AUC": 0.7503,
+          "Accuracy": 0.6587,
+          "AtRisk-Precision": 0.7833,
+          "AtRisk-Recall": 0.6104,
+          "AtRisk-F1": 0.6861,
+          "Macro-F1": 0.6561,
+          "Brier": 0.2248
+        },
+        "Logistic Regression (+ Team SP)": {
+          "ROC-AUC": 0.6896,
+          "PR-AUC": 0.753,
+          "Accuracy": 0.6587,
+          "AtRisk-Precision": 0.7361,
+          "AtRisk-Recall": 0.6883,
+          "AtRisk-F1": 0.7114,
+          "Macro-F1": 0.647,
+          "Brier": 0.2222
+        },
+        "Logistic Regression (+ Estimation Gap)": {
+          "ROC-AUC": 0.6862,
+          "PR-AUC": 0.7584,
+          "Accuracy": 0.6508,
+          "AtRisk-Precision": 0.7391,
+          "AtRisk-Recall": 0.6623,
+          "AtRisk-F1": 0.6986,
+          "Macro-F1": 0.6418,
+          "Brier": 0.2236
+        },
+        "Logistic Regression (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.6997,
+          "PR-AUC": 0.7537,
+          "Accuracy": 0.6746,
+          "AtRisk-Precision": 0.7432,
+          "AtRisk-Recall": 0.7143,
+          "AtRisk-F1": 0.7285,
+          "Macro-F1": 0.6613,
+          "Brier": 0.2169
+        },
+        "Logistic Regression (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.7071,
+          "PR-AUC": 0.7811,
+          "Accuracy": 0.6825,
+          "AtRisk-Precision": 0.7761,
+          "AtRisk-Recall": 0.6753,
+          "AtRisk-F1": 0.7222,
+          "Macro-F1": 0.6759,
+          "Brier": 0.2143
+        },
+        "Random Forest (No Effort)": {
+          "ROC-AUC": 0.6928,
+          "PR-AUC": 0.7539,
+          "Accuracy": 0.5952,
+          "AtRisk-Precision": 0.7241,
+          "AtRisk-Recall": 0.5455,
+          "AtRisk-F1": 0.6222,
+          "Macro-F1": 0.5932,
+          "Brier": 0.2291
+        },
+        "Random Forest (+ Pred Effort)": {
+          "ROC-AUC": 0.747,
+          "PR-AUC": 0.8169,
+          "Accuracy": 0.6111,
+          "AtRisk-Precision": 0.7593,
+          "AtRisk-Recall": 0.5325,
+          "AtRisk-F1": 0.626,
+          "Macro-F1": 0.6105,
+          "Brier": 0.2139
+        },
+        "Random Forest (+ Team SP)": {
+          "ROC-AUC": 0.7169,
+          "PR-AUC": 0.7962,
+          "Accuracy": 0.6111,
+          "AtRisk-Precision": 0.7333,
+          "AtRisk-Recall": 0.5714,
+          "AtRisk-F1": 0.6423,
+          "Macro-F1": 0.6081,
+          "Brier": 0.212
+        },
+        "Random Forest (+ Estimation Gap)": {
+          "ROC-AUC": 0.7258,
+          "PR-AUC": 0.7992,
+          "Accuracy": 0.6429,
+          "AtRisk-Precision": 0.75,
+          "AtRisk-Recall": 0.6234,
+          "AtRisk-F1": 0.6809,
+          "Macro-F1": 0.6377,
+          "Brier": 0.2107
+        },
+        "Random Forest (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.7115,
+          "PR-AUC": 0.7798,
+          "Accuracy": 0.6349,
+          "AtRisk-Precision": 0.746,
+          "AtRisk-Recall": 0.6104,
+          "AtRisk-F1": 0.6714,
+          "Macro-F1": 0.6304,
+          "Brier": 0.2149
+        },
+        "Random Forest (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.7179,
+          "PR-AUC": 0.7901,
+          "Accuracy": 0.619,
+          "AtRisk-Precision": 0.7544,
+          "AtRisk-Recall": 0.5584,
+          "AtRisk-F1": 0.6418,
+          "Macro-F1": 0.6175,
+          "Brier": 0.2188
+        },
+        "LightGBM (No Effort)": {
+          "ROC-AUC": 0.6626,
+          "PR-AUC": 0.7656,
+          "Accuracy": 0.5397,
+          "AtRisk-Precision": 0.6792,
+          "AtRisk-Recall": 0.4675,
+          "AtRisk-F1": 0.5538,
+          "Macro-F1": 0.5392,
+          "Brier": 0.2768
+        },
+        "LightGBM (+ Pred Effort)": {
+          "ROC-AUC": 0.6944,
+          "PR-AUC": 0.7549,
+          "Accuracy": 0.5476,
+          "AtRisk-Precision": 0.7174,
+          "AtRisk-Recall": 0.4286,
+          "AtRisk-F1": 0.5366,
+          "Macro-F1": 0.5474,
+          "Brier": 0.2754
+        },
+        "LightGBM (+ Team SP)": {
+          "ROC-AUC": 0.7132,
+          "PR-AUC": 0.7762,
+          "Accuracy": 0.6349,
+          "AtRisk-Precision": 0.7385,
+          "AtRisk-Recall": 0.6234,
+          "AtRisk-F1": 0.6761,
+          "Macro-F1": 0.6289,
+          "Brier": 0.2314
+        },
+        "LightGBM (+ Estimation Gap)": {
+          "ROC-AUC": 0.7153,
+          "PR-AUC": 0.7937,
+          "Accuracy": 0.6349,
+          "AtRisk-Precision": 0.7246,
+          "AtRisk-Recall": 0.6494,
+          "AtRisk-F1": 0.6849,
+          "Macro-F1": 0.6255,
+          "Brier": 0.2298
+        },
+        "LightGBM (+ Team SP + Model SP)": {
+          "ROC-AUC": 0.7426,
+          "PR-AUC": 0.786,
+          "Accuracy": 0.6825,
+          "AtRisk-Precision": 0.8136,
+          "AtRisk-Recall": 0.6234,
+          "AtRisk-F1": 0.7059,
+          "Macro-F1": 0.6805,
+          "Brier": 0.2259
+        },
+        "LightGBM (+ Final SP + Model SP (leakage check))": {
+          "ROC-AUC": 0.7432,
+          "PR-AUC": 0.7868,
+          "Accuracy": 0.6667,
+          "AtRisk-Precision": 0.807,
+          "AtRisk-Recall": 0.5974,
+          "AtRisk-F1": 0.6866,
+          "Macro-F1": 0.6653,
+          "Brier": 0.2276
+        }
+      },
+      "comparisons": {
+        "Logistic Regression|H1 team estimate": {
+          "delta": 0.0085,
+          "ci_low": -0.0242,
+          "ci_high": 0.043,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|H2 model estimate beyond team": {
+          "delta": 0.0101,
+          "ci_low": -0.0077,
+          "ci_high": 0.028,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Estimation gap alone": {
+          "delta": 0.005,
+          "ci_low": -0.0282,
+          "ci_high": 0.0395,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Original design (pred effort)": {
+          "delta": 0.0133,
+          "ci_low": -0.0136,
+          "ci_high": 0.0405,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Both estimates vs none": {
+          "delta": 0.0186,
+          "ci_low": -0.0169,
+          "ci_high": 0.0578,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Logistic Regression|Leakage: final SP vs prediction-time SP": {
+          "delta": 0.0074,
+          "ci_low": -0.0323,
+          "ci_high": 0.0468,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|H1 team estimate": {
+          "delta": 0.0241,
+          "ci_low": -0.0374,
+          "ci_high": 0.0888,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|H2 model estimate beyond team": {
+          "delta": -0.0054,
+          "ci_low": -0.0548,
+          "ci_high": 0.0541,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Estimation gap alone": {
+          "delta": 0.033,
+          "ci_low": -0.0258,
+          "ci_high": 0.0963,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Original design (pred effort)": {
+          "delta": 0.0542,
+          "ci_low": 0.0033,
+          "ci_high": 0.1095,
+          "sig_pos": true,
+          "sig_neg": false
+        },
+        "Random Forest|Both estimates vs none": {
+          "delta": 0.0187,
+          "ci_low": -0.0428,
+          "ci_high": 0.0848,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest|Leakage: final SP vs prediction-time SP": {
+          "delta": 0.0064,
+          "ci_low": -0.0492,
+          "ci_high": 0.0632,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|H1 team estimate": {
+          "delta": 0.0506,
+          "ci_low": -0.023,
+          "ci_high": 0.1283,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|H2 model estimate beyond team": {
+          "delta": 0.0294,
+          "ci_low": -0.0395,
+          "ci_high": 0.0902,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Estimation gap alone": {
+          "delta": 0.0527,
+          "ci_low": -0.0173,
+          "ci_high": 0.125,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Original design (pred effort)": {
+          "delta": 0.0318,
+          "ci_low": -0.0279,
+          "ci_high": 0.0948,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Both estimates vs none": {
+          "delta": 0.08,
+          "ci_low": -0.0104,
+          "ci_high": 0.1694,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM|Leakage: final SP vs prediction-time SP": {
+          "delta": 0.0005,
+          "ci_low": -0.0699,
+          "ci_high": 0.082,
+          "sig_pos": false,
+          "sig_neg": false
+        }
+      },
+      "h3_n_unestimated": 73,
+      "h3": {
+        "Logistic Regression": {
+          "delta": 0.0278,
+          "ci_low": -0.0053,
+          "ci_high": 0.0635,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "Random Forest": {
+          "delta": 0.0061,
+          "ci_low": -0.0838,
+          "ci_high": 0.0974,
+          "sig_pos": false,
+          "sig_neg": false
+        },
+        "LightGBM": {
+          "delta": -0.0172,
+          "ci_low": -0.1377,
+          "ci_high": 0.0925,
+          "sig_pos": false,
+          "sig_neg": false
+        }
+      },
+      "logistic_coefs": {
+        "gap_variant": {
+          "estimation_gap": 0.2505
+        },
+        "both_variant": {
+          "log_sp_team": 0.3435,
+          "log_sp_model": 0.2425
+        },
+        "team_variant": {
+          "log_sp_team": 0.442
+        }
+      }
+    }
+  ],
+  "direction": {
+    "gap beta < 0 (model thinks bigger -> more delay)": {
+      "projects": 13,
+      "in_hypothesis_direction": 0,
+      "median": 0.3708
+    },
+    "model SP beta > 0 given team SP": {
+      "projects": 13,
+      "in_hypothesis_direction": 13,
+      "median": 0.2132
+    },
+    "team SP beta > 0 (bigger commitments -> more delay)": {
+      "projects": 13,
+      "in_hypothesis_direction": 13,
+      "median": 0.662
+    }
+  },
+  "skipped": {}
+}

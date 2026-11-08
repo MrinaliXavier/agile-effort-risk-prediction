@@ -1,0 +1,61 @@
+PROJECT RHDEVDOCS - Stage 1: Ridge (Tabular + TF-IDF) | Stage 2: Logistic Regression (+ Team SP + Model SP) | label: spilled
+
+--- highest predicted risk ---
+Ticket RHDEVDOCS-2926: [SB] Release Notes, New Features and Known Issues for SBO 1.0
+  Chance of missing its first sprint: 95%  (this project's usual rate: 57%)
+  Team committed 8 SP; the model estimates 6.4 SP - 0.8x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    +0.912  model's effort estimate (SP) = 6.4
+    +0.555  issue type = Story
+    +0.525  team's estimate at commitment = 8.0
+    +0.374  priority = Blocker
+    +0.254  priority changes before commitment = 3.0
+    +0.232  number of labels = 1.0
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.308  (x1.36)  issue type = Story
+    +0.248  (x1.28)  priority = Blocker
+    +0.037  (x1.04)  word 'new'
+    +0.030  (x1.03)  issue type is not Bug
+    -0.028  (x0.97)  description length (characters) = 42.0
+    +0.026  (x1.03)  word 'issues'
+  ACTUAL OUTCOME: missed its sprint
+
+--- lowest predicted risk ---
+Ticket RHDEVDOCS-3566: Update release notes for v1.3.1 since we now have EUS support on 4.6
+  Chance of missing its first sprint: 1%  (this project's usual rate: 57%)
+  Team committed 1 SP; the model estimates 2.7 SP - 2.7x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    -3.114  status changes before commitment = 5.0
+    -0.724  team's estimate at commitment = 1.0
+    -0.158  model's effort estimate (SP) = 2.7
+    -0.145  number of labels = 0.0
+    +0.141  reporter's earlier tickets = 2.0
+    -0.129  priority = Urgent
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    -0.137  (x0.87)  word 'support'
+    +0.074  (x1.08)  priority = Urgent
+    +0.051  (x1.05)  issue type = Enhancement
+    +0.030  (x1.03)  issue type is not Bug
+    -0.026  (x0.97)  reporter's earlier tickets = 2.0
+    -0.025  (x0.98)  word 'update'
+  ACTUAL OUTCOME: finished in its sprint
+
+--- model thinks most under-estimated by the team ---
+Ticket RHDEVDOCS-3563: [SB] Add links under the additional resources section
+  Chance of missing its first sprint: 40%  (this project's usual rate: 57%)
+  Team committed 1 SP; the model estimates 4.6 SP - 4.6x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    -1.139  status changes before commitment = 2.0
+    -0.724  team's estimate at commitment = 1.0
+    +0.555  issue type = Story
+    +0.464  model's effort estimate (SP) = 4.6
+    +0.232  number of labels = 1.0
+    +0.217  priority = Medium
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.308  (x1.36)  issue type = Story
+    +0.057  (x1.06)  description length (characters) = 1074.0
+    +0.030  (x1.03)  issue type is not Bug
+    +0.029  (x1.03)  word 'getting'
+    +0.029  (x1.03)  word 'started'
+    +0.027  (x1.03)  word 'getting started'
+  ACTUAL OUTCOME: finished in its sprint

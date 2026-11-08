@@ -1,0 +1,85 @@
+key,summary,description,issuetype,priority,num_components,num_labels,reporter_prev_issue_count,early_status_changes,early_assignee_changes,early_priority_changes,early_comment_count,first_status_change_days_imputed,backlog_days,sprint_length_days,story_points,sp_team_commit,spilled
+KEYCLOAK-6482,Hello world WildFly Swarm Service Broker,Create module in Keycloak repository for a hello world service broker implemented with WildFly Swarm.,Task,Major,0,0,44,1,1,0,0,2.3966203703703703,2.473316145833333,19.99962366898148,8.0,8.0,0
+KEYCLOAK-8133,Can't Sucessfully inject a custom KeycloakSpringBootConfigResolver in the Keycloak Spring Boot Security Adapter,"We need to support multi-tenancy on our Spring boot resource server. The instructions described [here|https://www.keycloak.org/docs/latest/securing_apps/index.html#_multi_tenancy] are problematic in that it requires a web.xml change. Using Spring boot 2 with embedded tomcat, there is no web.xml file which can be modified. All attempts to add an init or context param programmatically though java were unsuccessful.
+
+An attempt to accomplish this which is different from the official documentation also failed. Described below:
+
+{code:java}
+imports...
+
+public class MultiTenantBearerTokenConfigResolver extends KeycloakSpringBootConfigResolver implements KeycloakConfigResolver {
+
+    @Value(""${keycloak.auth-server-url}"")
+    private static String serverUrl;
+
+    @Value(""${keycloak.use-resource-role-mappings}"")
+    private static String roleMappings;
+
+    @Override
+    public KeycloakDeployment resolve(OIDCHttpFacade.Request request) {
+        AccessToken accessToken = getAccessToken(request);
+        JSONObject deploymentJSON = createDeploymentJSON(accessToken);
+        InputStream is = new ByteArrayInputStream(deploymentJSON.toString().getBytes());
+        KeycloakDeployment keycloakDeployment = KeycloakDeploymentBuilder.build(is);
+        return keycloakDeployment;
+    }
+
+    private JSONObject createDeploymentJSON(AccessToken accessToken) {
+        String realm = accessToken.getIssuer().split(""/realms/"")[1];
+        String clientId = accessToken.getIssuedFor();
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put(""auth-server-url"", serverUrl);
+        jsonObject.put(""bearer-only"", ""true"");
+        jsonObject.put(""realm"", realm);
+        jsonObject.put(""resource"", clientId);
+        if(roleMappings != null) {
+            jsonObject.put(""use-resource-role-mappings"", roleMappings);
+        }
+        return jsonObject;
+    }
+
+    private AccessToken getAccessToken(OIDCHttpFacade.Request request) {
+        AccessToken token = null;
+        List<String> authHeaders = request.getHeaders(""Authorization"");
+
+        String tokenString = null;
+        for (String authHeader : authHeaders) {
+            String[] split = authHeader.trim().split(""\\s+"");
+            if (split == null || split.length != 2) continue;
+            if (!split[0].equalsIgnoreCase(""Bearer"")) continue;
+            tokenString = split[1];
+        }
+
+        if (tokenString != null) {
+            try {
+                token = RSATokenVerifier.create(tokenString).getToken();
+            } catch (VerificationException e) {
+                //TODO: log error
+            }
+        }
+        return token;
+    }
+}
+
+{code}
+
+The code above works if injected as a bean:
+
+
+{code:java}
+@Bean
+    public KeycloakSpringBootConfigResolver KeycloakConfigResolver() {
+        return new MultiTenantBearerTokenConfigResolver();
+    }
+{code}
+
+This will successfully inject the bean. The problem is that the Security Adapter also creates an instance of KeycloakSpringBootConfigResolver since we were unable to modify the web.xml. Now both ConfigResolvers (custom and default)  will execute per request instead of only the desired custom ConfigResolver.
+
+*Bug Summary:*
+
+Cannot override and create a custom KeycloakSpringBootConfigResolver on Spring Boot 2 with Embedded Tomcat.
+
+",Bug,Major,1,3,0,1,1,0,0,5.051481481481481,5.051631944444445,19.999578252314816,2.0,2.0,1
+KEYCLOAK-7107,Pipeline definition: Global parameters should be available for all scripts,Find a way how to make global parameters like a workspace available in all scripts running from the pipeline,Task,Major,0,1,47,0,0,0,0,1.4800580787037037,1.4800580787037037,20.95799747685185,5.0,5.0,0
+KEYCLOAK-7247,HTML for responsive welcome page,,Task,Major,0,1,4,0,1,0,0,7.01013599537037,7.01013599537037,18.957965856481483,5.0,5.0,0
+KEYCLOAK-6143,"Manual configuration page for the OTP prefixes ""Hmac"" to all algorithms","The ""Hmac"" prefix could be a bit misleading for end-users. The OTP generator apps usually state the algorithms just without the HMAC function name. So it should be like SHA1, SHA256, etc.",Bug,Minor,0,1,6,0,0,0,0,13.065740740740742,13.065740740740742,19.99975201388889,1.0,,0

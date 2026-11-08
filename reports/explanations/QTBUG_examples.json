@@ -1,0 +1,203 @@
+[
+  {
+    "key": "QTBUG-86714",
+    "probability": 0.85,
+    "team_sp_at_commitment": null,
+    "model_sp": 5.28,
+    "risk_units": "probability",
+    "risk_drivers": [
+      {
+        "feature": "time in backlog before the sprint",
+        "shap": 0.1757,
+        "value": "399.0 days"
+      },
+      {
+        "feature": "team's estimate at commitment",
+        "shap": 0.0736,
+        "value": "not estimated"
+      },
+      {
+        "feature": "status changes before commitment",
+        "shap": 0.0376,
+        "value": 0.0
+      },
+      {
+        "feature": "sprint length (days)",
+        "shap": -0.0347,
+        "value": 13.0
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap": 0.0318,
+        "value": 7.0
+      },
+      {
+        "feature": "issue type is not Bug",
+        "shap": 0.0288,
+        "value": null
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "issue type is not User Story",
+        "shap_log_sp": -0.0743
+      },
+      {
+        "feature": "issue type is not Bug",
+        "shap_log_sp": 0.0605
+      },
+      {
+        "feature": "word 'qt'",
+        "shap_log_sp": 0.0423
+      },
+      {
+        "feature": "word 'https'",
+        "shap_log_sp": 0.0254
+      },
+      {
+        "feature": "word 'qtconcurrent'",
+        "shap_log_sp": 0.0247
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap_log_sp": -0.0114
+      }
+    ],
+    "example": "highest predicted risk",
+    "actual_outcome": 1
+  },
+  {
+    "key": "QTBUG-95784",
+    "probability": 0.11,
+    "team_sp_at_commitment": 3.0,
+    "model_sp": 3.65,
+    "risk_units": "probability",
+    "risk_drivers": [
+      {
+        "feature": "time in backlog before the sprint",
+        "shap": -0.1607,
+        "value": "0.0 days"
+      },
+      {
+        "feature": "sprint length (days)",
+        "shap": -0.0622,
+        "value": 13.0
+      },
+      {
+        "feature": "team's estimate at commitment",
+        "shap": -0.0568,
+        "value": 3.0
+      },
+      {
+        "feature": "issue type = Bug",
+        "shap": -0.0354,
+        "value": null
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap": -0.0348,
+        "value": 20.0
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": -0.0255,
+        "value": 3.7
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "issue type is not User Story",
+        "shap_log_sp": -0.0756
+      },
+      {
+        "feature": "description length (characters)",
+        "shap_log_sp": -0.0631
+      },
+      {
+        "feature": "issue type = Bug",
+        "shap_log_sp": -0.0583
+      },
+      {
+        "feature": "summary length (characters)",
+        "shap_log_sp": -0.0222
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap_log_sp": 0.003
+      },
+      {
+        "feature": "issue type is not Epic",
+        "shap_log_sp": 0.0
+      }
+    ],
+    "example": "lowest predicted risk",
+    "actual_outcome": 0
+  },
+  {
+    "key": "QTBUG-86693",
+    "probability": 0.47,
+    "team_sp_at_commitment": 1.0,
+    "model_sp": 6.81,
+    "risk_units": "probability",
+    "risk_drivers": [
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": 0.0636,
+        "value": 6.8
+      },
+      {
+        "feature": "team's estimate at commitment",
+        "shap": -0.0616,
+        "value": 1.0
+      },
+      {
+        "feature": "status changes before commitment",
+        "shap": -0.0346,
+        "value": 2.0
+      },
+      {
+        "feature": "time in backlog before the sprint",
+        "shap": 0.0341,
+        "value": "362.1 days (first status change after 0.0 days)"
+      },
+      {
+        "feature": "sprint length (days)",
+        "shap": -0.0329,
+        "value": 14.0
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap": 0.0259,
+        "value": 6.0
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "word 'task'",
+        "shap_log_sp": 0.1729
+      },
+      {
+        "feature": "word 'qt'",
+        "shap_log_sp": 0.0592
+      },
+      {
+        "feature": "word 'need'",
+        "shap_log_sp": 0.059
+      },
+      {
+        "feature": "issue type is not User Story",
+        "shap_log_sp": -0.0585
+      },
+      {
+        "feature": "word '15'",
+        "shap_log_sp": -0.0456
+      },
+      {
+        "feature": "issue type is not Bug",
+        "shap_log_sp": 0.0431
+      }
+    ],
+    "example": "model thinks most under-estimated by the team",
+    "actual_outcome": 1
+  }
+]

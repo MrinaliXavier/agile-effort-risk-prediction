@@ -1,0 +1,34 @@
+{
+  "project": "DEVELOPER",
+  "label": "spilled",
+  "team_col": "sp_team_commit",
+  "effort_model": "Ridge (Tabular + TF-IDF)",
+  "risk_family": "Logistic Regression",
+  "risk_variant": "+ Team SP + Model SP",
+  "stage2_features": [
+    "num_components",
+    "num_labels",
+    "summary_len",
+    "description_len",
+    "reporter_prev_issue_count",
+    "has_description",
+    "early_status_changes",
+    "early_assignee_changes",
+    "early_priority_changes",
+    "early_comment_count",
+    "first_status_change_days_imputed",
+    "backlog_days",
+    "sprint_length_days",
+    "log_sp_team",
+    "log_sp_model",
+    "sp_missing_team"
+  ],
+  "reference_categories": {
+    "issuetype": "Story",
+    "priority": "None"
+  },
+  "selection_source": "reports/mp_spillover_results.json (validation split)",
+  "n_effort_rows": 1676,
+  "n_risk_rows": 1676,
+  "historical_delay_rate": 0.4427
+}

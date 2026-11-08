@@ -1,0 +1,203 @@
+[
+  {
+    "key": "KEYCLOAK-8730",
+    "probability": 0.9999,
+    "team_sp_at_commitment": 8.0,
+    "model_sp": 9.3,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "time in backlog before the sprint",
+        "shap": 7.0149,
+        "value": "920.1 days (first status change after 8.9 days)"
+      },
+      {
+        "feature": "number of labels",
+        "shap": 1.2899,
+        "value": 5.0
+      },
+      {
+        "feature": "team's estimate at commitment",
+        "shap": 0.6788,
+        "value": 8.0
+      },
+      {
+        "feature": "status changes before commitment",
+        "shap": -0.4945,
+        "value": 2.0
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": 0.2434,
+        "value": 9.3
+      },
+      {
+        "feature": "number of components",
+        "shap": 0.1715,
+        "value": 1.0
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "number of labels",
+        "shap_log_sp": 0.6044
+      },
+      {
+        "feature": "word 'saml'",
+        "shap_log_sp": 0.1218
+      },
+      {
+        "feature": "issue type is not Bug",
+        "shap_log_sp": 0.0972
+      },
+      {
+        "feature": "issue type = Feature Request",
+        "shap_log_sp": 0.0585
+      },
+      {
+        "feature": "number of components",
+        "shap_log_sp": -0.0457
+      },
+      {
+        "feature": "word 'https'",
+        "shap_log_sp": 0.0455
+      }
+    ],
+    "example": "highest predicted risk",
+    "actual_outcome": 0
+  },
+  {
+    "key": "KEYCLOAK-11611",
+    "probability": 0.0778,
+    "team_sp_at_commitment": 0.0,
+    "model_sp": 2.05,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "team's estimate at commitment",
+        "shap": -1.5782,
+        "value": 0.0
+      },
+      {
+        "feature": "status changes before commitment",
+        "shap": -0.4945,
+        "value": 2.0
+      },
+      {
+        "feature": "issue type = Bug",
+        "shap": -0.3166,
+        "value": null
+      },
+      {
+        "feature": "number of components",
+        "shap": 0.1715,
+        "value": 1.0
+      },
+      {
+        "feature": "time in backlog before the sprint",
+        "shap": -0.1277,
+        "value": "0.0 days"
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": -0.0855,
+        "value": 2.0
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "issue type = Bug",
+        "shap_log_sp": -0.2267
+      },
+      {
+        "feature": "word 'set'",
+        "shap_log_sp": -0.0779
+      },
+      {
+        "feature": "number of components",
+        "shap_log_sp": -0.0457
+      },
+      {
+        "feature": "word 'test'",
+        "shap_log_sp": 0.0287
+      },
+      {
+        "feature": "word 'error'",
+        "shap_log_sp": -0.027
+      },
+      {
+        "feature": "summary length (characters)",
+        "shap_log_sp": 0.0254
+      }
+    ],
+    "example": "lowest predicted risk",
+    "actual_outcome": 0
+  },
+  {
+    "key": "KEYCLOAK-12158",
+    "probability": 0.2761,
+    "team_sp_at_commitment": 1.0,
+    "model_sp": 4.55,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "team's estimate at commitment",
+        "shap": -0.8662,
+        "value": 1.0
+      },
+      {
+        "feature": "status changes before commitment",
+        "shap": 0.1783,
+        "value": 0.0
+      },
+      {
+        "feature": "number of components",
+        "shap": -0.1647,
+        "value": 0.0
+      },
+      {
+        "feature": "issue type is not Bug",
+        "shap": 0.1357,
+        "value": null
+      },
+      {
+        "feature": "time in backlog before the sprint",
+        "shap": -0.1279,
+        "value": "0.0 days"
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap": -0.1125,
+        "value": 65.0
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "word 'openshift'",
+        "shap_log_sp": 0.1431
+      },
+      {
+        "feature": "issue type is not Bug",
+        "shap_log_sp": 0.0972
+      },
+      {
+        "feature": "number of components",
+        "shap_log_sp": 0.0439
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap_log_sp": 0.0291
+      },
+      {
+        "feature": "word 'update'",
+        "shap_log_sp": -0.0258
+      },
+      {
+        "feature": "summary length (characters)",
+        "shap_log_sp": 0.0217
+      }
+    ],
+    "example": "model thinks most under-estimated by the team",
+    "actual_outcome": 1
+  }
+]

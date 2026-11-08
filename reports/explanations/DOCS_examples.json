@@ -1,0 +1,203 @@
+[
+  {
+    "key": "DOCS-14553",
+    "probability": 0.9621,
+    "team_sp_at_commitment": 3.0,
+    "model_sp": 2.61,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "team's estimate at commitment",
+        "shap": 1.1375,
+        "value": 3.0
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": 0.8262,
+        "value": 2.6
+      },
+      {
+        "feature": "reporter's earlier tickets",
+        "shap": 0.4473,
+        "value": 122.0
+      },
+      {
+        "feature": "assignee changes before commitment",
+        "shap": 0.4293,
+        "value": 0.0
+      },
+      {
+        "feature": "number of components",
+        "shap": 0.2705,
+        "value": 2.0
+      },
+      {
+        "feature": "summary length (characters)",
+        "shap": 0.1973,
+        "value": 99.0
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "word 'design docs'",
+        "shap_log_sp": 0.2269
+      },
+      {
+        "feature": "word 'design'",
+        "shap_log_sp": 0.1708
+      },
+      {
+        "feature": "word 'title'",
+        "shap_log_sp": 0.0932
+      },
+      {
+        "feature": "word 'h2'",
+        "shap_log_sp": 0.0338
+      },
+      {
+        "feature": "word 'server'",
+        "shap_log_sp": 0.032
+      },
+      {
+        "feature": "word 'docs h2'",
+        "shap_log_sp": 0.03
+      }
+    ],
+    "example": "highest predicted risk",
+    "actual_outcome": 1
+  },
+  {
+    "key": "DOCS-14519",
+    "probability": 0.0403,
+    "team_sp_at_commitment": 1.0,
+    "model_sp": 1.0,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "issue type = Sub-task",
+        "shap": -3.174,
+        "value": null
+      },
+      {
+        "feature": "assignee changes before commitment",
+        "shap": 0.4293,
+        "value": 0.0
+      },
+      {
+        "feature": "summary length (characters)",
+        "shap": -0.1556,
+        "value": 27.0
+      },
+      {
+        "feature": "status changes before commitment",
+        "shap": -0.1294,
+        "value": 0.0
+      },
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": 0.115,
+        "value": 1.0
+      },
+      {
+        "feature": "issue type is not Backport Sub-Task",
+        "shap": 0.0996,
+        "value": null
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "word 'design docs'",
+        "shap_log_sp": 0.1057
+      },
+      {
+        "feature": "word 'backport'",
+        "shap_log_sp": -0.1005
+      },
+      {
+        "feature": "word 'design'",
+        "shap_log_sp": 0.0908
+      },
+      {
+        "feature": "word 'docs'",
+        "shap_log_sp": -0.0214
+      },
+      {
+        "feature": "word 'docs h2'",
+        "shap_log_sp": -0.0192
+      },
+      {
+        "feature": "summary length (characters)",
+        "shap_log_sp": 0.0179
+      }
+    ],
+    "example": "lowest predicted risk",
+    "actual_outcome": 0
+  },
+  {
+    "key": "DOCS-14509",
+    "probability": 0.4514,
+    "team_sp_at_commitment": 1.0,
+    "model_sp": 1.53,
+    "risk_units": "log-odds",
+    "risk_drivers": [
+      {
+        "feature": "model's effort estimate (SP)",
+        "shap": 0.3983,
+        "value": 1.5
+      },
+      {
+        "feature": "issue type = Bug",
+        "shap": -0.2795,
+        "value": null
+      },
+      {
+        "feature": "summary length (characters)",
+        "shap": -0.1017,
+        "value": 38.0
+      },
+      {
+        "feature": "issue type is not Backport Sub-Task",
+        "shap": 0.0996,
+        "value": null
+      },
+      {
+        "feature": "issue type is not Sub-task",
+        "shap": 0.0982,
+        "value": null
+      },
+      {
+        "feature": "team's estimate at commitment",
+        "shap": -0.0783,
+        "value": 1.0
+      }
+    ],
+    "effort_drivers": [
+      {
+        "feature": "word 'design docs'",
+        "shap_log_sp": 0.1469
+      },
+      {
+        "feature": "word 'design'",
+        "shap_log_sp": 0.1318
+      },
+      {
+        "feature": "word 'information'",
+        "shap_log_sp": 0.035
+      },
+      {
+        "feature": "word 'quote'",
+        "shap_log_sp": -0.0271
+      },
+      {
+        "feature": "word 'docs h2'",
+        "shap_log_sp": -0.0228
+      },
+      {
+        "feature": "word 'h2'",
+        "shap_log_sp": 0.0176
+      }
+    ],
+    "example": "model thinks most under-estimated by the team",
+    "actual_outcome": 0
+  }
+]

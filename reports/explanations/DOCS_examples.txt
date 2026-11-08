@@ -1,0 +1,61 @@
+PROJECT DOCS - Stage 1: LightGBM (Tabular + TF-IDF) | Stage 2: Logistic Regression (+ Team SP + Model SP) | label: spilled
+
+--- highest predicted risk ---
+Ticket DOCS-14553: Investigate changes in SERVER-57426: Enable zstd compression for time-series col
+  Chance of missing its first sprint: 96%  (this project's usual rate: 29%)
+  Team committed 3 SP; the model estimates 2.6 SP - 0.9x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    +1.138  team's estimate at commitment = 3.0
+    +0.826  model's effort estimate (SP) = 2.6
+    +0.447  reporter's earlier tickets = 122.0
+    +0.429  assignee changes before commitment = 0.0
+    +0.270  number of components = 2.0
+    +0.197  summary length (characters) = 99.0
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.227  (x1.25)  word 'design docs'
+    +0.171  (x1.19)  word 'design'
+    +0.093  (x1.10)  word 'title'
+    +0.034  (x1.03)  word 'h2'
+    +0.032  (x1.03)  word 'server'
+    +0.030  (x1.03)  word 'docs h2'
+  ACTUAL OUTCOME: missed its sprint
+
+--- lowest predicted risk ---
+Ticket DOCS-14519: Backport DOCS-14464 to v1.7
+  Chance of missing its first sprint: 4%  (this project's usual rate: 29%)
+  Team committed 1 SP; the model estimates 1.0 SP - 1.0x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    -3.174  issue type = Sub-task
+    +0.429  assignee changes before commitment = 0.0
+    -0.156  summary length (characters) = 27.0
+    -0.129  status changes before commitment = 0.0
+    +0.115  model's effort estimate (SP) = 1.0
+    +0.100  issue type is not Backport Sub-Task
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.106  (x1.11)  word 'design docs'
+    -0.100  (x0.90)  word 'backport'
+    +0.091  (x1.10)  word 'design'
+    -0.021  (x0.98)  word 'docs'
+    -0.019  (x0.98)  word 'docs h2'
+    +0.018  (x1.02)  summary length (characters) = 27.0
+  ACTUAL OUTCOME: finished in its sprint
+
+--- model thinks most under-estimated by the team ---
+Ticket DOCS-14509: Typo in schema validation docs for 5.0
+  Chance of missing its first sprint: 45%  (this project's usual rate: 29%)
+  Team committed 1 SP; the model estimates 1.5 SP - 1.5x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    +0.398  model's effort estimate (SP) = 1.5
+    -0.279  issue type = Bug
+    -0.102  summary length (characters) = 38.0
+    +0.100  issue type is not Backport Sub-Task
+    +0.098  issue type is not Sub-task
+    -0.078  team's estimate at commitment = 1.0
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.147  (x1.16)  word 'design docs'
+    +0.132  (x1.14)  word 'design'
+    +0.035  (x1.04)  word 'information'
+    -0.027  (x0.97)  word 'quote'
+    -0.023  (x0.98)  word 'docs h2'
+    +0.018  (x1.02)  word 'h2'
+  ACTUAL OUTCOME: finished in its sprint

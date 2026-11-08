@@ -1,0 +1,61 @@
+PROJECT BXMSDOC - Stage 1: LightGBM (Tabular + TF-IDF) | Stage 2: Logistic Regression (+ Team SP + Model SP) | label: spilled
+
+--- highest predicted risk ---
+Ticket BXMSDOC-8067: Kogito: Do not reference archetypes, use quarkus cli BAPL-1822
+  Chance of missing its first sprint: 81%  (this project's usual rate: 41%)
+  The team had not estimated it at commitment; the model estimates 4.5 SP
+  What drives the risk (log-odds; + raises it, - lowers it):
+    +0.803  team's estimate at commitment = not estimated
+    +0.297  model's effort estimate (SP) = 4.5
+    +0.204  issue type is not Sub-task
+    +0.157  status changes before commitment = 0.0
+    -0.108  time in backlog before the sprint = 1.7 days
+    +0.105  has a description = 1.0
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.109  (x1.11)  reporter's earlier tickets = 2.0
+    +0.107  (x1.11)  word 'project'
+    +0.017  (x1.02)  summary length (characters) = 62.0
+    +0.013  (x1.01)  issue type is not Sub-task
+    +0.011  (x1.01)  word 'https'
+    -0.010  (x0.99)  issue type is not Enhancement
+  ACTUAL OUTCOME: missed its sprint
+
+--- lowest predicted risk ---
+Ticket BXMSDOC-7723: QE review on assembly "Custom tasks and work item handlers in Business Central"
+  Chance of missing its first sprint: 8%  (this project's usual rate: 41%)
+  Team committed 3 SP; the model estimates 1.6 SP - 0.5x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    -1.948  comments before commitment = 25.0
+    -1.064  status changes before commitment = 6.0
+    +0.322  time in backlog before the sprint = 71.4 days (first status change after 0.4 days)
+    +0.292  assignee changes before commitment = 3.0
+    -0.288  model's effort estimate (SP) = 1.6
+    +0.204  issue type is not Sub-task
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    -0.114  (x0.89)  word 'qe review'
+    -0.039  (x0.96)  word 'bxmsdoc'
+    -0.037  (x0.96)  word 'redhat com'
+    -0.029  (x0.97)  word 'review'
+    -0.028  (x0.97)  reporter's earlier tickets = 105.0
+    -0.019  (x0.98)  word 'pr'
+  ACTUAL OUTCOME: finished in its sprint
+
+--- model thinks most under-estimated by the team ---
+Ticket BXMSDOC-7598: Mention XStream security change in Release Notes
+  Chance of missing its first sprint: 42%  (this project's usual rate: 41%)
+  Team committed 1 SP; the model estimates 3.6 SP - 3.6x the team's estimate
+  What drives the risk (log-odds; + raises it, - lowers it):
+    -0.298  team's estimate at commitment = 1.0
+    +0.204  issue type is not Sub-task
+    -0.187  comments before commitment = 3.0
+    +0.155  model's effort estimate (SP) = 3.6
+    -0.140  number of components = 1.0
+    +0.105  has a description = 1.0
+  Why the model estimates this size (each item multiplies the estimate by about e^value):
+    +0.077  (x1.08)  reporter's earlier tickets = 20.0
+    -0.026  (x0.97)  description length (characters) = 936.0
+    -0.021  (x0.98)  word 'change'
+    +0.020  (x1.02)  issue type is not Sub-task
+    +0.020  (x1.02)  summary length (characters) = 48.0
+    +0.014  (x1.01)  word 'drools'
+  ACTUAL OUTCOME: finished in its sprint
